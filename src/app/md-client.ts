@@ -5,10 +5,6 @@ import {
   IJsFixLogger,
   MsgType } from 'jspurefix'
 
-import {
-  IMarketDataRequest
-} from '../types/'
-import { MDEntryType, SubscriptionRequestType } from '../types/enum'
 import { MDFactory } from './md-factory'
 
 export class MDClient extends AsciiSession {
