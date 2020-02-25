@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--compile\" \"--output=../../src/types/\""
+    "generate": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--compile\" \"--output=../../src/types/\"",
+    "md-app": "cd dist/app && node app"
   },
   "keywords": [
     "quickfix",
