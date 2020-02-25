@@ -3,12 +3,13 @@ import {
   MsgView,
   IJsFixConfig,
   IJsFixLogger,
-  Dictionary,
   MsgType } from 'jspurefix'
 
 import {
-  ITradeCaptureReport
+  IMarketDataRequest
 } from '../types/'
+import { MDEntryType, SubscriptionRequestType } from '../types/enum'
+import { MDFactory } from './md-factory'
 
 export class MDClient extends AsciiSession {
   private readonly logger: IJsFixLogger
@@ -43,6 +44,8 @@ export class MDClient extends AsciiSession {
     this.logger.info('ready')
     const logoutSeconds = 32
     this.logger.info(`will logout after ${logoutSeconds}`)
+    const mdr = MDFactory.BidOfferRequest('EUR/USD')
+    this.send(MsgType.MarketDataRequest, mdr)
     setTimeout(() => {
       this.done()
     }, logoutSeconds * 1000)
