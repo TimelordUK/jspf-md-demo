@@ -16,7 +16,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jspurefix": "^1.0.14"
+    "jspurefix": "^1.0.15",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.149",
