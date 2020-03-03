@@ -4,8 +4,10 @@
   "description": "FIX 4.4 market data demo using quick fix data dictionary",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "generate": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--compile\" \"--output=../../src/types/\"",
+    "replay": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--fix=../../data/example/fix.txt\" \"--objects\" --delimiter=\"|\"",
+    "tokens": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--fix=../../data/example/fix.txt\" \"--tokens\" --delimiter=\"|\"",
     "md-app": "cd dist/app && node app"
   },
   "keywords": [
@@ -17,12 +19,14 @@
   "license": "ISC",
   "dependencies": {
     "jspurefix": "^1.0.15",
+    "lodash": "^4.17.15",
     "request": "^2.88.2"
   },
   "devDependencies": {
+    "@types/jest": "^25.1.3",
     "@types/lodash": "^4.14.149",
     "@types/node": "^13.7.4",
-    "@types/sax": "^1.2.1",
+    "jest": "^25.1.0",
     "standard": "^14.3.1",
     "ts-jest": "^25.2.1",
     "tslint": "^6.0.0",

@@ -1,0 +1,505 @@
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 111
+[2] 35 (MsgType) = V[MarketDataRequest], [3] 49 (SenderCompID) = QL4ADZEUNZ
+[4] 56 (TargetCompID) = SEEDCX, [5] 34 (MsgSeqNum) = 2
+[6] 52 (SendingTime) = 20190402-14:22:04.152, [7] 262 (MDReqID) = 2
+[8] 263 (SubscriptionRequestType) = 1[SnapshotPlusUpdates], [9] 264 (MarketDepth) = 0
+[10] 267 (NoMDEntryTypes) = 1, [11] 269 (MDEntryType) = 4[OpeningPrice]
+[12] 146 (NoRelatedSym) = 1, [13] 55 (Symbol) = COSP:BTC/USD
+[14] 10 (CheckSum) = 031
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00135
+[2] 35 (MsgType) = f[SecurityStatus], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 2
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:05.133958798
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 55 (Symbol) = COSP:BTC/USD
+[10] 326 (SecurityTradingStatus) = 17[ReadyToTrade], [11] 60 (TransactTime) = 20190402-14:22:05.133958380
+[12] 10 (CheckSum) = 054
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00111
+[2] 35 (MsgType) = W[MarketDataSnapshotFullRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 3
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:05.133967999
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 1181 (ApplSeqNum ) = 16
+[10] 55 (Symbol) = COSP:BTC/USD, [11] 268 (NoMDEntries) = 0
+[12] 10 (CheckSum) = 087
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 217
+[2] 35 (MsgType) = D[OrderSingle], [3] 49 (SenderCompID) = QL4ADZEUNZ
+[4] 56 (TargetCompID) = SEEDCX, [5] 34 (MsgSeqNum) = 2
+[6] 50 (SenderSubID) = 2F8QNWXP2N9E, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = SCXM, [9] 52 (SendingTime) = 20190402-14:22:27.237
+[10] 369 (LastMsgSeqNumProcessed) = 1, [11] 11 (ClOrdID) = Order184946
+[12] 1 (Account) = 2F8QNWXP2, [13] 55 (Symbol) = COSP:BTC/USD
+[14] 54 (Side) = 1[Buy], [15] 60 (TransactTime) = 20190402-14:22:27
+[16] 38 (OrderQty) = 5, [17] 40 (OrdType) = 2[Limit]
+[18] 44 (Price) = 7300, [19] 59 (TimeInForce) = 0[Day]
+[20] 1031 (unknown) = A, [21] 528 (OrderCapacity) = A[Agency]
+[22] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount], [23] 1028 (unknown) = N
+[24] 10 (CheckSum) = 104
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00165
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 4
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:28.228012694
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 17, [11] 279 (MDUpdateAction) = 0[New]
+[12] 269 (MDEntryType) = 0[Bid], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 270 (MDEntryPx) = 7300.0, [15] 271 (MDEntrySize) = 5.0
+[16] 278 (MDEntryID) = 337800000000012071, [17] 10 (CheckSum) = 059
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 0313
+[2] 35 (MsgType) = 8[ExecutionReport], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 2
+[6] 50 (SenderSubID) = SCXM, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = 2F8QNWXP2N9E, [9] 52 (SendingTime) = 20190402-14:22:28.238866835
+[10] 369 (LastMsgSeqNumProcessed) = 2, [11] 1 (Account) = 2F8QNWXP2
+[12] 37 (OrderID) = 337800000000012071, [13] 11 (ClOrdID) = Order184946
+[14] 17 (ExecID) = 337800000000466512, [15] 150 (ExecType) = 0[New]
+[16] 39 (OrdStatus) = 0[New], [17] 55 (Symbol) = COSP:BTC/USD
+[18] 54 (Side) = 1[Buy], [19] 60 (TransactTime) = 20190402-14:22:28.226000000
+[20] 38 (OrderQty) = 5.0, [21] 151 (LeavesQty) = 5.0
+[22] 14 (CumQty) = 0.0, [23] 6 (AvgPx) = 0.0
+[24] 40 (OrdType) = 2[Limit], [25] 44 (Price) = 7300.0
+[26] 59 (TimeInForce) = 0[Day], [27] 1031 (unknown) = A
+[28] 528 (OrderCapacity) = A[Agency], [29] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount]
+[30] 1028 (unknown) = N, [31] 10 (CheckSum) = 073
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 217
+[2] 35 (MsgType) = D[OrderSingle], [3] 49 (SenderCompID) = QL4ADZEUNZ
+[4] 56 (TargetCompID) = SEEDCX, [5] 34 (MsgSeqNum) = 3
+[6] 50 (SenderSubID) = 2F8QNWXP2N9E, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = SCXM, [9] 52 (SendingTime) = 20190402-14:22:29.282
+[10] 369 (LastMsgSeqNumProcessed) = 2, [11] 11 (ClOrdID) = Order184947
+[12] 1 (Account) = 2F8QNWXP2, [13] 55 (Symbol) = COSP:BTC/USD
+[14] 54 (Side) = 2[Sell], [15] 60 (TransactTime) = 20190402-14:22:29
+[16] 38 (OrderQty) = 2, [17] 40 (OrdType) = 2[Limit]
+[18] 44 (Price) = 7300, [19] 59 (TimeInForce) = 0[Day]
+[20] 1031 (unknown) = A, [21] 528 (OrderCapacity) = A[Agency]
+[22] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount], [23] 1028 (unknown) = N
+[24] 10 (CheckSum) = 109
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 0339
+[2] 35 (MsgType) = 8[ExecutionReport], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 7
+[6] 50 (SenderSubID) = SCXM, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = 2F8QNWXP2N9E, [9] 52 (SendingTime) = 20190402-14:22:32.171291389
+[10] 369 (LastMsgSeqNumProcessed) = 4, [11] 1 (Account) = 2F8QNWXP2
+[12] 37 (OrderID) = 337800000000012071, [13] 11 (ClOrdID) = Order184946
+[14] 17 (ExecID) = 337800000000466540, [15] 150 (ExecType) = F[Trade]
+[16] 39 (OrdStatus) = 1[PartiallyFilled], [17] 55 (Symbol) = COSP:BTC/USD
+[18] 54 (Side) = 1[Buy], [19] 60 (TransactTime) = 20190402-14:22:32.136000000
+[20] 38 (OrderQty) = 5.0, [21] 151 (LeavesQty) = 1.0
+[22] 14 (CumQty) = 4.0, [23] 31 (LastPx) = 7300.0
+[24] 32 (LastQty) = 2.0, [25] 6 (AvgPx) = 7300.0
+[26] 40 (OrdType) = 2[Limit], [27] 44 (Price) = 7300.0
+[28] 59 (TimeInForce) = 0[Day], [29] 1031 (unknown) = A
+[30] 528 (OrderCapacity) = A[Agency], [31] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount]
+[32] 1028 (unknown) = N, [33] 851 (LastLiquidityInd) = 1[AddedLiquidity]
+[34] 10 (CheckSum) = 002
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00188
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 6
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:30.267608570
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 19, [11] 279 (MDUpdateAction) = 1[Change]
+[12] 269 (MDEntryType) = 0[Bid], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 270 (MDEntryPx) = 7300.0, [15] 271 (MDEntrySize) = 3.0
+[16] 278 (MDEntryID) = 337800000000012071, [17] 280 (MDEntryRefID) = 337800000000012071
+[18] 10 (CheckSum) = 155
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00146
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 7
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:30.267650237
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 20, [11] 279 (MDUpdateAction) = 2[Delete]
+[12] 269 (MDEntryType) = 1[Offer], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 280 (MDEntryRefID) = 337800000000012072, [15] 10 (CheckSum) = 199
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00165
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 8
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:30.267691956
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 21, [11] 279 (MDUpdateAction) = 0[New]
+[12] 269 (MDEntryType) = 2[Trade], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 270 (MDEntryPx) = 7300.0, [15] 271 (MDEntrySize) = 2.0
+[16] 278 (MDEntryID) = 337800000000466515, [17] 10 (CheckSum) = 083
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 0340
+[2] 35 (MsgType) = 8[ExecutionReport], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 10
+[6] 50 (SenderSubID) = SCXM, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = 2F8QNWXP2N9E, [9] 52 (SendingTime) = 20190402-14:22:33.890950449
+[10] 369 (LastMsgSeqNumProcessed) = 5, [11] 1 (Account) = 2F8QNWXP2
+[12] 37 (OrderID) = 337800000000012071, [13] 11 (ClOrdID) = Order184946
+[14] 17 (ExecID) = 337800000000466557, [15] 150 (ExecType) = F[Trade]
+[16] 39 (OrdStatus) = 2[Filled], [17] 55 (Symbol) = COSP:BTC/USD
+[18] 54 (Side) = 1[Buy], [19] 60 (TransactTime) = 20190402-14:22:33.856000000
+[20] 38 (OrderQty) = 5.0, [21] 151 (LeavesQty) = 0.0
+[22] 14 (CumQty) = 5.0, [23] 31 (LastPx) = 7300.0
+[24] 32 (LastQty) = 1.0, [25] 6 (AvgPx) = 7300.0
+[26] 40 (OrdType) = 2[Limit], [27] 44 (Price) = 7300.0
+[28] 59 (TimeInForce) = 0[Day], [29] 1031 (unknown) = A
+[30] 528 (OrderCapacity) = A[Agency], [31] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount]
+[32] 1028 (unknown) = N, [33] 851 (LastLiquidityInd) = 1[AddedLiquidity]
+[34] 10 (CheckSum) = 063
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00165
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 5
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:30.267540422
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 18, [11] 279 (MDUpdateAction) = 0[New]
+[12] 269 (MDEntryType) = 1[Offer], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 270 (MDEntryPx) = 7300.0, [15] 271 (MDEntrySize) = 2.0
+[16] 278 (MDEntryID) = 337800000000012072, [17] 10 (CheckSum) = 051
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 0339
+[2] 35 (MsgType) = 8[ExecutionReport], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 4
+[6] 50 (SenderSubID) = SCXM, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = 2F8QNWXP2N9E, [9] 52 (SendingTime) = 20190402-14:22:30.300286885
+[10] 369 (LastMsgSeqNumProcessed) = 3, [11] 1 (Account) = 2F8QNWXP2
+[12] 37 (OrderID) = 337800000000012071, [13] 11 (ClOrdID) = Order184946
+[14] 17 (ExecID) = 337800000000466515, [15] 150 (ExecType) = F[Trade]
+[16] 39 (OrdStatus) = 1[PartiallyFilled], [17] 55 (Symbol) = COSP:BTC/USD
+[18] 54 (Side) = 1[Buy], [19] 60 (TransactTime) = 20190402-14:22:30.265000000
+[20] 38 (OrderQty) = 5.0, [21] 151 (LeavesQty) = 3.0
+[22] 14 (CumQty) = 2.0, [23] 31 (LastPx) = 7300.0
+[24] 32 (LastQty) = 2.0, [25] 6 (AvgPx) = 7300.0
+[26] 40 (OrdType) = 2[Limit], [27] 44 (Price) = 7300.0
+[28] 59 (TimeInForce) = 0[Day], [29] 1031 (unknown) = A
+[30] 528 (OrderCapacity) = A[Agency], [31] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount]
+[32] 1028 (unknown) = N, [33] 851 (LastLiquidityInd) = 1[AddedLiquidity]
+[34] 10 (CheckSum) = 254
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00165
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 9
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:32.138113666
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 22, [11] 279 (MDUpdateAction) = 0[New]
+[12] 269 (MDEntryType) = 1[Offer], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 270 (MDEntryPx) = 7300.0, [15] 271 (MDEntrySize) = 2.0
+[16] 278 (MDEntryID) = 337800000000012073, [17] 10 (CheckSum) = 056
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00189
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 10
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:32.138203609
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 23, [11] 279 (MDUpdateAction) = 1[Change]
+[12] 269 (MDEntryType) = 0[Bid], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 270 (MDEntryPx) = 7300.0, [15] 271 (MDEntrySize) = 1.0
+[16] 278 (MDEntryID) = 337800000000012071, [17] 280 (MDEntryRefID) = 337800000000012071
+[18] 10 (CheckSum) = 185
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 0313
+[2] 35 (MsgType) = 8[ExecutionReport], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 3
+[6] 50 (SenderSubID) = SCXM, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = 2F8QNWXP2N9E, [9] 52 (SendingTime) = 20190402-14:22:30.278105825
+[10] 369 (LastMsgSeqNumProcessed) = 3, [11] 1 (Account) = 2F8QNWXP2
+[12] 37 (OrderID) = 337800000000012072, [13] 11 (ClOrdID) = Order184947
+[14] 17 (ExecID) = 337800000000466514, [15] 150 (ExecType) = 0[New]
+[16] 39 (OrdStatus) = 0[New], [17] 55 (Symbol) = COSP:BTC/USD
+[18] 54 (Side) = 2[Sell], [19] 60 (TransactTime) = 20190402-14:22:30.265000000
+[20] 38 (OrderQty) = 2.0, [21] 151 (LeavesQty) = 2.0
+[22] 14 (CumQty) = 0.0, [23] 6 (AvgPx) = 0.0
+[24] 40 (OrdType) = 2[Limit], [25] 44 (Price) = 7300.0
+[26] 59 (TimeInForce) = 0[Day], [27] 1031 (unknown) = A
+[28] 528 (OrderCapacity) = A[Agency], [29] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount]
+[30] 1028 (unknown) = N, [31] 10 (CheckSum) = 052
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 0339
+[2] 35 (MsgType) = 8[ExecutionReport], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 5
+[6] 50 (SenderSubID) = SCXM, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = 2F8QNWXP2N9E, [9] 52 (SendingTime) = 20190402-14:22:30.300290448
+[10] 369 (LastMsgSeqNumProcessed) = 3, [11] 1 (Account) = 2F8QNWXP2
+[12] 37 (OrderID) = 337800000000012072, [13] 11 (ClOrdID) = Order184947
+[14] 17 (ExecID) = 337800000000466516, [15] 150 (ExecType) = F[Trade]
+[16] 39 (OrdStatus) = 2[Filled], [17] 55 (Symbol) = COSP:BTC/USD
+[18] 54 (Side) = 2[Sell], [19] 60 (TransactTime) = 20190402-14:22:30.265000000
+[20] 38 (OrderQty) = 2.0, [21] 151 (LeavesQty) = 0.0
+[22] 14 (CumQty) = 2.0, [23] 31 (LastPx) = 7300.0
+[24] 32 (LastQty) = 2.0, [25] 6 (AvgPx) = 7300.0
+[26] 40 (OrdType) = 2[Limit], [27] 44 (Price) = 7300.0
+[28] 59 (TimeInForce) = 0[Day], [29] 1031 (unknown) = A
+[30] 528 (OrderCapacity) = A[Agency], [31] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount]
+[32] 1028 (unknown) = N, [33] 851 (LastLiquidityInd) = 2[RemovedLiquidity]
+[34] 10 (CheckSum) = 245
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00147
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 11
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:32.138238492
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 24, [11] 279 (MDUpdateAction) = 2[Delete]
+[12] 269 (MDEntryType) = 1[Offer], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 280 (MDEntryRefID) = 337800000000012073, [15] 10 (CheckSum) = 252
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00166
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 12
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:32.138283291
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 25, [11] 279 (MDUpdateAction) = 0[New]
+[12] 269 (MDEntryType) = 2[Trade], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 270 (MDEntryPx) = 7300.0, [15] 271 (MDEntrySize) = 2.0
+[16] 278 (MDEntryID) = 337800000000466540, [17] 10 (CheckSum) = 117
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 217
+[2] 35 (MsgType) = D[OrderSingle], [3] 49 (SenderCompID) = QL4ADZEUNZ
+[4] 56 (TargetCompID) = SEEDCX, [5] 34 (MsgSeqNum) = 4
+[6] 50 (SenderSubID) = 2F8QNWXP2N9E, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = SCXM, [9] 52 (SendingTime) = 20190402-14:22:31.153
+[10] 369 (LastMsgSeqNumProcessed) = 5, [11] 11 (ClOrdID) = Order184948
+[12] 1 (Account) = 2F8QNWXP2, [13] 55 (Symbol) = COSP:BTC/USD
+[14] 54 (Side) = 2[Sell], [15] 60 (TransactTime) = 20190402-14:22:31
+[16] 38 (OrderQty) = 2, [17] 40 (OrdType) = 2[Limit]
+[18] 44 (Price) = 7300, [19] 59 (TimeInForce) = 0[Day]
+[20] 1031 (unknown) = A, [21] 528 (OrderCapacity) = A[Agency]
+[22] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount], [23] 1028 (unknown) = N
+[24] 10 (CheckSum) = 097
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00166
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 13
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:33.857455566
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 26, [11] 279 (MDUpdateAction) = 0[New]
+[12] 269 (MDEntryType) = 1[Offer], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 270 (MDEntryPx) = 7300.0, [15] 271 (MDEntrySize) = 2.0
+[16] 278 (MDEntryID) = 337800000000012074, [17] 10 (CheckSum) = 122
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 0313
+[2] 35 (MsgType) = 8[ExecutionReport], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 6
+[6] 50 (SenderSubID) = SCXM, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = 2F8QNWXP2N9E, [9] 52 (SendingTime) = 20190402-14:22:32.149059415
+[10] 369 (LastMsgSeqNumProcessed) = 4, [11] 1 (Account) = 2F8QNWXP2
+[12] 37 (OrderID) = 337800000000012073, [13] 11 (ClOrdID) = Order184948
+[14] 17 (ExecID) = 337800000000466539, [15] 150 (ExecType) = 0[New]
+[16] 39 (OrdStatus) = 0[New], [17] 55 (Symbol) = COSP:BTC/USD
+[18] 54 (Side) = 2[Sell], [19] 60 (TransactTime) = 20190402-14:22:32.136000000
+[20] 38 (OrderQty) = 2.0, [21] 151 (LeavesQty) = 2.0
+[22] 14 (CumQty) = 0.0, [23] 6 (AvgPx) = 0.0
+[24] 40 (OrdType) = 2[Limit], [25] 44 (Price) = 7300.0
+[26] 59 (TimeInForce) = 0[Day], [27] 1031 (unknown) = A
+[28] 528 (OrderCapacity) = A[Agency], [29] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount]
+[30] 1028 (unknown) = N, [31] 10 (CheckSum) = 066
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 0339
+[2] 35 (MsgType) = 8[ExecutionReport], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 8
+[6] 50 (SenderSubID) = SCXM, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = 2F8QNWXP2N9E, [9] 52 (SendingTime) = 20190402-14:22:32.171296547
+[10] 369 (LastMsgSeqNumProcessed) = 4, [11] 1 (Account) = 2F8QNWXP2
+[12] 37 (OrderID) = 337800000000012073, [13] 11 (ClOrdID) = Order184948
+[14] 17 (ExecID) = 337800000000466541, [15] 150 (ExecType) = F[Trade]
+[16] 39 (OrdStatus) = 2[Filled], [17] 55 (Symbol) = COSP:BTC/USD
+[18] 54 (Side) = 2[Sell], [19] 60 (TransactTime) = 20190402-14:22:32.136000000
+[20] 38 (OrderQty) = 2.0, [21] 151 (LeavesQty) = 0.0
+[22] 14 (CumQty) = 2.0, [23] 31 (LastPx) = 7300.0
+[24] 32 (LastQty) = 2.0, [25] 6 (AvgPx) = 7300.0
+[26] 40 (OrdType) = 2[Limit], [27] 44 (Price) = 7300.0
+[28] 59 (TimeInForce) = 0[Day], [29] 1031 (unknown) = A
+[30] 528 (OrderCapacity) = A[Agency], [31] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount]
+[32] 1028 (unknown) = N, [33] 851 (LastLiquidityInd) = 2[RemovedLiquidity]
+[34] 10 (CheckSum) = 006
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00147
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 14
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:33.857514808
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 27, [11] 279 (MDUpdateAction) = 2[Delete]
+[12] 269 (MDEntryType) = 0[Bid], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 280 (MDEntryRefID) = 337800000000012071, [15] 10 (CheckSum) = 006
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00189
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 15
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:33.857548175
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 28, [11] 279 (MDUpdateAction) = 1[Change]
+[12] 269 (MDEntryType) = 1[Offer], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 270 (MDEntryPx) = 7300.0, [15] 271 (MDEntrySize) = 1.0
+[16] 278 (MDEntryID) = 337800000000012074, [17] 280 (MDEntryRefID) = 337800000000012074
+[18] 10 (CheckSum) = 221
+
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00166
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 16
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:33.857601093
+[8] 369 (LastMsgSeqNumProcessed) = 2, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 29, [11] 279 (MDUpdateAction) = 0[New]
+[12] 269 (MDEntryType) = 2[Trade], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 270 (MDEntryPx) = 7300.0, [15] 271 (MDEntrySize) = 1.0
+[16] 278 (MDEntryID) = 337800000000466557, [17] 10 (CheckSum) = 135
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 217
+[2] 35 (MsgType) = D[OrderSingle], [3] 49 (SenderCompID) = QL4ADZEUNZ
+[4] 56 (TargetCompID) = SEEDCX, [5] 34 (MsgSeqNum) = 5
+[6] 50 (SenderSubID) = 2F8QNWXP2N9E, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = SCXM, [9] 52 (SendingTime) = 20190402-14:22:32.873
+[10] 369 (LastMsgSeqNumProcessed) = 8, [11] 11 (ClOrdID) = Order184949
+[12] 1 (Account) = 2F8QNWXP2, [13] 55 (Symbol) = COSP:BTC/USD
+[14] 54 (Side) = 2[Sell], [15] 60 (TransactTime) = 20190402-14:22:32
+[16] 38 (OrderQty) = 2, [17] 40 (OrdType) = 2[Limit]
+[18] 44 (Price) = 7300, [19] 59 (TimeInForce) = 0[Day]
+[20] 1031 (unknown) = A, [21] 528 (OrderCapacity) = A[Agency]
+[22] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount], [23] 1028 (unknown) = N
+[24] 10 (CheckSum) = 113
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00166
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 17
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:35.358359225
+[8] 369 (LastMsgSeqNumProcessed) = 3, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 30, [11] 279 (MDUpdateAction) = 0[New]
+[12] 269 (MDEntryType) = 1[Offer], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 270 (MDEntryPx) = 7300.0, [15] 271 (MDEntrySize) = 2.0
+[16] 278 (MDEntryID) = 337800000000012075, [17] 10 (CheckSum) = 116
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 0313
+[2] 35 (MsgType) = 8[ExecutionReport], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 9
+[6] 50 (SenderSubID) = SCXM, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = 2F8QNWXP2N9E, [9] 52 (SendingTime) = 20190402-14:22:33.868415027
+[10] 369 (LastMsgSeqNumProcessed) = 5, [11] 1 (Account) = 2F8QNWXP2
+[12] 37 (OrderID) = 337800000000012074, [13] 11 (ClOrdID) = Order184949
+[14] 17 (ExecID) = 337800000000466556, [15] 150 (ExecType) = 0[New]
+[16] 39 (OrdStatus) = 0[New], [17] 55 (Symbol) = COSP:BTC/USD
+[18] 54 (Side) = 2[Sell], [19] 60 (TransactTime) = 20190402-14:22:33.856000000
+[20] 38 (OrderQty) = 2.0, [21] 151 (LeavesQty) = 2.0
+[22] 14 (CumQty) = 0.0, [23] 6 (AvgPx) = 0.0
+[24] 40 (OrdType) = 2[Limit], [25] 44 (Price) = 7300.0
+[26] 59 (TimeInForce) = 0[Day], [27] 1031 (unknown) = A
+[28] 528 (OrderCapacity) = A[Agency], [29] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount]
+[30] 1028 (unknown) = N, [31] 10 (CheckSum) = 085
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 0340
+[2] 35 (MsgType) = 8[ExecutionReport], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 11
+[6] 50 (SenderSubID) = SCXM, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = 2F8QNWXP2N9E, [9] 52 (SendingTime) = 20190402-14:22:33.890953474
+[10] 369 (LastMsgSeqNumProcessed) = 5, [11] 1 (Account) = 2F8QNWXP2
+[12] 37 (OrderID) = 337800000000012074, [13] 11 (ClOrdID) = Order184949
+[14] 17 (ExecID) = 337800000000466558, [15] 150 (ExecType) = F[Trade]
+[16] 39 (OrdStatus) = 1[PartiallyFilled], [17] 55 (Symbol) = COSP:BTC/USD
+[18] 54 (Side) = 2[Sell], [19] 60 (TransactTime) = 20190402-14:22:33.856000000
+[20] 38 (OrderQty) = 2.0, [21] 151 (LeavesQty) = 1.0
+[22] 14 (CumQty) = 1.0, [23] 31 (LastPx) = 7300.0
+[24] 32 (LastQty) = 1.0, [25] 6 (AvgPx) = 7300.0
+[26] 40 (OrdType) = 2[Limit], [27] 44 (Price) = 7300.0
+[28] 59 (TimeInForce) = 0[Day], [29] 1031 (unknown) = A
+[30] 528 (OrderCapacity) = A[Agency], [31] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount]
+[32] 1028 (unknown) = N, [33] 851 (LastLiquidityInd) = 2[RemovedLiquidity]
+[34] 10 (CheckSum) = 067
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 218
+[2] 35 (MsgType) = D[OrderSingle], [3] 49 (SenderCompID) = QL4ADZEUNZ
+[4] 56 (TargetCompID) = SEEDCX, [5] 34 (MsgSeqNum) = 6
+[6] 50 (SenderSubID) = 2F8QNWXP2N9E, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = SCXM, [9] 52 (SendingTime) = 20190402-14:22:34.374
+[10] 369 (LastMsgSeqNumProcessed) = 11, [11] 11 (ClOrdID) = Order184950
+[12] 1 (Account) = 2F8QNWXP2, [13] 55 (Symbol) = COSP:BTC/USD
+[14] 54 (Side) = 2[Sell], [15] 60 (TransactTime) = 20190402-14:22:34
+[16] 38 (OrderQty) = 2, [17] 40 (OrdType) = 2[Limit]
+[18] 44 (Price) = 7300, [19] 59 (TimeInForce) = 0[Day]
+[20] 1031 (unknown) = A, [21] 528 (OrderCapacity) = A[Agency]
+[22] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount], [23] 1028 (unknown) = N
+[24] 10 (CheckSum) = 149
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 0314
+[2] 35 (MsgType) = 8[ExecutionReport], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 12
+[6] 50 (SenderSubID) = SCXM, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = 2F8QNWXP2N9E, [9] 52 (SendingTime) = 20190402-14:22:35.369261712
+[10] 369 (LastMsgSeqNumProcessed) = 6, [11] 1 (Account) = 2F8QNWXP2
+[12] 37 (OrderID) = 337800000000012075, [13] 11 (ClOrdID) = Order184950
+[14] 17 (ExecID) = 337800000000466573, [15] 150 (ExecType) = 0[New]
+[16] 39 (OrdStatus) = 0[New], [17] 55 (Symbol) = COSP:BTC/USD
+[18] 54 (Side) = 2[Sell], [19] 60 (TransactTime) = 20190402-14:22:35.357000000
+[20] 38 (OrderQty) = 2.0, [21] 151 (LeavesQty) = 2.0
+[22] 14 (CumQty) = 0.0, [23] 6 (AvgPx) = 0.0
+[24] 40 (OrdType) = 2[Limit], [25] 44 (Price) = 7300.0
+[26] 59 (TimeInForce) = 0[Day], [27] 1031 (unknown) = A
+[28] 528 (OrderCapacity) = A[Agency], [29] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount]
+[30] 1028 (unknown) = N, [31] 10 (CheckSum) = 117
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 257
+[2] 35 (MsgType) = G[OrderCancelReplaceRequest], [3] 49 (SenderCompID) = QL4ADZEUNZ
+[4] 56 (TargetCompID) = SEEDCX, [5] 34 (MsgSeqNum) = 7
+[6] 50 (SenderSubID) = 2F8QNWXP2N9E, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = SCXM, [9] 52 (SendingTime) = 20190402-14:22:37.237
+[10] 369 (LastMsgSeqNumProcessed) = 6, [11] 37 (OrderID) = 337800000000012075
+[12] 41 (OrigClOrdID) = Order184950, [13] 11 (ClOrdID) = Replace184951
+[14] 1 (Account) = 2F8QNWXP2, [15] 55 (Symbol) = COSP:BTC/USD
+[16] 54 (Side) = 2[Sell], [17] 60 (TransactTime) = 20190402-14:22:37
+[18] 38 (OrderQty) = 15, [19] 40 (OrdType) = 2[Limit]
+[20] 44 (Price) = 7310, [21] 59 (TimeInForce) = 0[Day]
+[22] 1031 (unknown) = A, [23] 528 (OrderCapacity) = A[Agency]
+[24] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount], [25] 1028 (unknown) = N
+[26] 10 (CheckSum) = 112
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00190
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 18
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:38.251297432
+[8] 369 (LastMsgSeqNumProcessed) = 3, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 31, [11] 279 (MDUpdateAction) = 1[Change]
+[12] 269 (MDEntryType) = 1[Offer], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 270 (MDEntryPx) = 7310.0, [15] 271 (MDEntrySize) = 15.0
+[16] 278 (MDEntryID) = 337800000000012076, [17] 280 (MDEntryRefID) = 337800000000012075
+[18] 10 (CheckSum) = 002
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 00147
+[2] 35 (MsgType) = X[MarketDataIncrementalRefresh], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 19
+[6] 142 (SenderLocationID) = US,IL, [7] 52 (SendingTime) = 20190402-14:22:41.291990999
+[8] 369 (LastMsgSeqNumProcessed) = 3, [9] 268 (NoMDEntries) = 1
+[10] 1181 (ApplSeqNum ) = 32, [11] 279 (MDUpdateAction) = 2[Delete]
+[12] 269 (MDEntryType) = 1[Offer], [13] 55 (Symbol) = COSP:BTC/USD
+[14] 280 (MDEntryRefID) = 337800000000012076, [15] 10 (CheckSum) = 024
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 0333
+[2] 35 (MsgType) = 8[ExecutionReport], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 13
+[6] 50 (SenderSubID) = SCXM, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = 2F8QNWXP2N9E, [9] 52 (SendingTime) = 20190402-14:22:38.262064202
+[10] 369 (LastMsgSeqNumProcessed) = 7, [11] 1 (Account) = 2F8QNWXP2
+[12] 37 (OrderID) = 337800000000012076, [13] 11 (ClOrdID) = Replace184951
+[14] 41 (OrigClOrdID) = Order184950, [15] 17 (ExecID) = 337800000000466575
+[16] 150 (ExecType) = 5[Replace], [17] 39 (OrdStatus) = 0[New]
+[18] 55 (Symbol) = COSP:BTC/USD, [19] 54 (Side) = 2[Sell]
+[20] 60 (TransactTime) = 20190402-14:22:38.249000000, [21] 38 (OrderQty) = 15.0
+[22] 151 (LeavesQty) = 15.0, [23] 14 (CumQty) = 0.0
+[24] 6 (AvgPx) = 0.0, [25] 40 (OrdType) = 2[Limit]
+[26] 44 (Price) = 7310.0, [27] 59 (TimeInForce) = 0[Day]
+[28] 1031 (unknown) = A, [29] 528 (OrderCapacity) = A[Agency]
+[30] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount], [31] 1028 (unknown) = N
+[32] 10 (CheckSum) = 125
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 257
+[2] 35 (MsgType) = F[OrderCancelRequest], [3] 49 (SenderCompID) = QL4ADZEUNZ
+[4] 56 (TargetCompID) = SEEDCX, [5] 34 (MsgSeqNum) = 8
+[6] 50 (SenderSubID) = 2F8QNWXP2N9E, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = SCXM, [9] 52 (SendingTime) = 20190402-14:22:40.307
+[10] 369 (LastMsgSeqNumProcessed) = 7, [11] 41 (OrigClOrdID) = Replace184951
+[12] 37 (OrderID) = 337800000000012076, [13] 11 (ClOrdID) = Cancel184952
+[14] 1 (Account) = 2F8QNWXP2, [15] 55 (Symbol) = COSP:BTC/USD
+[16] 107 (SecurityDesc) = COSP:BTC/USD, [17] 54 (Side) = 2[Sell]
+[18] 60 (TransactTime) = 20190402-14:22:40, [19] 1031 (unknown) = A
+[20] 528 (OrderCapacity) = A[Agency], [21] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount]
+[22] 38 (OrderQty) = 15, [23] 1028 (unknown) = N
+[24] 10 (CheckSum) = 200
+[0] 8 (BeginString) = FIX.4.4, [1] 9 (BodyLength) = 0333
+[2] 35 (MsgType) = 8[ExecutionReport], [3] 49 (SenderCompID) = SEEDCX
+[4] 56 (TargetCompID) = QL4ADZEUNZ, [5] 34 (MsgSeqNum) = 14
+[6] 50 (SenderSubID) = SCXM, [7] 142 (SenderLocationID) = US,IL
+[8] 57 (TargetSubID) = 2F8QNWXP2N9E, [9] 52 (SendingTime) = 20190402-14:22:41.302509798
+[10] 369 (LastMsgSeqNumProcessed) = 8, [11] 1 (Account) = 2F8QNWXP2
+[12] 37 (OrderID) = 337800000000012076, [13] 11 (ClOrdID) = Cancel184952
+[14] 41 (OrigClOrdID) = Replace184951, [15] 17 (ExecID) = 337800000000466577
+[16] 150 (ExecType) = 4[Canceled], [17] 39 (OrdStatus) = 4[Canceled]
+[18] 55 (Symbol) = COSP:BTC/USD, [19] 54 (Side) = 2[Sell]
+[20] 60 (TransactTime) = 20190402-14:22:41.290000000, [21] 38 (OrderQty) = 15.0
+[22] 151 (LeavesQty) = 0.0, [23] 14 (CumQty) = 0.0
+[24] 6 (AvgPx) = 0.0, [25] 40 (OrdType) = 2[Limit]
+[26] 44 (Price) = 7310.0, [27] 59 (TimeInForce) = 0[Day]
+[28] 1031 (unknown) = A, [29] 528 (OrderCapacity) = A[Agency]
+[30] 582 (CustOrderCapacity) = 1[MemberTradingForTheirOwnAccount], [31] 1028 (unknown) = N
+[32] 10 (CheckSum) = 157

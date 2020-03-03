@@ -1,0 +1,794 @@
+V [MarketDataRequest] = {
+    "MDReqID": "2",
+    "SubscriptionRequestType": "1",
+    "MarketDepth": 0,
+    "MDReqGrp": {
+        "NoMDEntryTypes": [
+            {
+                "MDEntryType": "4"
+            }
+        ]
+    },
+    "InstrmtMDReqGrp": {
+        "NoRelatedSym": [
+            {
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                }
+            }
+        ]
+    }
+}
+
+f [SecurityStatus] = {
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "SecurityTradingStatus": 17,
+    "TransactTime": "2019-04-02T14:22:05.133Z"
+}
+
+W [MarketDataSnapshotFullRefresh] = {
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "MDFullGrp": {
+        "NoMDEntries": []
+    }
+}
+
+D [NewOrderSingle] = {
+    "ClOrdID": "Order184946",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "1",
+    "TransactTime": "2019-04-02T14:22:27.000Z",
+    "OrderQtyData": {
+        "OrderQty": 5
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 17,
+                "MDUpdateAction": "0",
+                "MDEntryType": "0",
+                "MDEntryID": "337800000000012071",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                },
+                "MDEntryPx": 7300,
+                "MDEntrySize": 5
+            }
+        ]
+    }
+}
+
+8 [ExecutionReport] = {
+    "OrderID": "337800000000012071",
+    "ClOrdID": "Order184946",
+    "ExecID": "337800000000466512",
+    "ExecType": "0",
+    "OrdStatus": "0",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "1",
+    "OrderQtyData": {
+        "OrderQty": 5
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1,
+    "LeavesQty": 5,
+    "CumQty": 0,
+    "AvgPx": 0,
+    "TransactTime": "2019-04-02T14:22:28.226Z"
+}
+
+D [NewOrderSingle] = {
+    "ClOrdID": "Order184947",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "TransactTime": "2019-04-02T14:22:29.000Z",
+    "OrderQtyData": {
+        "OrderQty": 2
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1
+}
+
+8 [ExecutionReport] = {
+    "OrderID": "337800000000012071",
+    "ClOrdID": "Order184946",
+    "ExecID": "337800000000466540",
+    "ExecType": "F",
+    "OrdStatus": "1",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "1",
+    "OrderQtyData": {
+        "OrderQty": 5
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1,
+    "LastQty": 2,
+    "LastPx": 7300,
+    "LeavesQty": 1,
+    "CumQty": 4,
+    "AvgPx": 7300,
+    "TransactTime": "2019-04-02T14:22:32.136Z",
+    "LastLiquidityInd": 1
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 19,
+                "MDUpdateAction": "1",
+                "MDEntryType": "0",
+                "MDEntryID": "337800000000012071",
+                "MDEntryRefID": "337800000000012071",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                },
+                "MDEntryPx": 7300,
+                "MDEntrySize": 3
+            }
+        ]
+    }
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 20,
+                "MDUpdateAction": "2",
+                "MDEntryType": "1",
+                "MDEntryRefID": "337800000000012072",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                }
+            }
+        ]
+    }
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 21,
+                "MDUpdateAction": "0",
+                "MDEntryType": "2",
+                "MDEntryID": "337800000000466515",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                },
+                "MDEntryPx": 7300,
+                "MDEntrySize": 2
+            }
+        ]
+    }
+}
+
+8 [ExecutionReport] = {
+    "OrderID": "337800000000012071",
+    "ClOrdID": "Order184946",
+    "ExecID": "337800000000466557",
+    "ExecType": "F",
+    "OrdStatus": "2",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "1",
+    "OrderQtyData": {
+        "OrderQty": 5
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1,
+    "LastQty": 1,
+    "LastPx": 7300,
+    "LeavesQty": 0,
+    "CumQty": 5,
+    "AvgPx": 7300,
+    "TransactTime": "2019-04-02T14:22:33.856Z",
+    "LastLiquidityInd": 1
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 18,
+                "MDUpdateAction": "0",
+                "MDEntryType": "1",
+                "MDEntryID": "337800000000012072",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                },
+                "MDEntryPx": 7300,
+                "MDEntrySize": 2
+            }
+        ]
+    }
+}
+
+8 [ExecutionReport] = {
+    "OrderID": "337800000000012071",
+    "ClOrdID": "Order184946",
+    "ExecID": "337800000000466515",
+    "ExecType": "F",
+    "OrdStatus": "1",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "1",
+    "OrderQtyData": {
+        "OrderQty": 5
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1,
+    "LastQty": 2,
+    "LastPx": 7300,
+    "LeavesQty": 3,
+    "CumQty": 2,
+    "AvgPx": 7300,
+    "TransactTime": "2019-04-02T14:22:30.265Z",
+    "LastLiquidityInd": 1
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 22,
+                "MDUpdateAction": "0",
+                "MDEntryType": "1",
+                "MDEntryID": "337800000000012073",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                },
+                "MDEntryPx": 7300,
+                "MDEntrySize": 2
+            }
+        ]
+    }
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 23,
+                "MDUpdateAction": "1",
+                "MDEntryType": "0",
+                "MDEntryID": "337800000000012071",
+                "MDEntryRefID": "337800000000012071",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                },
+                "MDEntryPx": 7300,
+                "MDEntrySize": 1
+            }
+        ]
+    }
+}
+
+8 [ExecutionReport] = {
+    "OrderID": "337800000000012072",
+    "ClOrdID": "Order184947",
+    "ExecID": "337800000000466514",
+    "ExecType": "0",
+    "OrdStatus": "0",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "OrderQtyData": {
+        "OrderQty": 2
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1,
+    "LeavesQty": 2,
+    "CumQty": 0,
+    "AvgPx": 0,
+    "TransactTime": "2019-04-02T14:22:30.265Z"
+}
+
+8 [ExecutionReport] = {
+    "OrderID": "337800000000012072",
+    "ClOrdID": "Order184947",
+    "ExecID": "337800000000466516",
+    "ExecType": "F",
+    "OrdStatus": "2",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "OrderQtyData": {
+        "OrderQty": 2
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1,
+    "LastQty": 2,
+    "LastPx": 7300,
+    "LeavesQty": 0,
+    "CumQty": 2,
+    "AvgPx": 7300,
+    "TransactTime": "2019-04-02T14:22:30.265Z",
+    "LastLiquidityInd": 2
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 24,
+                "MDUpdateAction": "2",
+                "MDEntryType": "1",
+                "MDEntryRefID": "337800000000012073",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                }
+            }
+        ]
+    }
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 25,
+                "MDUpdateAction": "0",
+                "MDEntryType": "2",
+                "MDEntryID": "337800000000466540",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                },
+                "MDEntryPx": 7300,
+                "MDEntrySize": 2
+            }
+        ]
+    }
+}
+
+D [NewOrderSingle] = {
+    "ClOrdID": "Order184948",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "TransactTime": "2019-04-02T14:22:31.000Z",
+    "OrderQtyData": {
+        "OrderQty": 2
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 26,
+                "MDUpdateAction": "0",
+                "MDEntryType": "1",
+                "MDEntryID": "337800000000012074",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                },
+                "MDEntryPx": 7300,
+                "MDEntrySize": 2
+            }
+        ]
+    }
+}
+
+8 [ExecutionReport] = {
+    "OrderID": "337800000000012073",
+    "ClOrdID": "Order184948",
+    "ExecID": "337800000000466539",
+    "ExecType": "0",
+    "OrdStatus": "0",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "OrderQtyData": {
+        "OrderQty": 2
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1,
+    "LeavesQty": 2,
+    "CumQty": 0,
+    "AvgPx": 0,
+    "TransactTime": "2019-04-02T14:22:32.136Z"
+}
+
+8 [ExecutionReport] = {
+    "OrderID": "337800000000012073",
+    "ClOrdID": "Order184948",
+    "ExecID": "337800000000466541",
+    "ExecType": "F",
+    "OrdStatus": "2",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "OrderQtyData": {
+        "OrderQty": 2
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1,
+    "LastQty": 2,
+    "LastPx": 7300,
+    "LeavesQty": 0,
+    "CumQty": 2,
+    "AvgPx": 7300,
+    "TransactTime": "2019-04-02T14:22:32.136Z",
+    "LastLiquidityInd": 2
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 27,
+                "MDUpdateAction": "2",
+                "MDEntryType": "0",
+                "MDEntryRefID": "337800000000012071",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                }
+            }
+        ]
+    }
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 28,
+                "MDUpdateAction": "1",
+                "MDEntryType": "1",
+                "MDEntryID": "337800000000012074",
+                "MDEntryRefID": "337800000000012074",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                },
+                "MDEntryPx": 7300,
+                "MDEntrySize": 1
+            }
+        ]
+    }
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 29,
+                "MDUpdateAction": "0",
+                "MDEntryType": "2",
+                "MDEntryID": "337800000000466557",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                },
+                "MDEntryPx": 7300,
+                "MDEntrySize": 1
+            }
+        ]
+    }
+}
+
+D [NewOrderSingle] = {
+    "ClOrdID": "Order184949",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "TransactTime": "2019-04-02T14:22:32.000Z",
+    "OrderQtyData": {
+        "OrderQty": 2
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 30,
+                "MDUpdateAction": "0",
+                "MDEntryType": "1",
+                "MDEntryID": "337800000000012075",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                },
+                "MDEntryPx": 7300,
+                "MDEntrySize": 2
+            }
+        ]
+    }
+}
+
+8 [ExecutionReport] = {
+    "OrderID": "337800000000012074",
+    "ClOrdID": "Order184949",
+    "ExecID": "337800000000466556",
+    "ExecType": "0",
+    "OrdStatus": "0",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "OrderQtyData": {
+        "OrderQty": 2
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1,
+    "LeavesQty": 2,
+    "CumQty": 0,
+    "AvgPx": 0,
+    "TransactTime": "2019-04-02T14:22:33.856Z"
+}
+
+8 [ExecutionReport] = {
+    "OrderID": "337800000000012074",
+    "ClOrdID": "Order184949",
+    "ExecID": "337800000000466558",
+    "ExecType": "F",
+    "OrdStatus": "1",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "OrderQtyData": {
+        "OrderQty": 2
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1,
+    "LastQty": 1,
+    "LastPx": 7300,
+    "LeavesQty": 1,
+    "CumQty": 1,
+    "AvgPx": 7300,
+    "TransactTime": "2019-04-02T14:22:33.856Z",
+    "LastLiquidityInd": 2
+}
+
+D [NewOrderSingle] = {
+    "ClOrdID": "Order184950",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "TransactTime": "2019-04-02T14:22:34.000Z",
+    "OrderQtyData": {
+        "OrderQty": 2
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1
+}
+
+8 [ExecutionReport] = {
+    "OrderID": "337800000000012075",
+    "ClOrdID": "Order184950",
+    "ExecID": "337800000000466573",
+    "ExecType": "0",
+    "OrdStatus": "0",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "OrderQtyData": {
+        "OrderQty": 2
+    },
+    "OrdType": "2",
+    "Price": 7300,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1,
+    "LeavesQty": 2,
+    "CumQty": 0,
+    "AvgPx": 0,
+    "TransactTime": "2019-04-02T14:22:35.357Z"
+}
+
+G [OrderCancelReplaceRequest] = {
+    "OrderID": "337800000000012075",
+    "OrigClOrdID": "Order184950",
+    "ClOrdID": "Replace184951",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "TransactTime": "2019-04-02T14:22:37.000Z",
+    "OrderQtyData": {
+        "OrderQty": 15
+    },
+    "OrdType": "2",
+    "Price": 7310,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 31,
+                "MDUpdateAction": "1",
+                "MDEntryType": "1",
+                "MDEntryID": "337800000000012076",
+                "MDEntryRefID": "337800000000012075",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                },
+                "MDEntryPx": 7310,
+                "MDEntrySize": 15
+            }
+        ]
+    }
+}
+
+X [MarketDataIncrementalRefresh] = {
+    "MDIncGrp": {
+        "NoMDEntries": [
+            {
+                "ApplSeqNum ": 32,
+                "MDUpdateAction": "2",
+                "MDEntryType": "1",
+                "MDEntryRefID": "337800000000012076",
+                "Instrument": {
+                    "Symbol": "COSP:BTC/USD"
+                }
+            }
+        ]
+    }
+}
+
+8 [ExecutionReport] = {
+    "OrderID": "337800000000012076",
+    "ClOrdID": "Replace184951",
+    "OrigClOrdID": "Order184950",
+    "ExecID": "337800000000466575",
+    "ExecType": "5",
+    "OrdStatus": "0",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "OrderQtyData": {
+        "OrderQty": 15
+    },
+    "OrdType": "2",
+    "Price": 7310,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1,
+    "LeavesQty": 15,
+    "CumQty": 0,
+    "AvgPx": 0,
+    "TransactTime": "2019-04-02T14:22:38.249Z"
+}
+
+F [OrderCancelRequest] = {
+    "OrigClOrdID": "Replace184951",
+    "OrderID": "337800000000012076",
+    "ClOrdID": "Cancel184952",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD",
+        "SecurityDesc": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "TransactTime": "2019-04-02T14:22:40.000Z",
+    "OrderQtyData": {
+        "OrderQty": 15
+    }
+}
+
+8 [ExecutionReport] = {
+    "OrderID": "337800000000012076",
+    "ClOrdID": "Cancel184952",
+    "OrigClOrdID": "Replace184951",
+    "ExecID": "337800000000466577",
+    "ExecType": "4",
+    "OrdStatus": "4",
+    "Account": "2F8QNWXP2",
+    "Instrument": {
+        "Symbol": "COSP:BTC/USD"
+    },
+    "Side": "2",
+    "OrderQtyData": {
+        "OrderQty": 15
+    },
+    "OrdType": "2",
+    "Price": 7310,
+    "TimeInForce": "0",
+    "OrderCapacity": "A",
+    "CustOrderCapacity": 1,
+    "LeavesQty": 0,
+    "CumQty": 0,
+    "AvgPx": 0,
+    "TransactTime": "2019-04-02T14:22:41.290Z"
+}
+
