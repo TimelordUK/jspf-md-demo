@@ -8,6 +8,10 @@ export class PriceLevel {
 
   private members = new OrderedList<Order>(o => o.id)
 
+  public quantity (): number {
+    return this.size
+  }
+
   public count (): number {
     return this.members.count()
   }
