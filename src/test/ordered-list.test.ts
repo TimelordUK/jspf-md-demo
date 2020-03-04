@@ -16,11 +16,11 @@ export class Order {
 
 function list5 () {
   const test = new OrderedList<Order>(o => o.id)
-  const o1 = new Order(1, Side.Buy, 100.0, 100, 0, 'first')
-  const o2 = new Order(2, Side.Buy, 100.0, 100, 0, 'second')
-  const o3 = new Order(3, Side.Buy, 100.0, 100, 0, 'third')
-  const o4 = new Order(4, Side.Buy, 100.0, 100, 0, 'fourth')
-  const o5 = new Order(5, Side.Buy, 100.0, 100, 0, 'fifth')
+  const o1 = new Order(1, 'BTC', Side.Buy, 100.0, 100, 0, 'first')
+  const o2 = new Order(2, 'BTC', Side.Buy, 100.0, 100, 0, 'second')
+  const o3 = new Order(3, 'BTC', Side.Buy, 100.0, 100, 0, 'third')
+  const o4 = new Order(4, 'BTC', Side.Buy, 100.0, 100, 0, 'fourth')
+  const o5 = new Order(5, 'BTC', Side.Buy, 100.0, 100, 0, 'fifth')
   test.add(o3)
   test.add(o1)
   test.add(o4)
@@ -31,7 +31,7 @@ function list5 () {
 
 test('add first element to order list', () => {
   const test = new OrderedList<Order>(o => o.id)
-  const o = new Order(1, Side.Buy, 100.0, 100, 0, 'first')
+  const o = new Order(1, 'BTC', Side.Buy, 100.0, 100, 0, 'first')
   test.add(o)
   expect(test.count()).toEqual(1)
   expect(test.get(0)).toBeTruthy()
@@ -40,9 +40,9 @@ test('add first element to order list', () => {
 
 test('add 3 unordered expect ordered', () => {
   const test = new OrderedList<Order>(o => o.id)
-  const o1 = new Order(1, Side.Buy, 100.0, 100, 0, 'first')
-  const o2 = new Order(2, Side.Buy, 100.0, 100, 0, 'second')
-  const o3 = new Order(3, Side.Buy, 100.0, 100, 0, 'third')
+  const o1 = new Order(1, 'BTC', Side.Buy, 100.0, 100, 0, 'first')
+  const o2 = new Order(2, 'BTC', Side.Buy, 100.0, 100, 0, 'second')
+  const o3 = new Order(3, 'BTC', Side.Buy, 100.0, 100, 0, 'third')
   test.add(o3)
   test.add(o2)
   test.add(o1)
@@ -72,7 +72,7 @@ test('add 5 unordered expect ordered', () => {
 
 test('add to list of 5', () => {
   const test = list5()
-  const o6 = new Order(6, Side.Buy, 100.0, 100, 0, 'sixth')
+  const o6 = new Order(6, 'BTC', Side.Buy, 100.0, 100, 0, 'sixth')
   expect(test.exists(o6)).toEqual(false)
   test.add(o6)
   expect(test.exists(o6)).toEqual(true)

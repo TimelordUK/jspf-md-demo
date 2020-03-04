@@ -1,19 +1,17 @@
 import * as events from 'events'
-import { PriceLevel } from './price-level'
-import { OrderedList } from './ordered-list'
-import { Order, Side } from './order'
+import { Order } from './order'
+import { Dictionary } from 'jspurefix'
+import { OrderBook } from './order-book'
 
 export class MatchingEngine extends events.EventEmitter {
-  static readonly toInt = 1
-  public buys = new OrderedList<PriceLevel>(level => level.price * MatchingEngine.toInt, true)
-  public sells = new OrderedList<PriceLevel>(level => level.price * MatchingEngine.toInt)
+  public books = new Dictionary<OrderBook>()
+
   public newOrder (order: Order): void {
-    const set = order.side === Side.Buy ? this.buys : this.sells
-    let level = set.find(order.price)
-    if (!level) {
-      level = new PriceLevel(order.side, order.price)
-      set.add(level)
+    let book = this.books.get(order.symbol)
+    if (!book) {
+      book = new OrderBook(order.symbol)
+      this.books.addUpdate(order.symbol, book)
     }
-    level.add(order)
+    book.newOrder(order)
   }
 }

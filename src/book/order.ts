@@ -6,6 +6,7 @@ export enum Side {
 export class Order {
   constructor (
     public readonly id: number,
+    public readonly symbol: string,
     public readonly side: Side,
     public readonly price: number,
     public readonly quantity: number,
