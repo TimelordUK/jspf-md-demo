@@ -21,6 +21,7 @@ export class MDFactory {
         NoRelatedSym: [
           {
             Instrument: {
+              StrikeCurrency: 'USD',
               Symbol: symbol
             }
           }
