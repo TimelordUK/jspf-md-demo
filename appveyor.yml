@@ -44,7 +44,10 @@ for:
 
     build_script:
       - node --version
+      - sh: node_modules/.bin/tsc --version
+      - sh: chmod 555 node_modules/jspurefix/script/build.sh
       - sh: node_modules/jspurefix/script/build.sh
+      - sh: node_modules/.bin/tsc
 
     test_script:
       - sh: "npm run md-app"
