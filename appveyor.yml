@@ -30,7 +30,7 @@ for:
       - node --version
       - cmd: node_modules\jspurefix\script\build.cmd
     test_script:
-      - cmd: npm run "md-app"
+      - cmd: npm run md-app
 -        
     matrix:
       only:
@@ -47,7 +47,7 @@ for:
       - sh: node_modules/jspurefix/script/build.sh
 
     test_script:
-      - sh: "npm run "md-app"
+      - sh: "npm run md-app"
 
 
 
