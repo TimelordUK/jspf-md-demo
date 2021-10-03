@@ -43,10 +43,14 @@ for:
       - npm install
 
     build_script:
-      - node --version
+      - sh: node --version
       - sh: node_modules/.bin/tsc --version
       - sh: chmod 555 node_modules/jspurefix/script/build.sh
-      - sh: node_modules/jspurefix/script/build.sh
+      - sh: cd node_modules/jspurefix
+      - sh: dos2unix script/build.sh
+      - sh: cat script/build.sh
+      - sh: script/build.sh
+      - sh: cd /home/appveyor/projects/jspf-md-demo
       - sh: node_modules/.bin/tsc
 
     test_script:
