@@ -49,20 +49,3 @@ for:
     test_script:
       - sh: "npm run md-app"
 
-
-
-
-
-
-
-
-
-
-
-
-
-version: 1.0.{build}
-build_script:
-  - cmd: script\build.cmd
-test_script:
-  - cmd: script\test.cmd
