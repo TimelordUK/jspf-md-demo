@@ -28,7 +28,9 @@ for:
       - npm install
     build_script:
       - cmd: node --version
-      - cmd: node_modules\jspurefix\script\build.cmd
+      - cmd: cd node_modules\jspurefix 
+      - cmd: script\build.cmd
+      - cmd: cd c:\projects\jspf-md-demo
       - cmd: node_modules\.bin\tsc --version
       - cmd: node_modules\.bin\tsc
     test_script:
