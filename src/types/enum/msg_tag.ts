@@ -911,5 +911,5 @@ export enum MsgTag {
   Nested3PartySubIDType = 954,
   LegContractSettlMonth = 955,
   LegInterestAccrualDate = 956,
-  ApplSeqNum  = 1181
+  ApplSeqNum = 1181
 }

@@ -3553,7 +3553,7 @@
   </component>
   <component name='MDIncGrp'>
    <group name='NoMDEntries' required='Y'>
-    <field name='ApplSeqNum ' required='Y' />
+    <field name='ApplSeqNum' required='Y' />
     <field name='MDUpdateAction' required='Y' />
     <field name='DeleteReason' required='N' />
     <field name='MDEntryType' required='N' />
@@ -6593,6 +6593,6 @@
   <field number='954' name='Nested3PartySubIDType' type='INT' />
   <field number='955' name='LegContractSettlMonth' type='MONTHYEAR' />
   <field number='956' name='LegInterestAccrualDate' type='LOCALMKTDATE' />
-  <field number='1181' name='ApplSeqNum ' type='INT' />
+  <field number='1181' name='ApplSeqNum' type='INT' />
  </fields>
 </fix>

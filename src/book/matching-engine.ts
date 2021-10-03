@@ -7,10 +7,11 @@ export class MatchingEngine extends events.EventEmitter {
   public books = new Dictionary<OrderBook>()
 
   public newOrder (order: Order): void {
-    let book = this.books.get(order.symbol)
+    const symbol = order.symbol
+    let book = this.books.get(symbol)
     if (!book) {
-      book = new OrderBook(order.symbol)
-      this.books.addUpdate(order.symbol, book)
+      book = new OrderBook(symbol)
+      this.books.addUpdate(symbol, book)
     }
     book.newOrder(order)
   }
