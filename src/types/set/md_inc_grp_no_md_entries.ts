@@ -3,6 +3,7 @@ import { IUndInstrmtGrp } from './und_instrmt_grp'
 import { IInstrmtLegGrp } from './instrmt_leg_grp'
 
 export interface IMDIncGrpNoMDEntries {
+  ApplSeqNum: number// 1181
   MDUpdateAction: string// 279
   DeleteReason?: string// 285
   MDEntryType?: string// 269
