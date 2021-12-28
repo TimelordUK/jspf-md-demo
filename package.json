@@ -24,6 +24,7 @@
     "typings": "^2.1.1"
   },
   "devDependencies": {
+    "@types/jest": "^27.0.3",
     "@types/lodash": "^4.14.178",
     "@types/node": "^17.0.5",
     "@types/sax": "^1.2.4",
