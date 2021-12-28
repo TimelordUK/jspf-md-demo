@@ -1,3 +1,4 @@
+import 'reflect-metadata'
 import { Order, OrderedList, Side } from '../book'
 
 /*

@@ -31,8 +31,10 @@ for:
       - cmd: cd node_modules\jspurefix 
       - cmd: script\build.cmd
       - cmd: cd c:\projects\jspf-md-demo
+      - cmd: npm install
       - cmd: node_modules\.bin\tsc --version
       - cmd: node_modules\.bin\tsc
+
     test_script:
       - cmd: npm run md-app
 -        
