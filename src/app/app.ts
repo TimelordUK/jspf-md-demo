@@ -1,27 +1,26 @@
+import 'reflect-metadata'
+
+import { EngineFactory, IJsFixConfig, SessionLauncher } from 'jspurefix'
 import { MDClient } from './md-client'
 import { MDServer } from './md-server'
-import { IJsFixConfig, initiator, acceptor } from 'jspurefix'
-import { Launcher } from './launcher'
 
-class AppLauncher extends Launcher {
-  public constructor () {
-    super(
-      './../../data/session/test-initiator.json',
-      './../../data/session/test-acceptor.json')
+class AppLauncher extends SessionLauncher {
+  public constructor (
+    client: string = '../../data/session/test-initiator.json',
+    server: string = '../../data/session/test-acceptor.json') {
+    super(client, server)
+    this.root = __dirname
   }
 
-  protected getAcceptor (config: IJsFixConfig): Promise<any> {
-    return acceptor(config, c => new MDServer(c))
-  }
-
-  protected getInitiator (config: IJsFixConfig): Promise<any> {
-    return initiator(config, c => new MDClient(c))
+  protected override makeFactory (config: IJsFixConfig): EngineFactory {
+    const isInitiator = this.isInitiator(config.description)
+    return {
+      makeSession: () => isInitiator ?
+        new MDClient(config) :
+        new MDServer(config)
+    } as EngineFactory
   }
 }
 
 const l = new AppLauncher()
-l.run().then(() => {
-  console.log('finished.')
-}).catch(e => {
-  console.log(e)
-})
+l.exec()
