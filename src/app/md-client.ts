@@ -6,12 +6,14 @@ import {
   MsgType } from 'jspurefix'
 
 import { MDFactory } from './md-factory'
+import { inject, injectable } from 'tsyringe'
 
+@injectable()
 export class MDClient extends AsciiSession {
   private readonly logger: IJsFixLogger
   private readonly fixLog: IJsFixLogger
 
-  constructor (public readonly config: IJsFixConfig) {
+  constructor (@inject('IJsFixConfig') public readonly config: IJsFixConfig) {
     super(config)
     this.logReceivedMsgs = true
     this.fixLog = config.logFactory.plain(`jsfix.${config!.description!.application!.name}.txt`)
