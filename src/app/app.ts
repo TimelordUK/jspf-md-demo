@@ -37,11 +37,11 @@ class AppLauncher extends SessionLauncher {
     const isInitiator = this.isInitiator(newConfig.description)
     if (isInitiator) {
       sessionContainer.register<FixSession>(DITokens.FixSession, {
-        useClass: MDClient
+        useFactory: () => new MDClient(newConfig)
       })
     } else {
       sessionContainer.register<FixSession>(DITokens.FixSession, {
-        useClass: MDServer
+        useFactory: () => new MDServer(newConfig)
       })
     }
     this.sessionContainer.registerSession(newConfig, sessionContainer)
