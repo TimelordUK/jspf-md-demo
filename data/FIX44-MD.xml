@@ -2492,6 +2492,8 @@
     <field name='MDEntryPx' required='N' />
     <field name='Currency' required='N' />
     <field name='MDEntrySize' required='N' />
+    <field name='SettlType' required='N' />
+    <component name='TrdRegTimestamps' required='N' />
     <field name='MDEntryDate' required='N' />
     <field name='MDEntryTime' required='N' />
     <field name='TickDirection' required='N' />
@@ -4646,6 +4648,7 @@
    <value enum='A' description='IMBALANCE' />
    <value enum='B' description='TRADE_VOLUME' />
    <value enum='C' description='OPEN_INTEREST' />
+   <value enum='H' description='MID_PRICE' />
   </field>
   <field number='270' name='MDEntryPx' type='PRICE' />
   <field number='271' name='MDEntrySize' type='QTY' />

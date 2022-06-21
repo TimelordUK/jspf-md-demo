@@ -1,8 +1,12 @@
+import { ITrdRegTimestamps } from './trd_reg_timestamps'
+
 export interface IMDFullGrpNoMDEntries {
   MDEntryType: string// 269
   MDEntryPx?: number// 270
   Currency?: string// 15
   MDEntrySize?: number// 271
+  SettlType?: string// 63
+  TrdRegTimestamps: ITrdRegTimestamps
   MDEntryDate?: Date// 272
   MDEntryTime?: Date// 273
   TickDirection?: string// 274

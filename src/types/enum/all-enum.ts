@@ -793,7 +793,8 @@ export enum MDEntryType {
   TradingSessionVwapPrice = '9',
   Imbalance = 'A',
   TradeVolume = 'B',
-  OpenInterest = 'C'
+  OpenInterest = 'C',
+  MidPrice = 'H'
 }
 
 export enum TickDirection {

@@ -42,7 +42,7 @@ export class MDClient extends AsciiSession {
     this.logger.info('ready')
     const logoutSeconds = 32
     this.logger.info(`will logout after ${logoutSeconds}`)
-    const mdr = MDFactory.BidOfferRequest('EUR/USD')
+    const mdr = MDFactory.BidOfferRequest('GBPUSD')
     this.send(MsgType.MarketDataRequest, mdr)
     setTimeout(() => {
       this.done()
