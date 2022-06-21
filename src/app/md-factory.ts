@@ -11,6 +11,7 @@ import { ILooseObject } from 'jspurefix/dist/collections/collection'
 export class MDFactory {
 
   public static FullSnapshot (symbol: string): ILooseObject {
+    const date = new Date(2022, 5, 23, 0, 0, 0)
     return {
       MDReqID: `#${symbol}#0#`, // #GBPUSD#0#
       Instrument: {
@@ -23,7 +24,7 @@ export class MDFactory {
             MDEntryPx: 1.22759,
             MDEntrySize: 1,
             SettlType: SettlType.Regular,
-            MDEntryDate: new Date('20220623'),
+            MDEntryDate: date,
             TrdRegTimestamps: {
               ITrdRegTimestampsNoTrdRegTimestamps: []
             } as ITrdRegTimestamps
@@ -33,7 +34,7 @@ export class MDFactory {
             MDEntryPx: 1.22759,
             MDEntrySize: 1,
             SettlType: SettlType.Regular,
-            MDEntryDate: new Date('20220623'),
+            MDEntryDate: date,
             TrdRegTimestamps: {
               ITrdRegTimestampsNoTrdRegTimestamps: []
             } as ITrdRegTimestamps
@@ -43,7 +44,7 @@ export class MDFactory {
             MDEntryPx: 1.22759,
             MDEntrySize: 1,
             SettlType: SettlType.Regular,
-            MDEntryDate: new Date('20220623'),
+            MDEntryDate: date,
             TrdRegTimestamps: {
               ITrdRegTimestampsNoTrdRegTimestamps: []
             } as ITrdRegTimestamps
