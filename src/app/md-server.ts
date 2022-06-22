@@ -24,7 +24,10 @@ export class MDServer extends AsciiSession {
     switch (msgType) {
       case MsgType.MarketDataRequest: {
         const req: IMarketDataRequest = view.toObject()
-        const snapshot = MDFactory.FullSnapshot(req.InstrmtMDReqGrp.NoRelatedSym[0].Instrument.Symbol)
+        const symbol = req.InstrmtMDReqGrp.NoRelatedSym[0].Instrument.Symbol
+        const id = req.MDReqID
+        const price = 1.22759
+        const snapshot = MDFactory.FullSnapshot(symbol, id, price)
         this.send(MsgType.MarketDataSnapshotFullRefresh, snapshot)
         break
       }

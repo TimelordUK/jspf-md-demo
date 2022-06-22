@@ -4,16 +4,18 @@ import {
   SubscriptionRequestType,
   IMarketDataRequest,
   IMarketDataSnapshotFullRefresh,
-  IMDFullGrpNoMDEntries, IMDFullGrp, ITrdRegTimestampsNoTrdRegTimestamps, ITrdRegTimestamps
+  IMDFullGrpNoMDEntries,
+  IMDFullGrp,
+  ITrdRegTimestamps
 } from '../types'
 import { ILooseObject } from 'jspurefix/dist/collections/collection'
 
 export class MDFactory {
 
-  public static FullSnapshot (symbol: string): ILooseObject {
-    const date = new Date(2022, 5, 23, 0, 0, 0)
+  public static FullSnapshot (symbol: string, reqId: string, price: number): ILooseObject {
+    const date = new Date()
     return {
-      MDReqID: `#${symbol}#0#`, // #GBPUSD#0#
+      MDReqID: reqId,
       Instrument: {
         SecurityID: symbol
       },
@@ -21,7 +23,7 @@ export class MDFactory {
         NoMDEntries: [
           {
             MDEntryType: MDEntryType.Bid,
-            MDEntryPx: 1.22759,
+            MDEntryPx: price,
             MDEntrySize: 1,
             SettlType: SettlType.Regular,
             MDEntryDate: date,
@@ -31,7 +33,7 @@ export class MDFactory {
           } as IMDFullGrpNoMDEntries,
           {
             MDEntryType: MDEntryType.Offer,
-            MDEntryPx: 1.22759,
+            MDEntryPx: price,
             MDEntrySize: 1,
             SettlType: SettlType.Regular,
             MDEntryDate: date,
@@ -41,7 +43,7 @@ export class MDFactory {
           } as IMDFullGrpNoMDEntries,
           {
             MDEntryType: MDEntryType.MidPrice,
-            MDEntryPx: 1.22759,
+            MDEntryPx: price,
             MDEntrySize: 1,
             SettlType: SettlType.Regular,
             MDEntryDate: date,
@@ -56,7 +58,7 @@ export class MDFactory {
 
   public static BidOfferRequest (symbol: string) {
     return {
-      MDReqID: '1',
+      MDReqID: `#${symbol}#0#`,
       SubscriptionRequestType: SubscriptionRequestType.SnapshotPlusUpdates,
       MarketDepth: 0,
       MDReqGrp: {
