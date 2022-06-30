@@ -1,4 +1,4 @@
-import { ISessionDescription, MsgType, ASessionMsgFactory, ObjectMutator } from 'jspurefix'
+import { ISessionDescription, MsgType, ASessionMsgFactory } from 'jspurefix'
 import { ILooseObject } from 'jspurefix/dist/collections/collection'
 import { IStandardHeader } from 'jspurefix/dist/types/FIX4.4/repo'
 import { inject, injectable } from 'tsyringe'

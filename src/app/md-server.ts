@@ -34,6 +34,10 @@ export class MDServer extends AsciiSession {
     }
   }
 
+  public sendNews (headline: string) {
+    this.send(MsgType.News, MDFactory.News(headline))
+  }
+
   protected onReady (view: MsgView): void {
     // server waits for client to make a request
     this.logger.info('ready for requests.')

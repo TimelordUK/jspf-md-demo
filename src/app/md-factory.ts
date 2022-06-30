@@ -6,11 +6,18 @@ import {
   IMarketDataSnapshotFullRefresh,
   IMDFullGrpNoMDEntries,
   IMDFullGrp,
-  ITrdRegTimestamps
+  ITrdRegTimestamps,
+  INews
 } from '../types'
 import { ILooseObject } from 'jspurefix/dist/collections/collection'
 
 export class MDFactory {
+
+  public static News (headline: string): ILooseObject {
+    return {
+      Headline: headline
+    } as INews
+  }
 
   public static FullSnapshot (symbol: string, reqId: string, price: number): ILooseObject {
     const date = new Date()

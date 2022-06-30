@@ -7,6 +7,7 @@ import {
 
 import { MDFactory } from './md-factory'
 import { inject, injectable } from 'tsyringe'
+import { INews } from '../types'
 
 @injectable()
 export class MDClient extends AsciiSession {
@@ -21,7 +22,14 @@ export class MDClient extends AsciiSession {
   }
 
   protected onApplicationMsg (msgType: string, view: MsgView): void {
-    this.logger.info(`${view.toJson()}`)
+    this.logger.info(`${msgType} ${view.toJson()}`)
+    switch (msgType) {
+      case MsgType.News: {
+        const news: INews = view.toObject()
+        this.logger.info(news.Headline)
+        break
+      }
+    }
   }
 
   protected onStopped (): void {
