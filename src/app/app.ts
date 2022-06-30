@@ -1,8 +1,13 @@
 import 'reflect-metadata'
 
 import {
-  IJsFixConfig, SessionLauncher, EngineFactory,
-  ISessionDescription, SessionContainer, ISessionMsgFactory, FixSession
+  EngineFactory,
+  FixSession,
+  IJsFixConfig,
+  ISessionDescription,
+  ISessionMsgFactory,
+  SessionContainer,
+  SessionLauncher
 } from 'jspurefix'
 import { MDClient } from './md-client'
 import { MDServer } from './md-server'
@@ -27,13 +32,12 @@ class AppLauncher extends SessionLauncher {
   }
 
   // register a custom object with the DI container.
-  public makeController (c: IJsFixConfig, session: FixSession) {
+  public makeController (c: IJsFixConfig, session: FixSession): MdController {
     const sessionContainer = c.sessionContainer
     sessionContainer.register<MdController>(MDTokens.MDController, {
       useFactory: () => new MdController(c, session)
     })
-    this.controller = sessionContainer.resolve<MdController>(MDTokens.MDController)
-    this.controller.start()
+    return sessionContainer.resolve<MdController>(MDTokens.MDController)
   }
 
   stopController () {
@@ -44,7 +48,8 @@ class AppLauncher extends SessionLauncher {
 
   private makeSession (config: IJsFixConfig): FixSession {
     const server = new MDServer(config)
-    this.makeController(config, server)
+    this.controller = this.makeController(config, server)
+    this.controller.start()
     return server
   }
 

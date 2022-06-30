@@ -1,9 +1,10 @@
+import { inject, injectable } from 'tsyringe'
 import { DITokens, FixSession, IJsFixConfig, IJsFixLogger } from 'jspurefix'
 
 const express = require('express')
 const app = express()
 const port = 3000
-import { inject, injectable } from 'tsyringe'
+
 import { MDServer } from './md-server'
 
 @injectable()
