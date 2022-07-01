@@ -3,7 +3,6 @@ import { DITokens, FixSession, IJsFixConfig, IJsFixLogger } from 'jspurefix'
 
 const express = require('express')
 const app = express()
-const port = 3000
 
 import { MDServer } from './md-server'
 
@@ -47,8 +46,8 @@ export class MdController {
     }
   }
 
-  public start () {
-    this.logger.info('start')
+  public start (port?: number) {
+    this.logger.info(`start port = ${port}`)
     this.server = app.listen(port, () => {
       this.logger.info(`MdController app listening on http://localhost:${port}/news`)
     })

@@ -1,4 +1,12 @@
 import 'reflect-metadata'
+const commander = require('commander') // (normal include)
+const program = new commander.Command()
+program
+  .option('-p, --port <number>', 'port for http controller', 3000)
+
+program.parse()
+const port: number = program.opts().port
+console.log(`port: ${port}`)
 
 import {
   EngineFactory,
@@ -49,7 +57,7 @@ class AppLauncher extends SessionLauncher {
   private makeSession (config: IJsFixConfig): FixSession {
     const server = new MDServer(config)
     this.controller = this.makeController(config, server)
-    this.controller.start()
+    this.controller.start(port)
     return server
   }
 
