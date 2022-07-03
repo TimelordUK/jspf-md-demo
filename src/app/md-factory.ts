@@ -4,15 +4,11 @@ import {
   SubscriptionRequestType,
   IMarketDataRequest,
   IMarketDataSnapshotFullRefresh,
-  IMDFullGrpNoMDEntries,
-  IMDFullGrp,
-  ITrdRegTimestamps,
   INews
 } from '../types'
 import { ILooseObject } from 'jspurefix/dist/collections/collection'
 
 export class MDFactory {
-
   public static News (headline: string): ILooseObject {
     return {
       Headline: headline
@@ -20,8 +16,9 @@ export class MDFactory {
   }
 
   public static FullSnapshot (symbol: string, reqId: string, price: number): ILooseObject {
-    const date = new Date();
-    return {
+    const date = new Date()
+    // @ts-expect-error ts2307
+    const snapshot: IMarketDataSnapshotFullRefresh = {
       MDReqID: reqId,
       Instrument: {
         SecurityID: symbol
@@ -35,9 +32,9 @@ export class MDFactory {
             SettlType: SettlType.Regular,
             MDEntryDate: date,
             TrdRegTimestamps: {
-              ITrdRegTimestampsNoTrdRegTimestamps: []
-            } as ITrdRegTimestamps
-          } as IMDFullGrpNoMDEntries,
+              NoTrdRegTimestamps: []
+            }
+          },
           {
             MDEntryType: MDEntryType.Offer,
             MDEntryPx: price,
@@ -45,9 +42,9 @@ export class MDFactory {
             SettlType: SettlType.Regular,
             MDEntryDate: date,
             TrdRegTimestamps: {
-              ITrdRegTimestampsNoTrdRegTimestamps: []
-            } as ITrdRegTimestamps
-          } as IMDFullGrpNoMDEntries,
+              NoTrdRegTimestamps: []
+            }
+          },
           {
             MDEntryType: MDEntryType.MidPrice,
             MDEntryPx: price,
@@ -55,16 +52,17 @@ export class MDFactory {
             SettlType: SettlType.Regular,
             MDEntryDate: date,
             TrdRegTimestamps: {
-              ITrdRegTimestampsNoTrdRegTimestamps: []
-            } as ITrdRegTimestamps
-          } as IMDFullGrpNoMDEntries
+              NoTrdRegTimestamps: []
+            }
+          }
         ]
-      } as IMDFullGrp
-    } as IMarketDataSnapshotFullRefresh
+      }
+    }
+    return snapshot
   }
 
-  public static BidOfferRequest (symbol: string) {
-    return {
+  public static BidOfferRequest (symbol: string): ILooseObject {
+    const bor: IMarketDataRequest = {
       MDReqID: `#${symbol}#0#`,
       SubscriptionRequestType: SubscriptionRequestType.SnapshotPlusUpdates,
       MarketDepth: 0,
@@ -83,6 +81,7 @@ export class MDFactory {
       },
       InstrmtMDReqGrp: {
         NoRelatedSym: [
+          // @ts-expect-error ts2307
           {
             Instrument: {
               StrikeCurrency: 'USD',
@@ -91,6 +90,7 @@ export class MDFactory {
           }
         ]
       }
-    } as IMarketDataRequest
+    }
+    return bor
   }
 }
