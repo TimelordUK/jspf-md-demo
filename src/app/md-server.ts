@@ -9,14 +9,15 @@ import { MDFactory } from './md-factory'
 export class MDServer extends AsciiSession {
   private readonly logger: IJsFixLogger
   private readonly fixLog: IJsFixLogger
-  private timerHandle: NodeJS.Timer = null
+  private readonly timerHandle: NodeJS.Timer
 
   constructor (@inject('IJsFixConfig') public readonly config: IJsFixConfig) {
     super(config)
     this.logReceivedMsgs = true
     this.checkMsgIntegrity = false
     this.logger = config.logFactory.logger(`${this.me}:MDServer`)
-    this.fixLog = config.logFactory.plain(`jsfix.${config!.description!.application!.name}.txt`)
+    const name = config?.description?.application?.name ?? ''
+    this.fixLog = config.logFactory.plain(`jsfix.${name}.txt`)
   }
 
   protected onApplicationMsg (msgType: string, view: MsgView): void {
@@ -24,7 +25,7 @@ export class MDServer extends AsciiSession {
     switch (msgType) {
       case MsgType.MarketDataRequest: {
         const req: IMarketDataRequest = view.toObject()
-        const symbol = req.InstrmtMDReqGrp.NoRelatedSym[0].Instrument.Symbol
+        const symbol: string = req?.InstrmtMDReqGrp?.NoRelatedSym[0].Instrument.Symbol ?? ''
         const id = req.MDReqID
         const price = 1.22759
         const snapshot = MDFactory.FullSnapshot(symbol, id, price)
@@ -34,7 +35,7 @@ export class MDServer extends AsciiSession {
     }
   }
 
-  public sendNews (headline: string) {
+  public sendNews (headline: string): void {
     this.send(MsgType.News, MDFactory.News(headline))
   }
 
@@ -45,7 +46,7 @@ export class MDServer extends AsciiSession {
 
   protected onStopped (): void {
     this.logger.info('stopped')
-    if (this.timerHandle) {
+    if (this.timerHandle !== null) {
       clearInterval(this.timerHandle)
     }
   }

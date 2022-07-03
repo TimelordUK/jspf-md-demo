@@ -1,15 +1,14 @@
-export interface IGetNumericKey<T> {
-  (instance: T): number
-}
+export type IGetNumericKey<T> = (instance: T) => number
 export class OrderedList<T> {
   constructor (public fetcher: IGetNumericKey<T>, public readonly highToLow: boolean = false) {
   }
-  private elements: T[] = []
+
+  private readonly elements: T[] = []
 
   private binarySearch (key: number): number {
     const arr = this.elements
     const fetcher = this.fetcher
-    let m: number = 0
+    let m = 0
     let n: number = arr.length - 1
     while (m <= n) {
       const k: number = (n + m) >> 1
@@ -26,11 +25,11 @@ export class OrderedList<T> {
     return -m - 1
   }
 
-  public top (): T {
+  public top (): T|null {
     return this.elements.length > 0 ? this.elements[0] : null
   }
 
-  public bottom (): T {
+  public bottom (): T|null {
     return this.peek()
   }
 
@@ -43,7 +42,7 @@ export class OrderedList<T> {
     return this.elements.length
   }
 
-  public peek (): T {
+  public peek (): T|null {
     const elements = this.elements
     return elements.length > 0 ? elements[elements.length - 1] : null
   }
@@ -53,7 +52,7 @@ export class OrderedList<T> {
     return where >= 0
   }
 
-  public find (key: number): T {
+  public find (key: number): T|null {
     const where = this.binarySearch(key)
     return where >= 0 ? this.elements[where] : null
   }

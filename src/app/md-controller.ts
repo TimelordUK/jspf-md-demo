@@ -1,10 +1,9 @@
 import { inject, injectable } from 'tsyringe'
 import { DITokens, FixSession, IJsFixConfig, IJsFixLogger } from 'jspurefix'
+import { MDServer } from './md-server'
 
 const express = require('express')
 const app = express()
-
-import { MDServer } from './md-server'
 
 @injectable()
 export class MdController {
@@ -16,13 +15,13 @@ export class MdController {
     @inject(DITokens.FixSession) public readonly session: FixSession) {
     const sender = session as MDServer
     const description = config.description
-    this.me = description.application.name
+    this.me = description?.application?.name ?? 'me'
     this.server = null
     this.logger = config.logFactory.logger(`${this.me}:MdController`)
     this.subscribe(sender)
   }
 
-  subscribe (session: MDServer) {
+  subscribe (session: MDServer): void {
     app.get('/news', (req: any, res: any) => {
       this.logger.info('got a request for a news flash')
       const msg = 'mash the buy button!'
@@ -33,7 +32,7 @@ export class MdController {
     })
   }
 
-  public stop () {
+  public stop (): void {
     this.logger.info('stop')
     if (this.server != null) {
       this.logger.info('closing server')
@@ -46,7 +45,8 @@ export class MdController {
     }
   }
 
-  public start (port?: number) {
+  public start (port?: number): void {
+    port = port ?? 3000
     this.logger.info(`start port = ${port}`)
     this.server = app.listen(port, () => {
       this.logger.info(`MdController app listening on http://localhost:${port}/news`)

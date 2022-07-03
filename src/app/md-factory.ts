@@ -20,7 +20,7 @@ export class MDFactory {
   }
 
   public static FullSnapshot (symbol: string, reqId: string, price: number): ILooseObject {
-    const date = new Date()
+    const date = new Date();
     return {
       MDReqID: reqId,
       Instrument: {

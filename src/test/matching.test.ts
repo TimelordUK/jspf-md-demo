@@ -14,11 +14,12 @@ test('add new order to matcher', () => {
   expect(book.sells.count()).toEqual(0)
   expect(book.buys.find(o1.price)).toBeTruthy()
   expect(book.buys.find(o1.price + 0.1)).toEqual(null)
-  expect(book.buys.find(o1.price).quantity()).toEqual(o1.quantity)
+  expect(book.buys.find(o1.price)?.quantity()).toEqual(o1.quantity)
 })
 
 test('enter NewOrderSingle to exchange', () => {
-  const o1 = {
+  // @ts-expect-error ts2307
+  const o1: INewOrderSingle = {
     ClOrdID: 'Order184946',
     Account: '2F8QNWXP2',
     Instrument: {
@@ -34,7 +35,7 @@ test('enter NewOrderSingle to exchange', () => {
     TimeInForce: TimeInForce.Day,
     OrderCapacity: OrderCapacity.Agency,
     CustOrderCapacity: CustOrderCapacity.MemberTradingForTheirOwnAccount
-  } as INewOrderSingle
+  }
   const exchange = new Exchange()
   exchange.newOrder(o1)
 })

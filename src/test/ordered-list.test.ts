@@ -15,7 +15,7 @@ export class Order {
   }
  */
 
-function list5 () {
+function list5 (): OrderedList<Order> {
   const test = new OrderedList<Order>(o => o.id)
   const o1 = new Order(1, 'BTC', Side.Buy, 100.0, 100, 0, 'first')
   const o2 = new Order(2, 'BTC', Side.Buy, 100.0, 100, 0, 'second')
@@ -62,7 +62,7 @@ test('add 5 unordered expect ordered', () => {
   expect(test.get(2).id).toEqual(3)
   expect(test.get(3).id).toEqual(4)
   expect(test.get(4).id).toEqual(5)
-  expect(test.peek().id).toEqual(5)
+  expect(test.peek()?.id).toEqual(5)
 
   expect(test.exists(test.get(0))).toEqual(true)
   expect(test.exists(test.get(1))).toEqual(true)
@@ -146,11 +146,11 @@ test('find in ordered', () => {
   expect(test.count()).toEqual(5)
   const e = test.find(1)
   expect(e).toBeTruthy()
-  expect(e.id).toEqual(1)
+  expect(e?.id).toEqual(1)
 
   const e3 = test.find(3)
   expect(e3).toBeTruthy()
-  expect(e3.id).toEqual(3)
+  expect(e3?.id).toEqual(3)
 
   const e10 = test.find(10)
   expect(e10).toEqual(null)
