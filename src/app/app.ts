@@ -31,6 +31,7 @@ class MySessionContainer extends SessionContainer {
 
 class AppLauncher extends SessionLauncher {
   controller: MdController
+
   public constructor (
     client = '../../data/session/test-initiator.json',
     server = '../../data/session/test-acceptor.json') {
@@ -74,13 +75,14 @@ class AppLauncher extends SessionLauncher {
   protected override makeFactory (config: IJsFixConfig): EngineFactory {
     const isInitiator = this.isInitiator(config.description)
     const instance = this
-    return {
+    const v: EngineFactory = {
       makeSession: () => isInitiator
         ? new MDClient(config)
         : instance.makeSession(config)
-    } as EngineFactory
+    }
+    return v
   }
 }
 
-const l = new AppLauncher()
+const l: AppLauncher = new AppLauncher()
 l.launcher()
