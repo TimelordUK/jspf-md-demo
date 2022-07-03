@@ -10,9 +10,11 @@ import { ILooseObject } from 'jspurefix/dist/collections/collection'
 
 export class MDFactory {
   public static News (headline: string): ILooseObject {
-    return {
+    // @ts-expect-error ts2307
+    const o: INews = {
       Headline: headline
-    } as INews
+    }
+    return o
   }
 
   public static FullSnapshot (symbol: string, reqId: string, price: number): ILooseObject {

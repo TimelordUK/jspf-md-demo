@@ -45,8 +45,7 @@ export class MdController {
     }
   }
 
-  public start (port?: number): void {
-    port = port ?? 3000
+  public start (port: number): void {
     this.logger.info(`start port = ${port}`)
     this.server = app.listen(port, () => {
       this.logger.info(`MdController app listening on http://localhost:${port}/news`)
