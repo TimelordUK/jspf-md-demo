@@ -16,17 +16,25 @@ import { MDServer } from './md-server'
 import { MsgFact } from './msg-fact'
 import { MdController } from './md-controller'
 
+const root = '../../data/session/'
 const commander = require('commander') // (normal include)
 const program = new commander.Command()
 program
   .option('-p, --port <number>', 'port for http controller', 3000)
-  .option('-i, --di', 'use DI based construction', false)
+  .option('-u, --useDI', 'use DI based construction', false)
+  .option('-c, --client <string>', 'client config', `${root}test-initiator.json`)
+  .option('-s, --server <string>', 'server config', `${root}test-acceptor.json`)
+
+export interface IOptions {
+  port: number
+  useDI: boolean
+  client: string
+  server: string
+}
 
 program.parse()
-const opts = program.opts()
-const port: number = opts.port
-const useDI: boolean = opts.di
-console.log(`port: ${port}, DI: ${useDI ? 'using DI' : 'using factory'}`)
+const opts: IOptions = program.opts()
+console.log(`port: ${opts.port}, DI: ${opts.useDI ? 'using DI' : 'using factory'}`)
 
 class MySessionContainer extends SessionContainer {
   protected makeSessionFactory (description: ISessionDescription): ISessionMsgFactory {
@@ -50,7 +58,7 @@ class AppLauncher extends SessionLauncher {
   protected MakeServer (config: IJsFixConfig): FixSession {
     const server = new MDServer(config)
     this.controller = new MdController(config, server)
-    this.controller.start(port)
+    this.controller.start(opts.port)
     return server
   }
 
@@ -72,11 +80,9 @@ class AppLauncher extends SessionLauncher {
 }
 
 class FactoryAppLauncher extends AppLauncher {
-  controller: MdController
-
   public constructor (
-    client = '../../data/session/test-initiator.json',
-    server = '../../data/session/test-acceptor.json') {
+    client = opts.client,
+    server = opts.server) {
     super(client, server)
   }
 
@@ -93,11 +99,9 @@ class FactoryAppLauncher extends AppLauncher {
 }
 
 class DIAppLauncher extends AppLauncher {
-  controller: MdController
-
   public constructor (
-    client = '../../data/session/test-initiator.json',
-    server = '../../data/session/test-acceptor.json') {
+    client = opts.client,
+    server = opts.server) {
     super(client, server)
   }
 
@@ -125,5 +129,7 @@ class DIAppLauncher extends AppLauncher {
   }
 }
 
-const l: AppLauncher = useDI ? new DIAppLauncher() : new FactoryAppLauncher()
+const l: AppLauncher = opts.useDI
+  ? new DIAppLauncher()
+  : new FactoryAppLauncher()
 l.launcher()
