@@ -23,7 +23,7 @@ program
   .option('-p, --port <number>', 'port for http controller', 3000)
   .option('-u, --useDI', 'use DI based construction', false)
   .option('-c, --client <string>', 'client config', `${root}test-initiator.json`)
-  .option('-s, --server <string>', 'server config', `${root}test-acceptor.json`)
+  .option('-s, --server <string>', 'server config (default no server)', null)
 
 export interface IOptions {
   port: number
