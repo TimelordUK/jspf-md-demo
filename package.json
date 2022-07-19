@@ -9,7 +9,8 @@
     "generate": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--compile\" \"--output=../../src/types/\"",
     "replay": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--fix=../../data/example/fix.txt\" \"--objects\" --delimiter=\"|\"",
     "tokens": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--fix=../../data/example/fix.txt\" \"--tokens\" --delimiter=\"|\"",
-    "md-app": "cd dist/app && node app"
+    "md-app": "cd dist/app && node app",
+    "help": "cd dist/app && node app --help"
   },
   "keywords": [
     "quickfix",
