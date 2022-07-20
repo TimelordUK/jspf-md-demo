@@ -118,6 +118,7 @@ class DIAppLauncher extends AppLauncher {
     })
   }
 
+  /* method 1: use DI container to register */
   protected override registerApplication (sessionContainer: DependencyContainer): void {
     const config = sessionContainer.resolve<IJsFixConfig>(DITokens.IJsFixConfig)
     const isInitiator = this.isInitiator(config.description)
