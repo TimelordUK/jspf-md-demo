@@ -9,7 +9,6 @@ import { MDFactory } from './md-factory'
 export class MDServer extends AsciiSession {
   private readonly logger: IJsFixLogger
   private readonly fixLog: IJsFixLogger
-  private readonly timerHandle: NodeJS.Timer
 
   constructor (@inject('IJsFixConfig') public readonly config: IJsFixConfig) {
     super(config)
@@ -46,9 +45,6 @@ export class MDServer extends AsciiSession {
 
   protected onStopped (): void {
     this.logger.info('stopped')
-    if (this.timerHandle !== null) {
-      clearInterval(this.timerHandle)
-    }
   }
 
   protected onLogon (view: MsgView, user: string, password: string): boolean {

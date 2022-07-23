@@ -24,12 +24,14 @@ program
   .option('-u, --useDI', 'use DI based construction', false)
   .option('-c, --client <string>', 'client config', `${root}test-initiator.json`)
   .option('-s, --server <string>', 'server config (default no server)', null)
+  .option('-l, --logout <number>', 'client logout after seconds', 12)
 
 export interface IOptions {
   port: number
   useDI: boolean
   client: string
   server: string
+  logout: number
 }
 
 program.parse()
@@ -44,7 +46,7 @@ class MySessionContainer extends SessionContainer {
 
 class AppLauncher extends SessionLauncher {
   controller: MdController
-
+  client: MDClient
   public constructor (
     client: string,
     server: string) {
@@ -60,6 +62,18 @@ class AppLauncher extends SessionLauncher {
     this.controller = new MdController(config, server)
     this.controller.start(opts.port)
     return server
+  }
+
+  protected MakeClient (config: IJsFixConfig): FixSession {
+    this.client = new MDClient(config)
+    setTimeout(() => {
+      this.client.endPromise().then(txt => {
+        console.log(`client ${txt}`)
+      }).catch(e => {
+        console.error(e)
+      })
+    }, opts.logout * 1000)
+    return this.client
   }
 
   stopController (): void {
@@ -92,7 +106,7 @@ class FactoryAppLauncher extends AppLauncher {
     const instance = this
     return {
       makeSession: () => isInitiator
-        ? new MDClient(config)
+        ? instance.MakeClient(config)
         : instance.MakeServer(config)
     }
   }
@@ -106,8 +120,9 @@ class DIAppLauncher extends AppLauncher {
   }
 
   protected asClient (sessionContainer: DependencyContainer): void {
+    const config = sessionContainer.resolve<IJsFixConfig>(DITokens.IJsFixConfig)
     sessionContainer.register<FixSession>(DITokens.FixSession, {
-      useClass: MDClient
+      useFactory: () => this.MakeClient(config)
     })
   }
 
