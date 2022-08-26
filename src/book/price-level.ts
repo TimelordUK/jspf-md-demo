@@ -6,7 +6,7 @@ export class PriceLevel {
   constructor (public readonly side: Side, public readonly price: number) {
   }
 
-  private members = new OrderedList<Order>(o => o.id)
+  private readonly members = new OrderedList<Order>(o => o.id)
 
   public quantity (): number {
     return this.size
@@ -19,8 +19,8 @@ export class PriceLevel {
   public add (order: Order): void {
     const members = this.members
     if (order.side !== this.side) return
-    const exist: Order = members.get(order.id)
-    if (exist) {
+    const exist = members.get(order.id)
+    if (exist != null) {
       this.size -= exist.remainder
     }
     const remainder = order.remainder
