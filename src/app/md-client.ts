@@ -6,8 +6,8 @@ import {
   MsgType
 } from 'jspurefix'
 
-import { MDFactory } from './md-factory'
 import { inject, injectable } from 'tsyringe'
+import { MDFactory } from './md-factory'
 import { INews } from '../types'
 
 @injectable()
