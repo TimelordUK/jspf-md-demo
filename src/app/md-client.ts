@@ -8,6 +8,7 @@ import {
 import { inject, injectable } from 'tsyringe'
 import { IMarketDataSnapshotFullRefresh, INews, IUserFixArchive, MsgType } from '../types'
 import { AsciiView } from 'jspurefix/dist/buffer/ascii'
+import { MDFactory } from './md-factory'
 
 @injectable()
 export class MDClient extends AsciiSession {
