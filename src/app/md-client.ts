@@ -31,7 +31,7 @@ export class MDClient extends AsciiSession {
     if (delimiter !== writeDelimiter) {
       const structure = asciiView.structure
       const tags = structure.tags.tagPos
-      for (let i = 0; i < structure.tags.nextTagPos - 1; ++i) {
+      for (let i = 0; i < structure.tags.nextTagPos; ++i) {
         const tag: TagPos = tags[i]
         const p: number = tag.start + tag.len
         viewBuffer.writeUInt8(delimiter, p)
