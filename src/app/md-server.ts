@@ -1,5 +1,5 @@
-import { AsciiSession, MsgView, IJsFixConfig, IJsFixLogger, MsgType } from 'jspurefix'
-import { IMarketDataRequest } from '../types'
+import { AsciiSession, MsgView, IJsFixConfig, IJsFixLogger } from 'jspurefix'
+import { IMarketDataRequest, IUserFixArchive, IUserFixArchiveNoEvents, MsgType } from '../types'
 import { inject, injectable } from 'tsyringe'
 import { MDFactory } from './md-factory'
 
@@ -31,6 +31,16 @@ export class MDServer extends AsciiSession {
         const snapshot = MDFactory.FullSnapshot(symbol, id, price)
         this.send(MsgType.MarketDataSnapshotFullRefresh, snapshot)
         break
+      }
+      case MsgType.UserFixArchive: {
+        const msg: IUserFixArchive = view.toObject()
+        const events: IUserFixArchiveNoEvents[] = msg.NoEvents
+        this.logger.info(`event count for archive ${events.length}`)
+        for (let i = 0; i < events.length; ++i) {
+          const ev = events[i]
+          const txt = ev.RawData.toString('utf8')
+          this.logger.info(`request to archive this message ${txt}`)
+        }
       }
     }
   }

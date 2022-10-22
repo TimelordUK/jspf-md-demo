@@ -209,7 +209,8 @@ export enum MsgType {
   UserRequest = 'BE',
   UserResponse = 'BF',
   CollateralInquiryAck = 'BG',
-  ConfirmationRequest = 'BH'
+  ConfirmationRequest = 'BH',
+  UserFixArchive = 'UFA'
 }
 
 export enum OrdStatus {

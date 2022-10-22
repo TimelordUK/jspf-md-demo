@@ -2,13 +2,13 @@ import {
   AsciiSession,
   MsgView,
   IJsFixConfig,
-  IJsFixLogger,
-  MsgType
+  IJsFixLogger, TagPos
 } from 'jspurefix'
 
 import { MDFactory } from './md-factory'
 import { inject, injectable } from 'tsyringe'
-import { INews } from '../types'
+import { IMarketDataSnapshotFullRefresh, INews, IUserFixArchive, MsgType } from '../types'
+import { AsciiView } from 'jspurefix/dist/buffer/ascii'
 
 @injectable()
 export class MDClient extends AsciiSession {
@@ -23,14 +23,59 @@ export class MDClient extends AsciiSession {
     this.logger = config.logFactory.logger(`${this.me}:MDClient`)
   }
 
+  // turn our view nack to a raw msg - this should go into the asciiView as a helper method
+  private asRaw (view: MsgView): Buffer {
+    const asciiView = view as AsciiView
+    const delimiter = asciiView.delimiter
+    const writeDelimiter = asciiView.writeDelimiter
+    const viewBuffer = asciiView.buffer.slice()
+    if (delimiter !== writeDelimiter) {
+      const structure = asciiView.structure
+      const tags = structure.tags.tagPos
+      for (let i = 0; i < structure.tags.nextTagPos - 1; ++i) {
+        const tag: TagPos = tags[i]
+        const p: number = tag.start + tag.len
+        viewBuffer.writeUInt8(delimiter, p)
+      }
+    }
+    return viewBuffer
+  }
+
+  private sendArchivist (msgType: string, view: MsgView): void {
+    const viewBuffer = this.asRaw(view)
+    const asTxt = viewBuffer.toString()
+    this.logger.info(asTxt)
+    // @ts-expect-error ts2307
+    const archive: IUserFixArchive = {
+      NoEvents: [
+        {
+          Subject: msgType,
+          RawData: viewBuffer,
+          RawDataLength: viewBuffer.length
+        }
+      ]
+    }
+    this.send(MsgType.UserFixArchive, archive)
+  }
+
   protected onApplicationMsg (msgType: string, view: MsgView): void {
     this.logger.info(`${msgType} ${view.toJson()}`)
     switch (msgType) {
       case MsgType.News: {
         const news: INews = view.toObject()
         this.logger.info(news.Headline)
-        break
+        // send the news to 'archive' service as a user defined message
+        this.sendArchivist(msgType, view)
       }
+        break
+
+      case MsgType.MarketDataSnapshotFullRefresh: {
+        const refresh: IMarketDataSnapshotFullRefresh = view.toObject()
+        const symbol: string = refresh.Instrument?.SecurityID ?? 'na'
+        this.logger.info(`received a MD refresh on instrument ${symbol}`)
+        this.logger.info(JSON.stringify(refresh, null, 4))
+      }
+        break
     }
   }
 

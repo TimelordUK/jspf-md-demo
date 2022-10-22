@@ -1388,7 +1388,7 @@
    <field name='MoneyLaunderingStatus' required='N' />
    <field name='RegistID' required='N' />
    <field name='Designation' required='N' />
-   <field name='MultiLegRptTypeReq' required='N' />
+   <field name='MultiLegRptTypeReq' required='N' />ty
   </message>
   <message name='TradeCaptureReportRequest' msgcat='app' msgtype='AD'>
    <field name='TradeRequestID' required='Y' />
@@ -2345,6 +2345,13 @@
    <field name='Text' required='N' />
    <field name='EncodedTextLen' required='N' />
    <field name='EncodedText' required='N' />
+  </message>
+  <message name='UserFixArchive' msgcat='app' msgtype='UFA'>
+   <group name='NoEvents' required='Y'>
+    <field name='Subject' required='N' />
+    <field name='RawDataLength' required='Y' />
+    <field name='RawData' required='Y' />
+   </group>
   </message>
  </messages>
  <trailer>
@@ -3954,6 +3961,7 @@
    <value enum='BF' description='USER_RESPONSE' />
    <value enum='BG' description='COLLATERAL_INQUIRY_ACK' />
    <value enum='BH' description='CONFIRMATION_REQUEST' />
+   <value enum='UFA' description="USER_FIX_ARCHIVE"/>
   </field>
   <field number='36' name='NewSeqNo' type='SEQNUM' />
   <field number='37' name='OrderID' type='STRING' />
