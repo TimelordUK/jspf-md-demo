@@ -5,7 +5,6 @@ import {
   IJsFixLogger, TagPos
 } from 'jspurefix'
 
-import { MDFactory } from './md-factory'
 import { inject, injectable } from 'tsyringe'
 import { IMarketDataSnapshotFullRefresh, INews, IUserFixArchive, MsgType } from '../types'
 import { AsciiView } from 'jspurefix/dist/buffer/ascii'
@@ -14,7 +13,6 @@ import { AsciiView } from 'jspurefix/dist/buffer/ascii'
 export class MDClient extends AsciiSession {
   private readonly logger: IJsFixLogger
   private readonly fixLog: IJsFixLogger
-
   constructor (@inject('IJsFixConfig') public readonly config: IJsFixConfig) {
     super(config)
     this.logReceivedMsgs = true
@@ -79,6 +77,24 @@ export class MDClient extends AsciiSession {
     }
   }
 
+  public async endPromise (): Promise<string> {
+    const instance = this
+    return await new Promise((resolve, reject) => {
+      if (this.transport !== null) {
+        const handle = setTimeout(() => {
+          reject(new Error('did not cleanly stop'))
+        }, 5 * 1000)
+        instance.on('done', () => {
+          clearTimeout(handle)
+          resolve('done')
+        })
+        instance.done()
+      } else {
+        resolve('already stopped')
+      }
+    })
+  }
+
   protected onStopped (): void {
     this.logger.info('stopped')
   }
@@ -99,9 +115,6 @@ export class MDClient extends AsciiSession {
     this.logger.info(`will logout after ${logoutSeconds}`)
     const mdr = MDFactory.BidOfferRequest('GBPUSD')
     this.send(MsgType.MarketDataRequest, mdr)
-    setTimeout(() => {
-      this.done()
-    }, logoutSeconds * 1000)
   }
 
   protected onLogon (view: MsgView, user: string, password: string): boolean {

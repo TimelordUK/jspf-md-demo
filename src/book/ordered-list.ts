@@ -25,15 +25,15 @@ export class OrderedList<T> {
     return -m - 1
   }
 
-  public top (): T|null {
+  public top (): T | null {
     return this.elements.length > 0 ? this.elements[0] : null
   }
 
-  public bottom (): T|null {
+  public bottom (): T | null {
     return this.peek()
   }
 
-  public get (i: number): T {
+  public get (i: number): T  {
     const elements = this.elements
     return elements[i]
   }
@@ -42,7 +42,7 @@ export class OrderedList<T> {
     return this.elements.length
   }
 
-  public peek (): T|null {
+  public peek (): T | null {
     const elements = this.elements
     return elements.length > 0 ? elements[elements.length - 1] : null
   }
@@ -52,7 +52,7 @@ export class OrderedList<T> {
     return where >= 0
   }
 
-  public find (key: number): T|null {
+  public find (key: number): T | null {
     const where = this.binarySearch(key)
     return where >= 0 ? this.elements[where] : null
   }
