@@ -9,6 +9,7 @@ import { MDFactory } from './md-factory'
 export class MDServer extends AsciiSession {
   private readonly logger: IJsFixLogger
   private readonly fixLog: IJsFixLogger
+  private readonly mdFactory: MDFactory = new MDFactory()
 
   constructor (@inject('IJsFixConfig') public readonly config: IJsFixConfig) {
     super(config)
@@ -27,7 +28,7 @@ export class MDServer extends AsciiSession {
         const symbol: string = req?.InstrmtMDReqGrp?.NoRelatedSym[0].Instrument.Symbol ?? ''
         const id = req.MDReqID
         const price = 1.22759
-        const snapshot = MDFactory.FullSnapshot(symbol, id, price)
+        const snapshot = this.mdFactory.FullSnapshot(symbol, id, price)
         this.send(MsgType.MarketDataSnapshotFullRefresh, snapshot)
         break
       }
@@ -45,7 +46,7 @@ export class MDServer extends AsciiSession {
   }
 
   public sendNews (headline: string): void {
-    this.send(MsgType.News, MDFactory.News(headline))
+    this.send(MsgType.News, this.mdFactory.News(headline))
   }
 
   protected onReady (view: MsgView): void {

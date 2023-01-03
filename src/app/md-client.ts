@@ -2,7 +2,7 @@ import {
   AsciiSession,
   MsgView,
   IJsFixConfig,
-  IJsFixLogger, TagPos
+  IJsFixLogger
 } from 'jspurefix'
 
 import { inject, injectable } from 'tsyringe'
@@ -14,6 +14,7 @@ import { MDFactory } from './md-factory'
 export class MDClient extends AsciiSession {
   private readonly logger: IJsFixLogger
   private readonly fixLog: IJsFixLogger
+  private readonly mdFactory: MDFactory = new MDFactory()
   constructor (@inject('IJsFixConfig') public readonly config: IJsFixConfig) {
     super(config)
     this.logReceivedMsgs = true
@@ -22,26 +23,10 @@ export class MDClient extends AsciiSession {
     this.logger = config.logFactory.logger(`${this.me}:MDClient`)
   }
 
-  // turn our view nack to a raw msg - this should go into the asciiView as a helper method
-  private asRaw (view: MsgView): Buffer {
-    const asciiView = view as AsciiView
-    const delimiter = asciiView.delimiter
-    const writeDelimiter = asciiView.writeDelimiter
-    const viewBuffer = asciiView.buffer.slice()
-    if (delimiter !== writeDelimiter) {
-      const structure = asciiView.structure
-      const tags = structure.tags.tagPos
-      for (let i = 0; i < structure.tags.nextTagPos; ++i) {
-        const tag: TagPos = tags[i]
-        const p: number = tag.start + tag.len
-        viewBuffer.writeUInt8(delimiter, p)
-      }
-    }
-    return viewBuffer
-  }
+  // turn our view nack to a raw msg and send
 
   private sendArchivist (msgType: string, view: MsgView): void {
-    const viewBuffer = this.asRaw(view)
+    const viewBuffer = (view as AsciiView).toBuffer()
     const asTxt = viewBuffer.toString()
     this.logger.info(asTxt)
     // @ts-expect-error ts2307
@@ -114,7 +99,7 @@ export class MDClient extends AsciiSession {
     this.logger.info('ready')
     const logoutSeconds = 32
     this.logger.info(`will logout after ${logoutSeconds}`)
-    const mdr = MDFactory.BidOfferRequest('GBPUSD')
+    const mdr = this.mdFactory.BidOfferRequest('GBPUSD')
     this.send(MsgType.MarketDataRequest, mdr)
   }
 

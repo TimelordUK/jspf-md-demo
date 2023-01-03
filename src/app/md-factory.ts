@@ -9,7 +9,7 @@ import {
 import { ILooseObject } from 'jspurefix/dist/collections/collection'
 
 export class MDFactory {
-  public static News (headline: string): ILooseObject {
+  public News (headline: string): ILooseObject {
     // @ts-expect-error ts2307
     const o: INews = {
       Headline: headline
@@ -17,7 +17,7 @@ export class MDFactory {
     return o
   }
 
-  public static FullSnapshot (symbol: string, reqId: string, price: number): ILooseObject {
+  public FullSnapshot (symbol: string, reqId: string, price: number): ILooseObject {
     const date = new Date()
     // @ts-expect-error ts2307
     const snapshot: IMarketDataSnapshotFullRefresh = {
@@ -63,7 +63,7 @@ export class MDFactory {
     return snapshot
   }
 
-  public static BidOfferRequest (symbol: string): ILooseObject {
+  public BidOfferRequest (symbol: string): ILooseObject {
     const bor: IMarketDataRequest = {
       MDReqID: `#${symbol}#0#`,
       SubscriptionRequestType: SubscriptionRequestType.SnapshotPlusUpdates,

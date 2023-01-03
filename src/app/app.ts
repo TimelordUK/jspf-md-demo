@@ -20,11 +20,11 @@ const root = '../../data/session/'
 const commander = require('commander') // (normal include)
 const program = new commander.Command()
 program
-  .option('-p, --port <number>', 'port for http controller', 3000)
+  .option('-p, --port <number>', 'port for http controller', '3000')
   .option('-u, --useDI', 'use DI based construction', false)
   .option('-c, --client <string>', 'client config', `${root}test-initiator.json`)
   .option('-s, --server <string>', 'server config (default no server)', null)
-  .option('-l, --logout <number>', 'client logout after seconds', 12)
+  .option('-l, --logout <number>', 'client logout after seconds', '12')
 
 export interface IOptions {
   port: number
