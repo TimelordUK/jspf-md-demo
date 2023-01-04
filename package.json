@@ -21,7 +21,7 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^9.4.1",
-    "jspurefix": "^2.2.1",
+    "jspurefix": "^3.0.0",
     "reflect-metadata": "^0.1.13",
     "request": "^2.88.2",
     "typings": "^2.1.1"
