@@ -46,21 +46,34 @@ export class MDClient extends AsciiSession {
     this.logger.info(`${msgType} ${view.toJson()}`)
     switch (msgType) {
       case MsgType.News: {
-        const news: INews = view.toObject()
-        this.logger.info(news.Headline)
-        // send the news to 'archive' service as a user defined message
-        this.sendArchivist(msgType, view)
-      }
+        this.news(view, msgType)
         break
+      }
 
       case MsgType.MarketDataSnapshotFullRefresh: {
-        const refresh: IMarketDataSnapshotFullRefresh = view.toObject()
-        const symbol: string = refresh.Instrument?.SecurityID ?? 'na'
-        this.logger.info(`received a MD refresh on instrument ${symbol}`)
-        this.logger.info(JSON.stringify(refresh, null, 4))
-      }
+        this.marketDataSnapshotFullRefresh(view)
         break
+      }
+
+      default: {
+        this.logger.info(`unknown msgType ${msgType}`)
+        break
+      }
     }
+  }
+
+  private news (view: MsgView, msgType: string): void {
+    const news: INews = view.toObject()
+    this.logger.info(news.Headline)
+    // send the news to 'archive' service as a user defined message
+    this.sendArchivist(msgType, view)
+  }
+
+  private marketDataSnapshotFullRefresh (view: MsgView): void {
+    const refresh: IMarketDataSnapshotFullRefresh = view.toObject()
+    const symbol: string = refresh.Instrument?.SecurityID ?? 'na'
+    this.logger.info(`received a MD refresh on instrument ${symbol}`)
+    this.logger.info(JSON.stringify(refresh, null, 4))
   }
 
   public async endPromise (): Promise<string> {

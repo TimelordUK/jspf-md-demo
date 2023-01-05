@@ -24,24 +24,39 @@ export class MDServer extends AsciiSession {
     this.logger.info(`${view.toJson()}`)
     switch (msgType) {
       case MsgType.MarketDataRequest: {
-        const req: IMarketDataRequest = view.toObject()
-        const symbol: string = req?.InstrmtMDReqGrp?.NoRelatedSym[0].Instrument.Symbol ?? ''
-        const id = req.MDReqID
-        const price = 1.22759
-        const snapshot = this.mdFactory.FullSnapshot(symbol, id, price)
-        this.send(MsgType.MarketDataSnapshotFullRefresh, snapshot)
+        this.marketDataRequest(view)
         break
       }
+
       case MsgType.UserFixArchive: {
-        const msg: IUserFixArchive = view.toObject()
-        const events: IUserFixArchiveNoEvents[] = msg.NoEvents
-        this.logger.info(`event count for archive ${events.length}`)
-        for (let i = 0; i < events.length; ++i) {
-          const ev = events[i]
-          const txt = ev.RawData.toString('utf8')
-          this.logger.info(`request to archive this message ${txt}`)
-        }
+        this.userFixArchive(view)
+        break
       }
+
+      default: {
+        this.logger.info(`unknown msgType ${msgType}`)
+        break
+      }
+    }
+  }
+
+  private marketDataRequest (view: MsgView): void {
+    const req: IMarketDataRequest = view.toObject()
+    const symbol: string = req?.InstrmtMDReqGrp?.NoRelatedSym[0].Instrument.Symbol ?? ''
+    const id = req.MDReqID
+    const price = 1.22759
+    const snapshot = this.mdFactory.FullSnapshot(symbol, id, price)
+    this.send(MsgType.MarketDataSnapshotFullRefresh, snapshot)
+  }
+
+  private userFixArchive (view: MsgView): void {
+    const msg: IUserFixArchive = view.toObject()
+    const events: IUserFixArchiveNoEvents[] = msg.NoEvents
+    this.logger.info(`event count for archive ${events.length}`)
+    for (let i = 0; i < events.length; ++i) {
+      const ev = events[i]
+      const txt = ev.RawData.toString('utf8')
+      this.logger.info(`request to archive this message ${txt}`)
     }
   }
 
