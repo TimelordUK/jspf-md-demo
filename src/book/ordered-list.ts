@@ -33,7 +33,7 @@ export class OrderedList<T> {
     return this.peek()
   }
 
-  public get (i: number): T  {
+  public get (i: number): T {
     const elements = this.elements
     return elements[i]
   }

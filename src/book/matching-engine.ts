@@ -9,7 +9,7 @@ export class MatchingEngine extends events.EventEmitter {
   public newOrder (order: Order): void {
     const symbol = order.symbol
     let book = this.books.get(symbol)
-    if (!book) {
+    if (book == null) {
       book = new OrderBook(symbol)
       this.books.addUpdate(symbol, book)
     }
