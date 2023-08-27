@@ -5,17 +5,15 @@ import {
   IJsFixLogger
 } from 'jspurefix'
 
-import { inject, injectable } from 'tsyringe'
 import { IMarketDataSnapshotFullRefresh, INews, IUserFixArchive, MsgType } from '../types'
 import { AsciiView } from 'jspurefix/dist/buffer/ascii'
 import { MDFactory } from './md-factory'
 
-@injectable()
 export class MDClient extends AsciiSession {
   private readonly logger: IJsFixLogger
   private readonly fixLog: IJsFixLogger
   private readonly mdFactory: MDFactory = new MDFactory()
-  constructor (@inject('IJsFixConfig') public readonly config: IJsFixConfig) {
+  constructor (public readonly config: IJsFixConfig) {
     super(config)
     this.logReceivedMsgs = true
     const name = config?.description?.application?.name ?? ''

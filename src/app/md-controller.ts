@@ -1,18 +1,16 @@
-import { inject, injectable } from 'tsyringe'
 import { DITokens, FixSession, IJsFixConfig, IJsFixLogger } from 'jspurefix'
 import { MDServer } from './md-server'
 
 const express = require('express')
 const app = express()
 
-@injectable()
 export class MdController {
   private readonly logger: IJsFixLogger
   private server: any
   protected readonly me: string
   constructor (
-    @inject(DITokens.IJsFixConfig) public readonly config: IJsFixConfig,
-    @inject(DITokens.FixSession) public readonly session: FixSession) {
+    public readonly config: IJsFixConfig,
+    public readonly session: FixSession) {
     const sender = session as MDServer
     const description = config.description
     this.me = description?.application?.name ?? 'me'

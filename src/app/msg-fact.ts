@@ -1,7 +1,6 @@
 import { ISessionDescription, MsgType, ASessionMsgFactory } from 'jspurefix'
 import { ILooseObject } from 'jspurefix/dist/collections/collection'
 import { IStandardHeader } from 'jspurefix/dist/types/FIX4.4/repo'
-import { inject, injectable } from 'tsyringe'
 
 import {
   EncryptMethod,
@@ -9,9 +8,8 @@ import {
   ILogout
 } from '../types/'
 
-@injectable()
 export class MsgFact extends ASessionMsgFactory {
-  constructor (@inject('ISessionDescription') readonly description: ISessionDescription) {
+  constructor (readonly description: ISessionDescription) {
     super(description, (_description: ISessionDescription, _type: string, o: ILooseObject) => o)
     this.isAscii = description?.application?.protocol === 'ascii'
   }
