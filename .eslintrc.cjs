@@ -1,10 +1,9 @@
-{
-  "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
-  ],
-
-  "rules": {
+module.exports = {
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
+  root: true,
+  rules: {
     "@typescript-eslint/return-await": "off",
     "@typescript-eslint/no-this-alias": "off",
     "@typescript-eslint/no-var-requires": "off",
@@ -19,12 +18,4 @@
     "no-async-promise-executor": "off",
     "valid-typeof": "off"
   },
-
-  "extends": [
-    "standard-with-typescript"
-  ],
-
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  }
-}
+};
