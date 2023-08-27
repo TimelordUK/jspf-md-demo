@@ -27,6 +27,7 @@ for:
     install:
       - ps: Install-Product node $env:nodejs_version $env:platform
       - npm install
+
     build_script:
       - cmd: node --version
       - cmd: cd node_modules\jspurefix 
@@ -52,7 +53,6 @@ for:
     build_script:
       - sh: node --version
       - sh: cd /home/appveyor/projects/jspf-md-demo
-      - sh: npm run unzip-repo
       - sh: ./node_modules/.bin/tsc --version
       - sh: ./node_modules/.bin/tsc
       - sh: npm run circular
