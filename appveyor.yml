@@ -51,15 +51,12 @@ for:
 
     build_script:
       - sh: node --version
-      - sh: node_modules/.bin/tsc --version
-      - sh: chmod 555 node_modules/jspurefix/script/build.sh
-      - sh: cd node_modules/jspurefix
-      - sh: dos2unix script/build.sh
-      - sh: cat script/build.sh
-      - sh: script/build.sh
       - sh: cd /home/appveyor/projects/jspf-md-demo
-      - sh: node_modules/.bin/tsc
+      - sh: npm run unzip-repo
+      - sh: ./node_modules/.bin/tsc --version
+      - sh: ./node_modules/.bin/tsc
+      - sh: npm run circular
 
     test_script:
-      - sh: "npm run md-app"
+      - sh: npm run md-app
 
