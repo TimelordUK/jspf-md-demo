@@ -42,6 +42,7 @@ export class MsgFact extends ASessionMsgFactory {
       BodyLength: placeHolder,
       MsgType: msgType,
       SenderCompID: description.SenderCompId,
+      SenderSubID: description.SenderSubID,
       MsgSeqNum: seqNum,
       SendingTime: time,
       TargetCompID: description.TargetCompID,
