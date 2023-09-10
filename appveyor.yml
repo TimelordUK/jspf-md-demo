@@ -13,7 +13,7 @@ environment:
     - nodejs_version: "18"
     - nodejs_version: "16"
     - nodejs_version: "14"
-n
+
 test_script:
   - ps: Write-Host "jspurefix test script"    
 
