@@ -61,14 +61,14 @@ export class MDClient extends AsciiSession {
   }
 
   private news (view: MsgView, msgType: string): void {
-    const news: INews = view.toObject()
+    const news: INews = view.toObject() as INews
     this.logger.info(news.Headline)
     // send the news to 'archive' service as a user defined message
     this.sendArchivist(msgType, view)
   }
 
   private marketDataSnapshotFullRefresh (view: MsgView): void {
-    const refresh: IMarketDataSnapshotFullRefresh = view.toObject()
+    const refresh: IMarketDataSnapshotFullRefresh = view.toObject() as IMarketDataSnapshotFullRefresh
     const symbol: string = refresh.Instrument?.SecurityID ?? 'na'
     this.logger.info(`received a MD refresh on instrument ${symbol}`)
     this.logger.info(JSON.stringify(refresh, null, 4))

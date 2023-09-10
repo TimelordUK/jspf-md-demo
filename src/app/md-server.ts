@@ -39,7 +39,7 @@ export class MDServer extends AsciiSession {
   }
 
   private marketDataRequest (view: MsgView): void {
-    const req: IMarketDataRequest = view.toObject()
+    const req: IMarketDataRequest = view.toObject() as IMarketDataRequest
     const symbol: string = req?.InstrmtMDReqGrp?.NoRelatedSym[0].Instrument.Symbol ?? ''
     const id = req.MDReqID
     const price = 1.22759
@@ -48,7 +48,7 @@ export class MDServer extends AsciiSession {
   }
 
   private userFixArchive (view: MsgView): void {
-    const msg: IUserFixArchive = view.toObject()
+    const msg: IUserFixArchive = view.toObject() as IUserFixArchive
     const events: IUserFixArchiveNoEvents[] = msg.NoEvents
     this.logger.info(`event count for archive ${events.length}`)
     for (let i = 0; i < events.length; ++i) {

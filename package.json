@@ -22,17 +22,17 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^11.0.0",
-    "jspurefix": "^3.0.0",
+    "jspurefix": "^3.1.0",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.4",
-    "@types/lodash": "^4.14.197",
+    "@types/lodash": "^4.14.198",
     "@types/sax": "^1.2.4",
-    "@typescript-eslint/eslint-plugin": "^6.5.0",
-    "@typescript-eslint/parser": "^6.5.0",
-    "eslint": "^8.48.0",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "^8.49.0",
     "jest": "^29.6.4",
     "madge": "^6.1.0",
     "standard": "^17.1.0",
