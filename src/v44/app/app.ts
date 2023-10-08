@@ -10,12 +10,12 @@ import {
 import { Md44Client } from './md44-client'
 import { Md44Server } from './md44-server'
 import { Msg44Fact } from './msg44-fact'
-import {OptionParser} from "../../common/option-parser";
-import {MdBaseClient} from "../../common/md-base-client";
-import {MdBaseServer} from "../../common/md-base-server";
-import {BaseFactoryAppLauncher} from "../../common/base-factory-app-launcher";
-import {BaseAppLauncher} from "../../common/base-app-launcher";
-import {BaseDIAppLauncher} from "../../common/base-di-app-launcher";
+import { OptionParser } from '../../common/option-parser'
+import { MdBaseClient } from '../../common/md-base-client'
+import { MdBaseServer } from '../../common/md-base-server'
+import { BaseFactoryAppLauncher } from '../../common/base-factory-app-launcher'
+import { BaseAppLauncher } from '../../common/base-app-launcher'
+import { BaseDIAppLauncher } from '../../common/base-di-app-launcher'
 
 const root = '../../data/session/v44/'
 const opts: IOptions = new OptionParser(root).get()
@@ -32,12 +32,12 @@ class FactoryAppLauncher extends BaseFactoryAppLauncher {
     super(options, new MySessionContainer())
   }
 
-  protected newClient(config: IJsFixConfig): MdBaseClient {
-    return new Md44Client(config);
+  protected newClient (config: IJsFixConfig): MdBaseClient {
+    return new Md44Client(config)
   }
 
-  protected newServer(config: IJsFixConfig): MdBaseServer {
-    return new Md44Server(config);
+  protected newServer (config: IJsFixConfig): MdBaseServer {
+    return new Md44Server(config)
   }
 
   /* method 2: override this method for factory construction */
@@ -56,12 +56,13 @@ class DIAppLauncher extends BaseDIAppLauncher {
   public constructor (options: IOptions) {
     super(options, new MySessionContainer())
   }
-  protected newClient(config: IJsFixConfig): MdBaseClient {
-    return new Md44Client(config);
+
+  protected newClient (config: IJsFixConfig): MdBaseClient {
+    return new Md44Client(config)
   }
 
-  protected newServer(config: IJsFixConfig): MdBaseServer {
-    return new Md44Server(config);
+  protected newServer (config: IJsFixConfig): MdBaseServer {
+    return new Md44Server(config)
   }
 }
 

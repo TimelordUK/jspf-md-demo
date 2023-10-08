@@ -1,6 +1,6 @@
 import { ISessionDescription, MsgType } from 'jspurefix'
 import { ILooseObject } from 'jspurefix/dist/collections/collection'
-import {BaseFactoryFact} from "../../common/base-factory";
+import { BaseFactoryFact } from '../../common/base-factory'
 
 import {
   EncryptMethod,

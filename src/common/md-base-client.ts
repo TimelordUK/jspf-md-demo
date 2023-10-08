@@ -1,15 +1,15 @@
 import {
   AsciiSession,
-  MsgView,
-  IJsFixConfig,
-  IJsFixLogger
+  type MsgView,
+  type IJsFixConfig,
+  type IJsFixLogger
 } from 'jspurefix'
 
 export abstract class MdBaseClient extends AsciiSession {
   protected readonly logger: IJsFixLogger
   protected readonly fixLog: IJsFixLogger
 
- protected constructor (public readonly config: IJsFixConfig) {
+  protected constructor (public readonly config: IJsFixConfig) {
     super(config)
     this.logReceivedMsgs = true
     const name = config?.description?.application?.name ?? ''
@@ -17,7 +17,7 @@ export abstract class MdBaseClient extends AsciiSession {
     this.logger = config.logFactory.logger(`${this.me}:MDClient`)
   }
 
-  protected abstract onApplicationMsg(msgType: string, view: MsgView): void
+  protected abstract onApplicationMsg (msgType: string, view: MsgView): void
   protected abstract onReady (view: MsgView): void
 
   public async endPromise (): Promise<string> {

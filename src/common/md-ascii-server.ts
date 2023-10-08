@@ -1,3 +1,3 @@
 interface MdAsciiServer {
-     sendNews (headline: string): void
+  sendNews: (headline: string) => void
 }

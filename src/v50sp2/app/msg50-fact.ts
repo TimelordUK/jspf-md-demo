@@ -1,13 +1,12 @@
 import { ISessionDescription, MsgType } from 'jspurefix'
 import { ILooseObject } from 'jspurefix/dist/collections/collection'
 
-
 import {
   EncryptMethod,
   ILogon,
   ILogout
 } from '../../types/FIX50SP2'
-import {BaseFactoryFact} from "../../common/base-factory";
+import { BaseFactoryFact } from '../../common/base-factory'
 
 export class Msg50Fact extends BaseFactoryFact {
   constructor (readonly description: ISessionDescription) {

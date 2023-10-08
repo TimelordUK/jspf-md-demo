@@ -1,9 +1,17 @@
 module.exports = {
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "standard-with-typescript"
+  ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  "plugins": [
+    "@typescript-eslint"
+  ],
   root: true,
   rules: {
+    "@typescript-eslint/no-explicit-any":"off",
     "@typescript-eslint/return-await": "off",
     "@typescript-eslint/no-this-alias": "off",
     "@typescript-eslint/no-var-requires": "off",
@@ -16,6 +24,7 @@ module.exports = {
     "@typescript-eslint/no-dynamic-delete": "off",
     "no-this-assignment": "off",
     "no-async-promise-executor": "off",
-    "valid-typeof": "off"
+    "valid-typeof": "off",
+    "@typescript-eslint/consistent-type-imports":"off"
   },
 };

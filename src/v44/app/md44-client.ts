@@ -1,12 +1,12 @@
 import {
   MsgView,
-  IJsFixConfig,
+  IJsFixConfig
 } from 'jspurefix'
 
 import { IMarketDataSnapshotFullRefresh, INews, IUserFixArchive, MsgType } from '../../types/FIX44'
 import { AsciiView } from 'jspurefix/dist/buffer/ascii'
 import { Md44Factory } from './md44-factory'
-import {MdBaseClient} from "../../common/md-base-client";
+import { MdBaseClient } from '../../common/md-base-client'
 
 export class Md44Client extends MdBaseClient {
   private readonly mdFactory: Md44Factory = new Md44Factory()

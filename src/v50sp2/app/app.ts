@@ -10,12 +10,12 @@ import {
 import { Md50Client } from './md50-client'
 import { Md50Server } from './md50-server'
 import { Msg50Fact } from './msg50-fact'
-import {OptionParser} from "../../common/option-parser";
-import {BaseAppLauncher} from "../../common/base-app-launcher";
-import {MdBaseClient} from "../../common/md-base-client";
-import {MdBaseServer} from "../../common/md-base-server";
-import {BaseDIAppLauncher} from "../../common/base-di-app-launcher";
-import {BaseFactoryAppLauncher} from "../../common/base-factory-app-launcher";
+import { OptionParser } from '../../common/option-parser'
+import { BaseAppLauncher } from '../../common/base-app-launcher'
+import { MdBaseClient } from '../../common/md-base-client'
+import { MdBaseServer } from '../../common/md-base-server'
+import { BaseDIAppLauncher } from '../../common/base-di-app-launcher'
+import { BaseFactoryAppLauncher } from '../../common/base-factory-app-launcher'
 
 const root = '../../data/session/v50sp2/'
 
@@ -34,12 +34,12 @@ class FactoryAppLauncher extends BaseFactoryAppLauncher {
     super(options, new MySessionContainer())
   }
 
-  protected newClient(config: IJsFixConfig): MdBaseClient {
-    return new Md50Client(config);
+  protected newClient (config: IJsFixConfig): MdBaseClient {
+    return new Md50Client(config)
   }
 
-  protected newServer(config: IJsFixConfig): MdBaseServer {
-    return new Md50Server(config);
+  protected newServer (config: IJsFixConfig): MdBaseServer {
+    return new Md50Server(config)
   }
 
   /* method 2: override this method for factory construction */
@@ -48,8 +48,8 @@ class FactoryAppLauncher extends BaseFactoryAppLauncher {
     const instance = this
     return {
       makeSession: () => isInitiator
-          ? instance.MakeClient(config)
-          : instance.MakeServer(config)
+        ? instance.MakeClient(config)
+        : instance.MakeServer(config)
     }
   }
 }
@@ -58,16 +58,17 @@ class DIAppLauncher extends BaseDIAppLauncher {
   public constructor (options: IOptions) {
     super(options, new MySessionContainer())
   }
-  protected newClient(config: IJsFixConfig): MdBaseClient {
-    return new Md50Client(config);
+
+  protected newClient (config: IJsFixConfig): MdBaseClient {
+    return new Md50Client(config)
   }
 
-  protected newServer(config: IJsFixConfig): MdBaseServer {
-    return new Md50Server(config);
+  protected newServer (config: IJsFixConfig): MdBaseServer {
+    return new Md50Server(config)
   }
 }
 
 const l: BaseAppLauncher = opts.useDI
-    ? new DIAppLauncher(opts)
-    : new FactoryAppLauncher(opts)
+  ? new DIAppLauncher(opts)
+  : new FactoryAppLauncher(opts)
 l.launcher()

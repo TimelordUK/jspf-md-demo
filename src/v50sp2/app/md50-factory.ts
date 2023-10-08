@@ -32,21 +32,21 @@ export class Md50Factory {
             MDEntryPx: price,
             MDEntrySize: 1,
             SettlType: SettlType.Regular,
-            MDEntryDate: date,
+            MDEntryDate: date
           },
           {
             MDEntryType: MDEntryType.Offer,
             MDEntryPx: price,
             MDEntrySize: 1,
             SettlType: SettlType.Regular,
-            MDEntryDate: date,
+            MDEntryDate: date
           },
           {
             MDEntryType: MDEntryType.MidPrice,
             MDEntryPx: price,
             MDEntrySize: 1,
             SettlType: SettlType.Regular,
-            MDEntryDate: date,
+            MDEntryDate: date
           }
         ]
       }

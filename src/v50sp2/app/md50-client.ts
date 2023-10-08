@@ -1,11 +1,11 @@
 import {
   MsgView,
-  IJsFixConfig,
+  IJsFixConfig
 } from 'jspurefix'
 
 import { IMarketDataSnapshotFullRefresh, MsgType } from '../../types/FIX50SP2'
 import { Md50Factory } from './md50-factory'
-import {MdBaseClient} from "../../common/md-base-client";
+import { MdBaseClient } from '../../common/md-base-client'
 
 export class Md50Client extends MdBaseClient {
   private readonly mdFactory: Md50Factory = new Md50Factory()
