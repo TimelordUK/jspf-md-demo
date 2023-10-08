@@ -1,6 +1,56 @@
 <fix type='FIX' major='5' minor='0' servicepack='2'>
- <header />
+    <header>
+        <field name='BeginString' required='Y' />
+        <field name='BodyLength' required='Y' />
+        <field name='MsgType' required='Y' />
+        <field name='SenderCompID' required='Y' />
+        <field name='TargetCompID' required='Y' />
+        <field name='OnBehalfOfCompID' required='N' />
+        <field name='DeliverToCompID' required='N' />
+        <field name='SecureDataLen' required='N' />
+        <field name='SecureData' required='N' />
+        <field name='MsgSeqNum' required='Y' />
+        <field name='SenderSubID' required='N' />
+        <field name='SenderLocationID' required='N' />
+        <field name='TargetSubID' required='N' />
+        <field name='TargetLocationID' required='N' />
+        <field name='OnBehalfOfSubID' required='N' />
+        <field name='OnBehalfOfLocationID' required='N' />
+        <field name='DeliverToSubID' required='N' />
+        <field name='DeliverToLocationID' required='N' />
+        <field name='PossDupFlag' required='N' />
+        <field name='PossResend' required='N' />
+        <field name='SendingTime' required='Y' />
+        <field name='OrigSendingTime' required='N' />
+        <field name='XmlDataLen' required='N' />
+        <field name='XmlData' required='N' />
+        <field name='MessageEncoding' required='N' />
+        <field name='LastMsgSeqNumProcessed' required='N' />
+        <component name='Hop' required='N' />
+    </header>
+
  <messages>
+     <message name='Logout' msgcat='admin' msgtype='5'>
+         <field name='Text' required='N' />
+         <field name='EncodedTextLen' required='N' />
+         <field name='EncodedText' required='N' />
+     </message>
+     <message name='Logon' msgcat='admin' msgtype='A'>
+         <field name='EncryptMethod' required='Y' />
+         <field name='HeartBtInt' required='Y' />
+         <field name='RawDataLength' required='N' />
+         <field name='RawData' required='N' />
+         <field name='ResetSeqNumFlag' required='N' />
+         <field name='NextExpectedMsgSeqNum' required='N' />
+         <field name='MaxMessageSize' required='N' />
+         <group name='NoMsgTypes' required='N'>
+             <field name='RefMsgType' required='N' />
+             <field name='MsgDirection' required='N' />
+         </group>
+         <field name='TestMessageIndicator' required='N' />
+         <field name='Username' required='N' />
+         <field name='Password' required='N' />
+     </message>
   <message name='IOI' msgtype='6' msgcat='app'>
    <component name='ApplicationSequenceControl' required='N' />
    <field name='IOIID' required='Y' />
@@ -4671,8 +4721,19 @@
    <field name='PayRequestStatus' required='Y' />
   </message>
  </messages>
- <trailer />
+    <trailer>
+        <field name='SignatureLength' required='N' />
+        <field name='Signature' required='N' />
+        <field name='CheckSum' required='Y' />
+    </trailer>s
  <components>
+     <component name='Hop'>
+         <group name='NoHops' required='N'>
+             <field name='HopCompID' required='N' />
+             <field name='HopSendingTime' required='N' />
+             <field name='HopRefID' required='N' />
+         </group>
+     </component>
   <component name='CommissionData'>
    <field name='Commission' required='N' />
    <field name='CommType' required='N' />

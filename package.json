@@ -8,10 +8,11 @@
     "test": "jest",
     "circular": "madge --circular --extensions js dist && madge --circular --extensions ts src",
     "generate": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--compile\" \"--output=../../src/types/FIX44\"",
-    "generate52": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX50SP2.xml\" \"--compile\" \"--output=../../src/types/FIX50SP2\"",
+    "generate5": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX50SP2.xml\" \"--compile\" \"--output=../../src/types/FIX50SP2\"",
     "replay": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--fix=../../data/example/fix.txt\" \"--objects\" --delimiter=\"|\"",
     "tokens": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--fix=../../data/example/fix.txt\" \"--tokens\" --delimiter=\"|\"",
     "md-app": "cd dist/v44/app && node app --port 3000 --server ../../data/session/v44/test-acceptor.json",
+    "md5-app": "cd dist/v50sp2/app && node app --port 3000 --server ../../data/session/v50sp2/test-acceptor.json",
     "help": "cd dist/v44/app && node app --help"
   },
   "keywords": [

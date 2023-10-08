@@ -11,9 +11,9 @@ import {
   SessionContainer,
   SessionLauncher
 } from 'jspurefix'
-import { MDClient } from './md-client'
-import { MDServer } from './md-server'
-import { MsgFact } from './msg-fact'
+import { Md44Client } from './md44-client'
+import { Md44Server } from './md44-server'
+import { Msg44Fact } from './msg44-fact'
 import { MdController } from '../../common/md-controller'
 
 const root = '../../data/session/v44/'
@@ -40,13 +40,13 @@ console.log(`port: ${opts.port}, DI: ${opts.useDI ? 'using DI' : 'using factory'
 
 class MySessionContainer extends SessionContainer {
   protected makeSessionFactory (description: ISessionDescription): ISessionMsgFactory {
-    return new MsgFact(description)
+    return new Msg44Fact(description)
   }
 }
 
 class AppLauncher extends SessionLauncher {
   controller: MdController
-  client: MDClient
+  client: Md44Client
   public constructor (
     client: string,
     server: string) {
@@ -58,14 +58,14 @@ class AppLauncher extends SessionLauncher {
   // register a custom object with the DI container.
 
   protected MakeServer (config: IJsFixConfig): FixSession {
-    const server = new MDServer(config)
+    const server = new Md44Server(config)
     this.controller = new MdController(config, server)
     this.controller.start(opts.port)
     return server
   }
 
   protected MakeClient (config: IJsFixConfig): FixSession {
-    this.client = new MDClient(config)
+    this.client = new Md44Client(config)
     setTimeout(() => {
       this.client.endPromise().then(txt => {
         console.log(`client ${txt}`)
