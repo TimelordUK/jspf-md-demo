@@ -1,17 +1,19 @@
 {
   "name": "jspf-md-demo",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "FIX 4.4 market data demo using quick fix data dictionary",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest",
     "circular": "madge --circular --extensions js dist && madge --circular --extensions ts src",
-    "generate": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--compile\" \"--output=../../src/types/\"",
+    "generate": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--compile\" \"--output=../../src/types/FIX44\"",
+    "generate5": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX50SP2.xml\" \"--compile\" \"--output=../../src/types/FIX50SP2\"",
     "replay": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--fix=../../data/example/fix.txt\" \"--objects\" --delimiter=\"|\"",
     "tokens": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--fix=../../data/example/fix.txt\" \"--tokens\" --delimiter=\"|\"",
-    "md-app": "cd dist/app && node app --port 3000 --server ../../data/session/test-acceptor.json",
-    "help": "cd dist/app && node app --help"
+    "md-app": "cd dist/v44/app && node app --port 3000 --server ../../data/session/v44/test-acceptor.json",
+    "md5-app": "cd dist/v50sp2/app && node app --port 3000 --server ../../data/session/v50sp2/test-acceptor.json",
+    "help": "cd dist/v44/app && node app --help"
   },
   "keywords": [
     "quickfix",
