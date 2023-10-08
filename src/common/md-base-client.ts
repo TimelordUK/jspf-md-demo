@@ -5,8 +5,6 @@ import {
   IJsFixLogger
 } from 'jspurefix'
 
-import { AsciiView } from 'jspurefix/dist/buffer/ascii'
-
 export abstract class MdBaseClient extends AsciiSession {
   protected readonly logger: IJsFixLogger
   protected readonly fixLog: IJsFixLogger

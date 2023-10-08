@@ -3,7 +3,7 @@ import { ILooseObject } from 'jspurefix/dist/collections/collection'
 import { IStandardHeader } from 'jspurefix/dist/types/FIX4.4/repo'
 
 export abstract class BaseFactoryFact extends ASessionMsgFactory {
-    constructor (readonly description: ISessionDescription) {
+    protected constructor (readonly description: ISessionDescription) {
         super(description, (_description: ISessionDescription, _type: string, o: ILooseObject) => o)
         this.isAscii = description?.application?.protocol === 'ascii'
     }
