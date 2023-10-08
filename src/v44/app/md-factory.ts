@@ -5,7 +5,7 @@ import {
   IMarketDataRequest,
   IMarketDataSnapshotFullRefresh,
   INews
-} from '../types'
+} from '../../types/FIX44'
 import { ILooseObject } from 'jspurefix/dist/collections/collection'
 
 export class MDFactory {

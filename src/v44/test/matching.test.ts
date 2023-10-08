@@ -2,7 +2,7 @@ import 'reflect-metadata'
 
 import { Exchange, Order, Side } from '../book'
 import { MatchingEngine } from '../book/matching-engine'
-import { INewOrderSingle, OrdType, OrderCapacity, TimeInForce, Side as FixSide, CustOrderCapacity } from '../types'
+import { INewOrderSingle, OrdType, OrderCapacity, TimeInForce, Side as FixSide, CustOrderCapacity } from '../../types/FIX44'
 
 test('add new order to matcher', () => {
   const matcher = new MatchingEngine()

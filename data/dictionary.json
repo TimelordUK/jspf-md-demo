@@ -1,6 +1,7 @@
 {
   "md-qf44": {
     "output": "src/types/",
-    "dict": "data/FIX44-MD.xml"
+    "dict": "data/FIX44-MD.xml",
+    "dict52": "data/FIX50SP2.xml"
   }
 }

@@ -1,5 +1,4 @@
-import { DITokens, FixSession, IJsFixConfig, IJsFixLogger } from 'jspurefix'
-import { MDServer } from './md-server'
+import { IJsFixConfig, IJsFixLogger } from 'jspurefix'
 
 const express = require('express')
 const app = express()
@@ -10,8 +9,8 @@ export class MdController {
   protected readonly me: string
   constructor (
     public readonly config: IJsFixConfig,
-    public readonly session: FixSession) {
-    const sender = session as MDServer
+    public readonly session: MdAsciiServer) {
+    const sender = session as MdAsciiServer
     const description = config.description
     this.me = description?.application?.name ?? 'me'
     this.server = null
@@ -19,7 +18,7 @@ export class MdController {
     this.subscribe(sender)
   }
 
-  subscribe (session: MDServer): void {
+  subscribe (session: MdAsciiServer): void {
     app.get('/news', (req: any, res: any) => {
       this.logger.info('got a request for a news flash')
       const msg = 'mash the buy button!'

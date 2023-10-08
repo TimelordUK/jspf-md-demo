@@ -1,7 +1,7 @@
-import { INewOrderSingle } from '../types'
+import { INewOrderSingle } from '../../types/FIX44'
 import { MatchingEngine } from './matching-engine'
 import { Order, Side } from './order'
-import { Side as FixSide } from '../types/enum'
+import { Side as FixSide } from '../../types/FIX44/enum/'
 
 export class Exchange {
   private readonly matcher: MatchingEngine = new MatchingEngine()

@@ -14,9 +14,9 @@ import {
 import { MDClient } from './md-client'
 import { MDServer } from './md-server'
 import { MsgFact } from './msg-fact'
-import { MdController } from './md-controller'
+import { MdController } from '../../common/md-controller'
 
-const root = '../../data/session/'
+const root = '../../data/session/v44/'
 const commander = require('commander') // (normal include)
 const program = new commander.Command()
 program
@@ -24,7 +24,7 @@ program
   .option('-u, --useDI', 'use DI based construction', false)
   .option('-c, --client <string>', 'client config', `${root}test-initiator.json`)
   .option('-s, --server <string>', 'server config (default no server)', null)
-  .option('-l, --logout <number>', 'client logout after seconds', '12')
+  .option('-l, --logout <number>', 'client logout after seconds', '30')
 
 export interface IOptions {
   port: number

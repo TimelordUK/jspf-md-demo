@@ -6,7 +6,7 @@ import {
   EncryptMethod,
   ILogon,
   ILogout
-} from '../types/'
+} from '../../types/FIX44'
 
 export class MsgFact extends ASessionMsgFactory {
   constructor (readonly description: ISessionDescription) {
