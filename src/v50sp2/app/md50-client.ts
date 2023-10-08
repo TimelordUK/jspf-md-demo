@@ -3,7 +3,7 @@ import {
   IJsFixConfig,
 } from 'jspurefix'
 
-import { IMarketDataSnapshotFullRefresh, INews, MsgType } from '../../types/FIX50SP2'
+import { IMarketDataSnapshotFullRefresh, MsgType } from '../../types/FIX50SP2'
 import { Md50Factory } from './md50-factory'
 import {MdBaseClient} from "../../common/md-base-client";
 
