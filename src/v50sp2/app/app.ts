@@ -1,10 +1,7 @@
 import 'reflect-metadata'
-import { DependencyContainer } from 'tsyringe'
 
 import {
-  DITokens,
   EngineFactory,
-  FixSession,
   IJsFixConfig,
   ISessionDescription,
   ISessionMsgFactory,
@@ -14,9 +11,11 @@ import { Md50Client } from './md50-client'
 import { Md50Server } from './md50-server'
 import { Msg50Fact } from './msg50-fact'
 import {OptionParser} from "../../common/option-parser";
-import {BaseAppLauncher} from "../../common/app-launcher";
+import {BaseAppLauncher} from "../../common/base-app-launcher";
 import {MdBaseClient} from "../../common/md-base-client";
 import {MdBaseServer} from "../../common/md-base-server";
+import {BaseDIAppLauncher} from "../../common/base-di-app-launcher";
+import {BaseFactoryAppLauncher} from "../../common/base-factory-app-launcher";
 
 const root = '../../data/session/v50sp2/'
 
@@ -30,22 +29,17 @@ class MySessionContainer extends SessionContainer {
   }
 }
 
-class AppLauncher extends BaseAppLauncher {
-  constructor(options: IOptions) {
+class FactoryAppLauncher extends BaseFactoryAppLauncher {
+  public constructor (options: IOptions) {
     super(options, new MySessionContainer())
   }
+
   protected newClient(config: IJsFixConfig): MdBaseClient {
     return new Md50Client(config);
   }
 
   protected newServer(config: IJsFixConfig): MdBaseServer {
     return new Md50Server(config);
-  }
-}
-
-class FactoryAppLauncher extends AppLauncher {
-  public constructor (options: IOptions) {
-    super(options)
   }
 
   /* method 2: override this method for factory construction */
@@ -60,38 +54,20 @@ class FactoryAppLauncher extends AppLauncher {
   }
 }
 
-class DIAppLauncher extends AppLauncher {
+class DIAppLauncher extends BaseDIAppLauncher {
   public constructor (options: IOptions) {
-    super(options)
+    super(options, new MySessionContainer())
+  }
+  protected newClient(config: IJsFixConfig): MdBaseClient {
+    return new Md50Client(config);
   }
 
-  protected asClient (sessionContainer: DependencyContainer): void {
-    const config = sessionContainer.resolve<IJsFixConfig>(DITokens.IJsFixConfig)
-    sessionContainer.register<FixSession>(DITokens.FixSession, {
-      useFactory: () => this.MakeClient(config)
-    })
-  }
-
-  protected asServer (sessionContainer: DependencyContainer): void {
-    const config = sessionContainer.resolve<IJsFixConfig>(DITokens.IJsFixConfig)
-    sessionContainer.register<FixSession>(DITokens.FixSession, {
-      useFactory: () => this.MakeServer(config)
-    })
-  }
-
-  /* method 1: use DI container to register */
-  protected override registerApplication (sessionContainer: DependencyContainer): void {
-    const config = sessionContainer.resolve<IJsFixConfig>(DITokens.IJsFixConfig)
-    const isInitiator = this.isInitiator(config.description)
-    if (isInitiator) {
-      this.asClient(sessionContainer)
-    } else {
-      this.asServer(sessionContainer)
-    }
+  protected newServer(config: IJsFixConfig): MdBaseServer {
+    return new Md50Server(config);
   }
 }
 
-const l: AppLauncher = opts.useDI
-  ? new DIAppLauncher(opts)
-  : new FactoryAppLauncher(opts)
+const l: BaseAppLauncher = opts.useDI
+    ? new DIAppLauncher(opts)
+    : new FactoryAppLauncher(opts)
 l.launcher()
