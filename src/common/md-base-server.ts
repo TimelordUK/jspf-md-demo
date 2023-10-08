@@ -1,6 +1,6 @@
 import {AsciiSession, IJsFixConfig, IJsFixLogger, MsgView} from "jspurefix";
 
-export abstract class MdBaseServer extends AsciiSession {
+export abstract class MdBaseServer extends AsciiSession implements MdAsciiServer{
     protected readonly logger: IJsFixLogger
     protected readonly fixLog: IJsFixLogger
 
@@ -14,6 +14,7 @@ export abstract class MdBaseServer extends AsciiSession {
     }
 
     protected abstract onApplicationMsg(msgType: string, view: MsgView): void
+    public abstract sendNews (headline: string): void
     protected onReady (view: MsgView): void {
         // server waits for client to make a request
         this.logger.info('ready for requests.')

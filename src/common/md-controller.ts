@@ -10,7 +10,7 @@ export class MdController {
   constructor (
     public readonly config: IJsFixConfig,
     public readonly session: MdAsciiServer) {
-    const sender = session as MdAsciiServer
+    const sender = session
     const description = config.description
     this.me = description?.application?.name ?? 'me'
     this.server = null

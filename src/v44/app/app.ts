@@ -8,34 +8,18 @@ import {
   IJsFixConfig,
   ISessionDescription,
   ISessionMsgFactory,
-  SessionContainer,
-  SessionLauncher
+  SessionContainer
 } from 'jspurefix'
 import { Md44Client } from './md44-client'
 import { Md44Server } from './md44-server'
 import { Msg44Fact } from './msg44-fact'
-import { MdController } from '../../common/md-controller'
+import {OptionParser} from "../../common/option-parser";
+import {BaseAppLauncher} from "../../common/app-launcher";
+import {MdBaseClient} from "../../common/md-base-client";
+import {MdBaseServer} from "../../common/md-base-server";
 
 const root = '../../data/session/v44/'
-const commander = require('commander') // (normal include)
-const program = new commander.Command()
-program
-  .option('-p, --port <number>', 'port for http controller', '3000')
-  .option('-u, --useDI', 'use DI based construction', false)
-  .option('-c, --client <string>', 'client config', `${root}test-initiator.json`)
-  .option('-s, --server <string>', 'server config (default no server)', null)
-  .option('-l, --logout <number>', 'client logout after seconds', '30')
-
-export interface IOptions {
-  port: number
-  useDI: boolean
-  client: string
-  server: string
-  logout: number
-}
-
-program.parse()
-const opts: IOptions = program.opts()
+const opts: IOptions = new OptionParser(root).get()
 console.log(`port: ${opts.port}, DI: ${opts.useDI ? 'using DI' : 'using factory'}`)
 
 class MySessionContainer extends SessionContainer {
@@ -44,60 +28,23 @@ class MySessionContainer extends SessionContainer {
   }
 }
 
-class AppLauncher extends SessionLauncher {
-  controller: MdController
-  client: Md44Client
-  public constructor (
-    client: string,
-    server: string) {
-    super(client, server)
-    this.sessionContainer = new MySessionContainer()
-    this.root = __dirname
+class AppLauncher extends BaseAppLauncher {
+  constructor(options: IOptions) {
+    super(options, new MySessionContainer())
+  }
+  protected newClient(config: IJsFixConfig): MdBaseClient {
+    return new Md44Client(config);
   }
 
-  // register a custom object with the DI container.
-
-  protected MakeServer (config: IJsFixConfig): FixSession {
-    const server = new Md44Server(config)
-    this.controller = new MdController(config, server)
-    this.controller.start(opts.port)
-    return server
+  protected newServer(config: IJsFixConfig): MdBaseServer {
+    return new Md44Server(config);
   }
 
-  protected MakeClient (config: IJsFixConfig): FixSession {
-    this.client = new Md44Client(config)
-    setTimeout(() => {
-      this.client.endPromise().then(txt => {
-        console.log(`client ${txt}`)
-      }).catch(e => {
-        console.error(e)
-      })
-    }, opts.logout * 1000)
-    return this.client
-  }
-
-  stopController (): void {
-    if (this.controller != null) {
-      this.controller.stop()
-    }
-  }
-
-  public launcher (): void {
-    const instance = this
-    this.run().then(() => {
-      instance.stopController()
-      console.log('finished.')
-    }).catch(e => {
-      console.error(e)
-    })
-  }
 }
 
 class FactoryAppLauncher extends AppLauncher {
-  public constructor (
-    client = opts.client,
-    server = opts.server) {
-    super(client, server)
+  public constructor (options: IOptions) {
+    super(options)
   }
 
   /* method 2: override this method for factory construction */
@@ -113,10 +60,8 @@ class FactoryAppLauncher extends AppLauncher {
 }
 
 class DIAppLauncher extends AppLauncher {
-  public constructor (
-    client = opts.client,
-    server = opts.server) {
-    super(client, server)
+  public constructor (options: IOptions) {
+    super(options)
   }
 
   protected asClient (sessionContainer: DependencyContainer): void {
@@ -146,6 +91,6 @@ class DIAppLauncher extends AppLauncher {
 }
 
 const l: AppLauncher = opts.useDI
-  ? new DIAppLauncher()
-  : new FactoryAppLauncher()
+  ? new DIAppLauncher(opts)
+  : new FactoryAppLauncher(opts)
 l.launcher()
