@@ -12,8 +12,9 @@ export interface ILogon {
   NextExpectedMsgSeqNum?: number// [7] 789 (Int)
   MaxMessageSize?: number// [8] 383 (Length)
   NoMsgTypes?: ILogonNoMsgTypes[]// [9] RefMsgType.372, MsgDirection.385
-  TestMessageIndicator?: boolean// [10] 464 (Boolean)
-  Username?: string// [11] 553 (String)
-  Password?: string// [12] 554 (String)
-  StandardTrailer: IStandardTrailer// [13] SignatureLength.93, Signature.89, CheckSum.10
+  DefaultApplVerID: string// [10] 1137 (String)
+  TestMessageIndicator?: boolean// [11] 464 (Boolean)
+  Username?: string// [12] 553 (String)
+  Password?: string// [13] 554 (String)
+  StandardTrailer: IStandardTrailer// [14] SignatureLength.93, Signature.89, CheckSum.10
 }

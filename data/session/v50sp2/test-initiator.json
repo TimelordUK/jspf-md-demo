@@ -17,6 +17,7 @@
   "HeartBtInt": 30,
   "SenderCompId": "init-comp",
   "TargetCompID": "accept-comp",
+  "DefaultApplVerID": "t1",
   "TargetSubID": "fix",
   "BeginString": "FIX.5.0SP2"
 }

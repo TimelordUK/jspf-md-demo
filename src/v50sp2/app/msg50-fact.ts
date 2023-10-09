@@ -7,9 +7,10 @@ import {
   ILogout
 } from '../../types/FIX50SP2'
 import { BaseFactoryFact } from '../../common/base-factory'
+import { IMd50Description } from './md50-description'
 
 export class Msg50Fact extends BaseFactoryFact {
-  constructor (readonly description: ISessionDescription) {
+  constructor (readonly description: IMd50Description) {
     super(description)
   }
 
@@ -21,7 +22,8 @@ export class Msg50Fact extends BaseFactoryFact {
       Password: description.Password,
       HeartBtInt: description.HeartBtInt,
       ResetSeqNumFlag: description.ResetSeqNumFlag,
-      EncryptMethod: EncryptMethod.None
+      EncryptMethod: EncryptMethod.None,
+      DefaultApplVerID: description.DefaultApplVerID
     }
     return this.mutate(o, MsgType.Logon)
   }

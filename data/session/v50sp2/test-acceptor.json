@@ -17,5 +17,6 @@
   "SenderCompId": "accept-comp",
   "TargetCompID": "init-comp",
   "TargetSubID": "fix",
+  "DefaultApplVerID": "t2",
   "BeginString": "FIX.5.0SP2"
 }
