@@ -1,4 +1,4 @@
-import { ISessionDescription, MsgType } from 'jspurefix'
+import { MsgType } from 'jspurefix'
 import { ILooseObject } from 'jspurefix/dist/collections/collection'
 
 import {
