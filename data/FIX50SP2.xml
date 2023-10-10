@@ -35,6 +35,36 @@
          <field name='EncodedTextLen' required='N' />
          <field name='EncodedText' required='N' />
      </message>
+     <!--
+     export interface ILogon {
+  StandardHeader: IStandardHeader
+  EncryptMethod: number// 98
+  HeartBtInt: number// 108
+  RawDataLength?: number// 95
+  RawData?: Buffer// 96
+  ResetSeqNumFlag?: boolean// 141
+  NextExpectedMsgSeqNum?: number// 789
+  MaxMessageSize?: number// 383
+  MsgTypeGrp?: IMsgTypeGrp[]
+  TestMessageIndicator?: boolean// 464
+  Username?: string// 553
+  Password?: string// 554
+  NewPassword?: string// 925
+  EncryptedPasswordMethod?: number// 1400
+  EncryptedPasswordLen?: number// 1401
+  EncryptedPassword?: Buffer// 1402
+  EncryptedNewPasswordLen?: number// 1403
+  EncryptedNewPassword?: Buffer// 1404
+  SessionStatus?: number// 1409
+  DefaultApplVerID: string// 1137
+  DefaultApplExtID?: number// 1407
+  DefaultCstmApplVerID?: string// 1408
+  Text?: string// 58
+  EncodedTextLen?: number// 354
+  EncodedText?: Buffer// 355
+  StandardTrailer: IStandardTrailer
+}
+     -->
      <message name='Logon' msgcat='admin' msgtype='A'>
          <field name='EncryptMethod' required='Y' />
          <field name='HeartBtInt' required='Y' />
@@ -47,11 +77,23 @@
              <field name='RefMsgType' required='N' />
              <field name='MsgDirection' required='N' />
          </group>
-         <!--  DefaultApplVerID: string// 1137-->
          <field name='DefaultApplVerID' required='Y' />
          <field name='TestMessageIndicator' required='N' />
          <field name='Username' required='N' />
          <field name='Password' required='N' />
+         <field name='NewPassword' required='N' />
+         <field name='EncryptedPasswordMethod' required='N' />
+         <field name='EncryptedPasswordLen' required='N' />
+         <field name='EncryptedPassword' required='N' />
+         <field name='EncryptedNewPasswordLen' required='N' />
+         <field name='EncryptedNewPassword' required='N' />
+         <field name='SessionStatus' required='N' />
+         <field name='DefaultApplVerID' required='N' />
+         <field name='DefaultApplExtID' required='N' />
+         <field name='DefaultCstmApplVerID' required='N' />
+         <field name='Text' required='N' />
+         <field name='EncodedTextLen' required='N' />
+         <field name='EncodedText' required='N' />
      </message>
   <message name='IOI' msgtype='6' msgcat='app'>
    <component name='ApplicationSequenceControl' required='N' />

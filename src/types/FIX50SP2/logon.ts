@@ -16,5 +16,18 @@ export interface ILogon {
   TestMessageIndicator?: boolean// [11] 464 (Boolean)
   Username?: string// [12] 553 (String)
   Password?: string// [13] 554 (String)
-  StandardTrailer: IStandardTrailer// [14] SignatureLength.93, Signature.89, CheckSum.10
+  NewPassword?: string// [14] 925 (String)
+  EncryptedPasswordMethod?: number// [15] 1400 (Int)
+  EncryptedPasswordLen?: number// [16] 1401 (Length)
+  EncryptedPassword?: Buffer// [17] 1402 (RawData)
+  EncryptedNewPasswordLen?: number// [18] 1403 (Length)
+  EncryptedNewPassword?: Buffer// [19] 1404 (RawData)
+  SessionStatus?: number// [20] 1409 (Int)
+  DefaultApplVerID?: string// [21] 1137 (String)
+  DefaultApplExtID?: number// [22] 1407 (Int)
+  DefaultCstmApplVerID?: string// [23] 1408 (String)
+  Text?: string// [24] 58 (String)
+  EncodedTextLen?: number// [25] 354 (Length)
+  EncodedText?: Buffer// [26] 355 (RawData)
+  StandardTrailer: IStandardTrailer// [27] SignatureLength.93, Signature.89, CheckSum.10
 }
