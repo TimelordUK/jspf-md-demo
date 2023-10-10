@@ -77,7 +77,6 @@
              <field name='RefMsgType' required='N' />
              <field name='MsgDirection' required='N' />
          </group>
-         <field name='DefaultApplVerID' required='Y' />
          <field name='TestMessageIndicator' required='N' />
          <field name='Username' required='N' />
          <field name='Password' required='N' />
