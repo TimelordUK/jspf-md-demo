@@ -39,6 +39,7 @@ for:
 
     test_script:
       - cmd: npm run md-app
+      - cmd: npm run md5-app
 -        
     matrix:
       only:
@@ -59,4 +60,5 @@ for:
 
     test_script:
       - sh: npm run md-app
+      - sh: npm run md5-app
 
