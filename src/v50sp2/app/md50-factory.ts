@@ -1,26 +1,22 @@
 import {
-  MDEntryType,
-  SettlType,
-  SubscriptionRequestType,
   IMarketDataRequest,
   IMarketDataSnapshotFullRefresh,
-  INews
+  INews,
+  MDEntryType,
+  SettlType,
+  SubscriptionRequestType
 } from '../../types/FIX50SP2'
-import { ILooseObject } from 'jspurefix/dist/collections/collection'
 
 export class Md50Factory {
-  public News (headline: string): ILooseObject {
-    // @ts-expect-error ts2307
-    const o: INews = {
+  public News (headline: string): INews {
+    return {
       Headline: headline
-    }
-    return o
+    } as INews
   }
 
-  public FullSnapshot (symbol: string, reqId: string, price: number): ILooseObject {
+  public FullSnapshot (symbol: string, reqId: string, price: number): IMarketDataSnapshotFullRefresh {
     const date = new Date()
-    // @ts-expect-error ts2307
-    const snapshot: IMarketDataSnapshotFullRefresh = {
+    return {
       MDReqID: reqId,
       Instrument: {
         SecurityID: symbol
@@ -50,13 +46,11 @@ export class Md50Factory {
           }
         ]
       }
-    }
-    return snapshot
+    } as IMarketDataSnapshotFullRefresh
   }
 
-  public BidOfferRequest (symbol: string): ILooseObject {
-    // @ts-expect-error ts2307
-    const bor: IMarketDataRequest = {
+  public BidOfferRequest (symbol: string): IMarketDataRequest {
+    return {
       MDReqID: `#${symbol}#0#`,
       SubscriptionRequestType: SubscriptionRequestType.SnapshotAndUpdates,
       MarketDepth: 0,
@@ -83,7 +77,6 @@ export class Md50Factory {
           }
         ]
       }
-    }
-    return bor
+    } as IMarketDataRequest
   }
 }
