@@ -1,6 +1,6 @@
 {
   "name": "jspf-md-demo",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "FIX 4.4 market data demo using quick fix data dictionary",
   "main": "index.js",
   "scripts": {
