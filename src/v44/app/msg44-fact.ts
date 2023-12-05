@@ -15,8 +15,7 @@ export class Msg44Fact extends BaseFactoryFact {
 
   public logon (): ILooseObject {
     const description = this.description
-    // @ts-expect-error ts2307
-    const o: ILogon = {
+    const o: Partial<ILogon> = {
       Username: description.Username,
       Password: description.Password,
       HeartBtInt: description.HeartBtInt,
@@ -27,8 +26,7 @@ export class Msg44Fact extends BaseFactoryFact {
   }
 
   public logout (text: string): ILooseObject {
-    // @ts-expect-error ts2307
-    const o: ILogout = { Text: text }
+    const o: Partial<ILogout> = { Text: text }
     return this.mutate(o, MsgType.Logout)
   }
 }

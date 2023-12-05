@@ -14,7 +14,7 @@ export class Md50Factory {
     } as INews
   }
 
-  public FullSnapshot (symbol: string, reqId: string, price: number): IMarketDataSnapshotFullRefresh {
+  public FullSnapshot (symbol: string, reqId: string, price: number): Partial<IMarketDataSnapshotFullRefresh> {
     const date = new Date()
     return {
       MDReqID: reqId,
@@ -46,10 +46,10 @@ export class Md50Factory {
           }
         ]
       }
-    } as IMarketDataSnapshotFullRefresh
+    } as Partial<IMarketDataSnapshotFullRefresh>
   }
 
-  public BidOfferRequest (symbol: string): IMarketDataRequest {
+  public BidOfferRequest (symbol: string): Partial<IMarketDataRequest> {
     return {
       MDReqID: `#${symbol}#0#`,
       SubscriptionRequestType: SubscriptionRequestType.SnapshotAndUpdates,
@@ -77,6 +77,6 @@ export class Md50Factory {
           }
         ]
       }
-    } as IMarketDataRequest
+    } as Partial<IMarketDataRequest>
   }
 }

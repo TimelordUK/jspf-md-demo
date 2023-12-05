@@ -20,8 +20,7 @@ export class Md44Client extends MdBaseClient {
     const viewBuffer = (view as AsciiView).toBuffer()
     const asTxt = viewBuffer.toString()
     this.logger.info(asTxt)
-    // @ts-expect-error ts2307
-    const archive: IUserFixArchive = {
+    const archive: Partial<IUserFixArchive> = {
       NoEvents: [
         {
           Subject: msgType,

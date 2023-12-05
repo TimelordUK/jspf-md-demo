@@ -7,7 +7,7 @@ import {
   ILogout
 } from '../../types/FIX50SP2'
 import { BaseFactoryFact } from '../../common/base-factory'
-import { IMd50Description } from './md50-description'
+import { IMd50Description } from '../../../dist/v50sp2/app/md50-description'
 
 export class Msg50Fact extends BaseFactoryFact {
   constructor (readonly description: IMd50Description) {
@@ -16,8 +16,7 @@ export class Msg50Fact extends BaseFactoryFact {
 
   public logon (): ILooseObject {
     const description = this.description
-    // @ts-expect-error ts2307
-    const o: ILogon = {
+    const o: Partial<ILogon> = {
       Username: description.Username,
       Password: description.Password,
       HeartBtInt: description.HeartBtInt,
