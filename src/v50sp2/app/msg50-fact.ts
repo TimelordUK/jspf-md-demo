@@ -1,4 +1,4 @@
-import { MsgType } from 'jspurefix'
+import { ISession50Description, MsgType } from 'jspurefix'
 import { ILooseObject } from 'jspurefix/dist/collections/collection'
 
 import {
@@ -7,10 +7,9 @@ import {
   ILogout
 } from '../../types/FIX50SP2'
 import { BaseFactoryFact } from '../../common/base-factory'
-import { IMd50Description } from '../../../dist/v50sp2/app/md50-description'
 
 export class Msg50Fact extends BaseFactoryFact {
-  constructor (readonly description: IMd50Description) {
+  constructor (readonly description: ISession50Description) {
     super(description)
   }
 

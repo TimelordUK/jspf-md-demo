@@ -3,6 +3,7 @@ import 'reflect-metadata'
 import {
   EngineFactory,
   IJsFixConfig,
+  ISession50Description,
   ISessionDescription,
   ISessionMsgFactory,
   SessionContainer
@@ -16,7 +17,6 @@ import { MdBaseClient } from '../../common/md-base-client'
 import { MdBaseServer } from '../../common/md-base-server'
 import { BaseDIAppLauncher } from '../../common/base-di-app-launcher'
 import { BaseFactoryAppLauncher } from '../../common/base-factory-app-launcher'
-import { IMd50Description } from '../../../dist/v50sp2/app/md50-description'
 
 const root = '../../data/session/v50sp2/'
 
@@ -26,7 +26,7 @@ console.log(`port: ${opts.port}, DI: ${opts.useDI ? 'using DI' : 'using factory'
 
 class MySessionContainer extends SessionContainer {
   protected makeSessionFactory (description: ISessionDescription): ISessionMsgFactory {
-    return new Msg50Fact(description as IMd50Description)
+    return new Msg50Fact(description as ISession50Description)
   }
 }
 
