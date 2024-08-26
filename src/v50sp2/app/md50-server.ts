@@ -1,5 +1,5 @@
-import { MsgView, IJsFixConfig } from 'jspurefix'
-import { IInstrmtMDReqGrpNoRelatedSym, IMarketDataRequest, MsgType } from '../../types/FIX50SP2'
+import { MsgView, IJsFixConfig, ISessionDescription } from 'jspurefix'
+import { IInstrmtMDReqGrpNoRelatedSym, IMarketDataRequest, MsgTag, MsgType } from '../../types/FIX50SP2'
 import { Md50Factory } from './md50-factory'
 import { MdBaseServer } from '../../common/md-base-server'
 
@@ -10,6 +10,30 @@ export class Md50Server extends MdBaseServer {
 
   constructor (public readonly config: IJsFixConfig) {
     super(config)
+  }
+
+  protected onLogon (view: MsgView, user: string, password: string): boolean {
+    const targetCompId: string = view.getTyped(MsgTag.TargetCompID) as string
+    const template = this.config.description
+    const newSession = {
+      application: template.application,
+      BeginString: template.BeginString,
+      HeartBtInt: template.HeartBtInt,
+      BodyLengthChars: template.BodyLengthChars,
+      SenderSubID: template.SenderSubID,
+      SenderCompId: targetCompId,
+      TargetSubID: template.TargetSubID,
+      TargetCompID: template.TargetCompID,
+      Username: template.Username,
+      Password: template.Password,
+      ResetSeqNumFlag: template.ResetSeqNumFlag,
+      Name: template.Name,
+      LastReceivedSeqNum: template.LastReceivedSeqNum,
+      LastSentSeqNum: template.LastSentSeqNum
+    } as ISessionDescription
+    this.config.description = newSession
+    this.logger.info(`inject ${JSON.stringify(newSession, null, 4)} using client targetCompId ${targetCompId}`)
+    return true
   }
 
   protected onApplicationMsg (msgType: string, view: MsgView): void {

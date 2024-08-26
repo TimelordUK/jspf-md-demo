@@ -14,7 +14,7 @@
   "EncryptMethod": 0,
   "ResetSeqNumFlag": true,
   "HeartBtInt": 30,
-  "SenderCompId": "accept-comp",
+  "SenderCompId": "*",
   "TargetCompID": "init-comp",
   "TargetSubID": "fix",
   "DefaultApplVerID": "t2",
