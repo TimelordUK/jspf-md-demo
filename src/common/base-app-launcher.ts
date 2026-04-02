@@ -4,8 +4,8 @@ import { type MdBaseClient } from './md-base-client'
 import { type MdBaseServer } from './md-base-server'
 
 export abstract class BaseAppLauncher extends SessionLauncher {
-  controller: MdController
-  client: MdBaseClient
+  controller!: MdController
+  client!: MdBaseClient
   protected constructor (
     public options: IOptions,
     sc: SessionContainer) {

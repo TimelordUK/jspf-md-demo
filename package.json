@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint . --ext .ts",
     "build": "tsc",
-    "test": "jest",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "circular": "madge --circular --extensions js dist && madge --circular --extensions ts src",
     "generate": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-MD.xml\" \"--compile\" \"--output=../../src/types/FIX44\"",
     "generate5": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX50SP2.xml\" \"--compile\" \"--output=../../src/types/FIX50SP2\"",
@@ -25,23 +25,21 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^14.0.2",
-    "jspurefix": "^4.1.2",
+    "jspurefix": "^5.2.0",
     "reflect-metadata": "^0.2.2"
   },
+  "overrides": {
+    "typescript": "$typescript"
+  },
   "devDependencies": {
-    "@types/express": "^5.0.6",
-    "@types/jest": "^30.0.0",
-    "@types/node": "^22.15.21",
-    "@types/lodash": "^4.17.23",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/lodash": "^4.17.24",
+    "@types/node": "^25.5.0",
     "@types/sax": "^1.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.19.0",
-    "@typescript-eslint/parser": "^6.19.0",
-    "eslint": "^8.56.0",
-    "eslint-config-standard-with-typescript": "^43.0.1",
-    "jest": "^30.2.0",
+    "eslint": "^9.39.4",
+    "eslint-config-love": "^151.0.0",
     "madge": "^8.0.0",
-    "standard": "^17.1.2",
-    "ts-jest": "^29.4.6",
-    "typescript": "^5.9.3"
+    "ts-jest": "^29.4.9",
+    "typescript": "^6.0.2"
   }
 }

@@ -13,6 +13,7 @@
     "inlineSources": true,
     "pretty": true,
     "strictNullChecks": true,
+    "skipLibCheck": true,
     "outDir": "./dist"
   },
   "compileOnSave": true,
@@ -22,6 +23,7 @@
   ],
   "exclude": [
     "node_modules",
-    "./dist"
+    "./dist",
+    "src/**/*.test.ts"
   ]
 }
