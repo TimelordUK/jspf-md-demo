@@ -1,3 +1,8 @@
+/*
+*******************
+* StandardTrailer *
+*******************
+*/
 export interface IStandardTrailer {
   SignatureLength?: number// [1] 93 (Length)
   Signature?: Buffer// [2] 89 (RawData)

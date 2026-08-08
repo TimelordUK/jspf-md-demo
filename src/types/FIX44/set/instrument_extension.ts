@@ -1,5 +1,10 @@
 import { IAttrbGrp } from './attrb_grp'
 
+/*
+***********************
+* InstrumentExtension *
+***********************
+*/
 export interface IInstrumentExtension {
   DeliveryForm?: number// [1] 668 (Int)
   PctAtRisk?: number// [2] 869 (Float)

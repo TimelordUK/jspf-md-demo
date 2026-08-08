@@ -1,3 +1,8 @@
+/*
+*******************
+* NoContraBrokers *
+*******************
+*/
 export interface IContraGrpNoContraBrokers {
   ContraBroker?: string// [1] 375 (String)
   ContraTrader?: string// [2] 337 (String)

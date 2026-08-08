@@ -1,5 +1,10 @@
 import { IInstrmtMDReqGrpNoRelatedSym } from './instrmt_md_req_grp_no_related_sym'
 
+/*
+*******************
+* InstrmtMDReqGrp *
+*******************
+*/
 export interface IInstrmtMDReqGrp {
   NoRelatedSym: IInstrmtMDReqGrpNoRelatedSym[]// [1] Symbol.55, SymbolSfx.65 .. LegInterestAccrualDate.956
 }

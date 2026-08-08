@@ -16,6 +16,11 @@ import { IInstrmtLegExecGrp } from './set/instrmt_leg_exec_grp'
 import { IMiscFeesGrp } from './set/misc_fees_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*******************
+* ExecutionReport *
+*******************
+*/
 export interface IExecutionReport {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   OrderID: string// [2] 37 (String)
@@ -54,7 +59,7 @@ export interface IExecutionReport {
   SettlDate?: Date// [35] 64 (LocalDate)
   CashMargin?: string// [36] 544 (String)
   ClearingFeeIndicator?: string// [37] 635 (String)
-  Instrument?: IInstrument// [38] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [38] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   FinancingDetails?: IFinancingDetails// [39] AgreementDesc.913, AgreementID.914 .. MarginRatio.898
   UndInstrmtGrp?: IUndInstrmtGrp// [40] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   Side: string// [41] 54 (String)

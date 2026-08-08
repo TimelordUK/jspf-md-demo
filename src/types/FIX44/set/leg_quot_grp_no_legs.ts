@@ -3,6 +3,11 @@ import { ILegStipulations } from './leg_stipulations'
 import { INestedParties } from './nested_parties'
 import { ILegBenchmarkCurveData } from './leg_benchmark_curve_data'
 
+/*
+**********
+* NoLegs *
+**********
+*/
 export interface ILegQuotGrpNoLegs {
   InstrumentLeg?: IInstrumentLeg// [1] LegSymbol.600, LegSymbolSfx.601 .. LegInterestAccrualDate.956
   LegQty?: number// [2] 687 (Float)

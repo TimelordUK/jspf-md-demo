@@ -1,6 +1,11 @@
 import { ISecAltIDGrp } from './sec_alt_id_grp'
 import { IEvntGrp } from './evnt_grp'
 
+/*
+**************
+* Instrument *
+**************
+*/
 export interface IInstrument {
   Symbol?: string// [1] 55 (String)
   SymbolSfx?: string// [2] 65 (String)

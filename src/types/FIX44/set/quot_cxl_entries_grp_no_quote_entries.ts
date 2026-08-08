@@ -3,6 +3,11 @@ import { IFinancingDetails } from './financing_details'
 import { IUndInstrmtGrp } from './und_instrmt_grp'
 import { IInstrmtLegGrp } from './instrmt_leg_grp'
 
+/*
+******************
+* NoQuoteEntries *
+******************
+*/
 export interface IQuotCxlEntriesGrpNoQuoteEntries {
   Instrument?: IInstrument// [1] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   FinancingDetails?: IFinancingDetails// [2] AgreementDesc.913, AgreementID.914 .. MarginRatio.898

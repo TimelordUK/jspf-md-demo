@@ -7,20 +7,25 @@ import { IPositionQty } from './set/position_qty'
 import { IPositionAmountData } from './set/position_amount_data'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+********************
+* AssignmentReport *
+********************
+*/
 export interface IAssignmentReport {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   AsgnRptID: string// [2] 833 (String)
   TotNumAssignmentReports?: number// [3] 832 (Int)
   LastRptRequested?: boolean// [4] 912 (Boolean)
-  Parties?: IParties// [5] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
+  Parties: IParties// [5] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
   Account?: string// [6] 1 (String)
   AccountType: number// [7] 581 (Int)
   Instrument?: IInstrument// [8] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   Currency?: string// [9] 15 (String)
   InstrmtLegGrp?: IInstrmtLegGrp// [10] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956
   UndInstrmtGrp?: IUndInstrmtGrp// [11] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
-  PositionQty?: IPositionQty// [12] NoPositions.702, PosType.703 .. NestedPartySubIDType.805
-  PositionAmountData?: IPositionAmountData// [13] NoPosAmt.753, PosAmtType.707, PosAmt.708
+  PositionQty: IPositionQty// [12] NoPositions.702, PosType.703 .. NestedPartySubIDType.805
+  PositionAmountData: IPositionAmountData// [13] NoPosAmt.753, PosAmtType.707, PosAmt.708
   ThresholdAmount?: number// [14] 834 (Float)
   SettlPrice: number// [15] 730 (Float)
   SettlPriceType: number// [16] 731 (Int)

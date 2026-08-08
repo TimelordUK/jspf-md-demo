@@ -4,6 +4,11 @@ import { IInstrument } from './set/instrument'
 import { IUnderlyingInstrument } from './set/underlying_instrument'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+**************************
+* OrderMassStatusRequest *
+**************************
+*/
 export interface IOrderMassStatusRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   MassStatusReqID: string// [2] 584 (String)

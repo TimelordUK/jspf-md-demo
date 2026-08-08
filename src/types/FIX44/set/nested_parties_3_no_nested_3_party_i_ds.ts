@@ -1,5 +1,10 @@
 import { INstdPtys3SubGrp } from './nstd_ptys_3_sub_grp'
 
+/*
+*********************
+* NoNested3PartyIDs *
+*********************
+*/
 export interface INestedParties3NoNested3PartyIDs {
   Nested3PartyID?: string// [1] 949 (String)
   Nested3PartyIDSource?: string// [2] 950 (String)

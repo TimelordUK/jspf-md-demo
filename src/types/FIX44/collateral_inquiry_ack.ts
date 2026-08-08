@@ -9,6 +9,11 @@ import { IInstrmtLegGrp } from './set/instrmt_leg_grp'
 import { IUndInstrmtGrp } from './set/und_instrmt_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+************************
+* CollateralInquiryAck *
+************************
+*/
 export interface ICollateralInquiryAck {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   CollInquiryID: string// [2] 909 (String)

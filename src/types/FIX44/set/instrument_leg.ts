@@ -1,5 +1,10 @@
 import { ILegSecAltIDGrp } from './leg_sec_alt_id_grp'
 
+/*
+*****************
+* InstrumentLeg *
+*****************
+*/
 export interface IInstrumentLeg {
   LegSymbol?: string// [1] 600 (String)
   LegSymbolSfx?: string// [2] 601 (String)

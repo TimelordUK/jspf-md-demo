@@ -16,6 +16,11 @@ import { IStipulations } from './set/stipulations'
 import { IMiscFeesGrp } from './set/misc_fees_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+****************
+* Confirmation *
+****************
+*/
 export interface IConfirmation {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   ConfirmID: string// [2] 664 (String)
@@ -34,18 +39,18 @@ export interface IConfirmation {
   TransactTime: Date// [15] 60 (UtcTimestamp)
   TradeDate: Date// [16] 75 (LocalDate)
   TrdRegTimestamps?: ITrdRegTimestamps// [17] NoTrdRegTimestamps.768, TrdRegTimestamp.769 .. TrdRegTimestampOrigin.771
-  Instrument?: IInstrument// [18] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [18] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   InstrumentExtension?: IInstrumentExtension// [19] DeliveryForm.668, PctAtRisk.869 .. InstrAttribValue.872
   FinancingDetails?: IFinancingDetails// [20] AgreementDesc.913, AgreementID.914 .. MarginRatio.898
-  UndInstrmtGrp?: IUndInstrmtGrp// [21] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
-  InstrmtLegGrp?: IInstrmtLegGrp// [22] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956
+  UndInstrmtGrp: IUndInstrmtGrp// [21] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
+  InstrmtLegGrp: IInstrmtLegGrp// [22] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956
   YieldData?: IYieldData// [23] YieldType.235, Yield.236 .. YieldRedemptionPriceType.698
   AllocQty: number// [24] 80 (Float)
   QtyType?: number// [25] 854 (Int)
   Side: string// [26] 54 (String)
   Currency?: string// [27] 15 (String)
   LastMkt?: string// [28] 30 (String)
-  CpctyConfGrp?: ICpctyConfGrp// [29] NoCapacities.862, OrderCapacity.528 .. OrderCapacityQty.863
+  CpctyConfGrp: ICpctyConfGrp// [29] NoCapacities.862, OrderCapacity.528 .. OrderCapacityQty.863
   AllocAccount: string// [30] 79 (String)
   AllocAcctIDSource?: number// [31] 661 (Int)
   AllocAccountType?: number// [32] 798 (Int)

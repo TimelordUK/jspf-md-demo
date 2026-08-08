@@ -1,3 +1,8 @@
+/*
+********************
+* FinancingDetails *
+********************
+*/
 export interface IFinancingDetails {
   AgreementDesc?: string// [1] 913 (String)
   AgreementID?: string// [2] 914 (String)

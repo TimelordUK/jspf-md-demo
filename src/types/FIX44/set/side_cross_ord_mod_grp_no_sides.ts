@@ -3,12 +3,17 @@ import { IPreAllocGrp } from './pre_alloc_grp'
 import { IOrderQtyData } from './order_qty_data'
 import { ICommissionData } from './commission_data'
 
+/*
+***********
+* NoSides *
+***********
+*/
 export interface ISideCrossOrdModGrpNoSides {
   Side: string// [1] 54 (String)
   ClOrdID: string// [2] 11 (String)
   SecondaryClOrdID?: string// [3] 526 (String)
   ClOrdLinkID?: string// [4] 583 (String)
-  Parties: IParties// [5] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
+  Parties?: IParties// [5] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
   TradeOriginationDate?: Date// [6] 229 (LocalDate)
   TradeDate?: Date// [7] 75 (LocalDate)
   Account?: string// [8] 1 (String)
@@ -18,10 +23,10 @@ export interface ISideCrossOrdModGrpNoSides {
   BookingUnit?: string// [12] 590 (String)
   PreallocMethod?: string// [13] 591 (String)
   AllocID?: string// [14] 70 (String)
-  PreAllocGrp: IPreAllocGrp// [15] NoAllocs.78, AllocAccount.79 .. AllocQty.80
+  PreAllocGrp?: IPreAllocGrp// [15] NoAllocs.78, AllocAccount.79 .. AllocQty.80
   QtyType?: number// [16] 854 (Int)
   OrderQtyData: IOrderQtyData// [17] OrderQty.38, CashOrderQty.152 .. RoundingModulus.469
-  CommissionData: ICommissionData// [18] Commission.12, CommType.13 .. FundRenewWaiv.497
+  CommissionData?: ICommissionData// [18] Commission.12, CommType.13 .. FundRenewWaiv.497
   OrderCapacity?: string// [19] 528 (String)
   OrderRestrictions?: string// [20] 529 (String)
   CustOrderCapacity?: number// [21] 582 (Int)

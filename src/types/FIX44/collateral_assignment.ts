@@ -13,6 +13,11 @@ import { IStipulations } from './set/stipulations'
 import { ISettlInstructionsData } from './set/settl_instructions_data'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+************************
+* CollateralAssignment *
+************************
+*/
 export interface ICollateralAssignment {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   CollAsgnID: string// [2] 902 (String)

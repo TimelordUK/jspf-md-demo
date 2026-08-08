@@ -7,6 +7,11 @@ import { IPositionQty } from './set/position_qty'
 import { IPositionAmountData } from './set/position_amount_data'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+******************
+* PositionReport *
+******************
+*/
 export interface IPositionReport {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   PosMaintRptID: string// [2] 721 (String)
@@ -19,7 +24,7 @@ export interface IPositionReport {
   ClearingBusinessDate: Date// [9] 715 (LocalDate)
   SettlSessID?: string// [10] 716 (String)
   SettlSessSubID?: string// [11] 717 (String)
-  Parties?: IParties// [12] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
+  Parties: IParties// [12] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
   Account: string// [13] 1 (String)
   AcctIDSource?: number// [14] 660 (Int)
   AccountType: number// [15] 581 (Int)
@@ -30,8 +35,8 @@ export interface IPositionReport {
   PriorSettlPrice: number// [20] 734 (Float)
   InstrmtLegGrp?: IInstrmtLegGrp// [21] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956
   PosUndInstrmtGrp?: IPosUndInstrmtGrp// [22] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingSettlPriceType.733
-  PositionQty?: IPositionQty// [23] NoPositions.702, PosType.703 .. NestedPartySubIDType.805
-  PositionAmountData?: IPositionAmountData// [24] NoPosAmt.753, PosAmtType.707, PosAmt.708
+  PositionQty: IPositionQty// [23] NoPositions.702, PosType.703 .. NestedPartySubIDType.805
+  PositionAmountData: IPositionAmountData// [24] NoPosAmt.753, PosAmtType.707, PosAmt.708
   RegistStatus?: string// [25] 506 (String)
   DeliveryDate?: Date// [26] 743 (LocalDate)
   Text?: string// [27] 58 (String)

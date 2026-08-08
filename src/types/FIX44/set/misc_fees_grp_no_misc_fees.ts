@@ -1,3 +1,8 @@
+/*
+**************
+* NoMiscFees *
+**************
+*/
 export interface IMiscFeesGrpNoMiscFees {
   MiscFeeAmt?: number// [1] 137 (Float)
   MiscFeeCurr?: string// [2] 138 (String)

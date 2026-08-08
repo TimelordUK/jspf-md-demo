@@ -11,6 +11,11 @@ import { IPegInstructions } from './set/peg_instructions'
 import { IDiscretionInstructions } from './set/discretion_instructions'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+******************************
+* MultilegOrderCancelReplace *
+******************************
+*/
 export interface IMultilegOrderCancelReplace {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   OrderID?: string// [2] 37 (String)
@@ -42,14 +47,14 @@ export interface IMultilegOrderCancelReplace {
   TrdgSesGrp?: ITrdgSesGrp// [28] NoTradingSessions.386, TradingSessionID.336, TradingSessionSubID.625
   ProcessCode?: string// [29] 81 (String)
   Side: string// [30] 54 (String)
-  Instrument?: IInstrument// [31] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [31] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   UndInstrmtGrp?: IUndInstrmtGrp// [32] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   PrevClosePx?: number// [33] 140 (Float)
-  LegOrdGrp?: ILegOrdGrp// [34] NoLegs.555, LegSymbol.600 .. LegSettlDate.588
+  LegOrdGrp: ILegOrdGrp// [34] NoLegs.555, LegSymbol.600 .. LegSettlDate.588
   LocateReqd?: boolean// [35] 114 (Boolean)
   TransactTime: Date// [36] 60 (UtcTimestamp)
   QtyType?: number// [37] 854 (Int)
-  OrderQtyData?: IOrderQtyData// [38] OrderQty.38, CashOrderQty.152 .. RoundingModulus.469
+  OrderQtyData: IOrderQtyData// [38] OrderQty.38, CashOrderQty.152 .. RoundingModulus.469
   OrdType: string// [39] 40 (String)
   PriceType?: number// [40] 423 (Int)
   Price?: number// [41] 44 (Float)

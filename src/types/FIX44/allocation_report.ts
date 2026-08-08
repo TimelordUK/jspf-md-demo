@@ -13,6 +13,11 @@ import { IYieldData } from './set/yield_data'
 import { IAllocGrp } from './set/alloc_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+********************
+* AllocationReport *
+********************
+*/
 export interface IAllocationReport {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   AllocReportID: string// [2] 755 (String)
@@ -36,7 +41,7 @@ export interface IAllocationReport {
   ReversalIndicator?: boolean// [20] 700 (Boolean)
   MatchType?: string// [21] 574 (String)
   Side: string// [22] 54 (String)
-  Instrument?: IInstrument// [23] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [23] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   InstrumentExtension?: IInstrumentExtension// [24] DeliveryForm.668, PctAtRisk.869 .. InstrAttribValue.872
   FinancingDetails?: IFinancingDetails// [25] AgreementDesc.913, AgreementID.914 .. MarginRatio.898
   UndInstrmtGrp?: IUndInstrmtGrp// [26] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889

@@ -2,6 +2,11 @@ import { IStandardHeader } from './set/standard_header'
 import { IUnderlyingInstrument } from './set/underlying_instrument'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*********************************
+* DerivativeSecurityListRequest *
+*********************************
+*/
 export interface IDerivativeSecurityListRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   SecurityReqID: string// [2] 320 (String)

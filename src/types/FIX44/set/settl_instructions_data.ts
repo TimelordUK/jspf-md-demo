@@ -1,5 +1,10 @@
 import { IDlvyInstGrp } from './dlvy_inst_grp'
 
+/*
+*************************
+* SettlInstructionsData *
+*************************
+*/
 export interface ISettlInstructionsData {
   SettlDeliveryType?: number// [1] 172 (Int)
   StandInstDbType?: number// [2] 169 (Int)

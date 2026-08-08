@@ -1,6 +1,11 @@
 import { IStandardHeader } from './set/standard_header'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*****************
+* SequenceReset *
+*****************
+*/
 export interface ISequenceReset {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   GapFillFlag?: boolean// [2] 123 (Boolean)

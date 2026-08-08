@@ -78,7 +78,6 @@ export class Md44Factory {
       },
       InstrmtMDReqGrp: {
         NoRelatedSym: [
-          // @ts-expect-error ts2307
           {
             Instrument: {
               StrikeCurrency: 'USD',

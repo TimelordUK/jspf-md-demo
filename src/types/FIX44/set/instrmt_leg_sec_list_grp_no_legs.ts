@@ -2,6 +2,11 @@ import { IInstrumentLeg } from './instrument_leg'
 import { ILegStipulations } from './leg_stipulations'
 import { ILegBenchmarkCurveData } from './leg_benchmark_curve_data'
 
+/*
+**********
+* NoLegs *
+**********
+*/
 export interface IInstrmtLegSecListGrpNoLegs {
   InstrumentLeg?: IInstrumentLeg// [1] LegSymbol.600, LegSymbolSfx.601 .. LegInterestAccrualDate.956
   LegSwapType?: number// [2] 690 (Int)

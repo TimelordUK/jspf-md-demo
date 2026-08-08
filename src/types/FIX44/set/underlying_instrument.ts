@@ -1,6 +1,11 @@
 import { IUndSecAltIDGrp } from './und_sec_alt_id_grp'
 import { IUnderlyingStipulations } from './underlying_stipulations'
 
+/*
+************************
+* UnderlyingInstrument *
+************************
+*/
 export interface IUnderlyingInstrument {
   UnderlyingSymbol?: string// [1] 311 (String)
   UnderlyingSymbolSfx?: string// [2] 312 (String)

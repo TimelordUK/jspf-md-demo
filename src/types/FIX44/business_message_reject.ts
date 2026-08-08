@@ -1,6 +1,11 @@
 import { IStandardHeader } from './set/standard_header'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*************************
+* BusinessMessageReject *
+*************************
+*/
 export interface IBusinessMessageReject {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   RefSeqNum?: number// [2] 45 (Int)

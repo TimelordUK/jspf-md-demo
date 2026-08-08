@@ -1,6 +1,11 @@
 import { IParties } from './parties'
 import { ISettlInstructionsData } from './settl_instructions_data'
 
+/*
+***************
+* NoSettlInst *
+***************
+*/
 export interface ISettlInstGrpNoSettlInst {
   SettlInstID?: string// [1] 162 (String)
   SettlInstTransType?: string// [2] 163 (String)

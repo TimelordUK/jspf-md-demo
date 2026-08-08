@@ -3,6 +3,11 @@ import { IParties } from './set/parties'
 import { IAllocAckGrp } from './set/alloc_ack_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+****************************
+* AllocationInstructionAck *
+****************************
+*/
 export interface IAllocationInstructionAck {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   AllocID: string// [2] 70 (String)

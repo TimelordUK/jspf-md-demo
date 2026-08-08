@@ -1,3 +1,8 @@
+/*
+************
+* NoAllocs *
+************
+*/
 export interface IAllocAckGrpNoAllocs {
   AllocAccount?: string// [1] 79 (String)
   AllocAcctIDSource?: number// [2] 661 (Int)

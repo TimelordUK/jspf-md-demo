@@ -1,6 +1,11 @@
 import { IParties } from './parties'
 import { IOrderQtyData } from './order_qty_data'
 
+/*
+***********
+* NoSides *
+***********
+*/
 export interface ISideCrossOrdCxlGrpNoSides {
   Side: string// [1] 54 (String)
   OrigClOrdID: string// [2] 41 (String)
@@ -8,7 +13,7 @@ export interface ISideCrossOrdCxlGrpNoSides {
   SecondaryClOrdID?: string// [4] 526 (String)
   ClOrdLinkID?: string// [5] 583 (String)
   OrigOrdModTime?: Date// [6] 586 (UtcTimestamp)
-  Parties: IParties// [7] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
+  Parties?: IParties// [7] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
   TradeOriginationDate?: Date// [8] 229 (LocalDate)
   TradeDate?: Date// [9] 75 (LocalDate)
   OrderQtyData: IOrderQtyData// [10] OrderQty.38, CashOrderQty.152 .. RoundingModulus.469

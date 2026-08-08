@@ -1,3 +1,8 @@
+/*
+******************
+* CommissionData *
+******************
+*/
 export interface ICommissionData {
   Commission?: number// [1] 12 (Float)
   CommType?: string// [2] 13 (String)

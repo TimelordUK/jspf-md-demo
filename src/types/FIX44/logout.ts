@@ -1,6 +1,11 @@
 import { IStandardHeader } from './set/standard_header'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+**********
+* Logout *
+**********
+*/
 export interface ILogout {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   Text?: string// [2] 58 (String)

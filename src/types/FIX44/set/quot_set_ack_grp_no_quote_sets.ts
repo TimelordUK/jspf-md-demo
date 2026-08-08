@@ -1,6 +1,11 @@
 import { IUnderlyingInstrument } from './underlying_instrument'
 import { IQuotEntryAckGrp } from './quot_entry_ack_grp'
 
+/*
+***************
+* NoQuoteSets *
+***************
+*/
 export interface IQuotSetAckGrpNoQuoteSets {
   QuoteSetID?: string// [1] 302 (String)
   UnderlyingInstrument?: IUnderlyingInstrument// [2] UnderlyingSymbol.311, UnderlyingSymbolSfx.312 .. UnderlyingStipValue.889

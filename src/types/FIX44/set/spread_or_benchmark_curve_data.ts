@@ -1,3 +1,8 @@
+/*
+******************************
+* SpreadOrBenchmarkCurveData *
+******************************
+*/
 export interface ISpreadOrBenchmarkCurveData {
   Spread?: number// [1] 218 (Float)
   BenchmarkCurveCurrency?: string// [2] 220 (String)

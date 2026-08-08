@@ -1,5 +1,10 @@
 import { IHop } from './hop'
 
+/*
+******************
+* StandardHeader *
+******************
+*/
 export interface IStandardHeader {
   BeginString: string// [1] 8 (String)
   BodyLength: number// [2] 9 (Length)

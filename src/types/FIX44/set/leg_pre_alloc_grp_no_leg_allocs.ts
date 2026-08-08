@@ -1,5 +1,10 @@
 import { INestedParties2 } from './nested_parties_2'
 
+/*
+***************
+* NoLegAllocs *
+***************
+*/
 export interface ILegPreAllocGrpNoLegAllocs {
   LegAllocAccount?: string// [1] 671 (String)
   LegIndividualAllocID?: string// [2] 672 (String)

@@ -11,6 +11,11 @@ import { IPegInstructions } from './set/peg_instructions'
 import { IDiscretionInstructions } from './set/discretion_instructions'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+**********************************
+* CrossOrderCancelReplaceRequest *
+**********************************
+*/
 export interface ICrossOrderCancelReplaceRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   OrderID?: string// [2] 37 (String)
@@ -18,8 +23,8 @@ export interface ICrossOrderCancelReplaceRequest {
   OrigCrossID: string// [4] 551 (String)
   CrossType: number// [5] 549 (Int)
   CrossPrioritization: number// [6] 550 (Int)
-  SideCrossOrdModGrp?: ISideCrossOrdModGrp// [7] NoSides.552, Side.54 .. SideComplianceID.659
-  Instrument?: IInstrument// [8] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  SideCrossOrdModGrp: ISideCrossOrdModGrp// [7] NoSides.552, Side.54 .. SideComplianceID.659
+  Instrument: IInstrument// [8] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   UndInstrmtGrp?: IUndInstrmtGrp// [9] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   InstrmtLegGrp?: IInstrmtLegGrp// [10] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956
   SettlType?: string// [11] 63 (String)

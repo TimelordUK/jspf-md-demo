@@ -5,6 +5,11 @@ import { ITrdInstrmtLegGrp } from './set/trd_instrmt_leg_grp'
 import { ITrdAllocGrp } from './set/trd_alloc_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*************************
+* TradeCaptureReportAck *
+*************************
+*/
 export interface ITradeCaptureReportAck {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   TradeReportID: string// [2] 571 (String)
@@ -25,7 +30,7 @@ export interface ITradeCaptureReportAck {
   TrdMatchID?: string// [17] 880 (String)
   ExecID?: string// [18] 17 (String)
   SecondaryExecID?: string// [19] 527 (String)
-  Instrument?: IInstrument// [20] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [20] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   TransactTime?: Date// [21] 60 (UtcTimestamp)
   TrdRegTimestamps?: ITrdRegTimestamps// [22] NoTrdRegTimestamps.768, TrdRegTimestamp.769 .. TrdRegTimestampOrigin.771
   ResponseTransportType?: number// [23] 725 (Int)

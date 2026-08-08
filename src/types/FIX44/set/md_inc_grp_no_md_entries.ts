@@ -2,6 +2,11 @@ import { IInstrument } from './instrument'
 import { IUndInstrmtGrp } from './und_instrmt_grp'
 import { IInstrmtLegGrp } from './instrmt_leg_grp'
 
+/*
+***************
+* NoMDEntries *
+***************
+*/
 export interface IMDIncGrpNoMDEntries {
   ApplSeqNum: number// [1] 1181 (Int)
   MDUpdateAction: string// [2] 279 (String)
@@ -9,9 +14,9 @@ export interface IMDIncGrpNoMDEntries {
   MDEntryType?: string// [4] 269 (String)
   MDEntryID?: string// [5] 278 (String)
   MDEntryRefID?: string// [6] 280 (String)
-  Instrument: IInstrument// [7] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
-  UndInstrmtGrp: IUndInstrmtGrp// [8] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
-  InstrmtLegGrp: IInstrmtLegGrp// [9] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956
+  Instrument?: IInstrument// [7] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  UndInstrmtGrp?: IUndInstrmtGrp// [8] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
+  InstrmtLegGrp?: IInstrmtLegGrp// [9] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956
   FinancialStatus?: string// [10] 291 (String)
   CorporateAction?: string// [11] 292 (String)
   MDEntryPx?: number// [12] 270 (Float)

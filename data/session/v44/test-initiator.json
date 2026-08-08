@@ -18,5 +18,9 @@
   "SenderCompId": "init-comp",
   "TargetCompID": "accept-comp",
   "TargetSubID": "fix",
-  "BeginString": "FIX.4.4"
+  "BeginString": "FIX.4.4",
+
+  "Logon": {
+    "Account": "md-desk-1"
+  }
 }

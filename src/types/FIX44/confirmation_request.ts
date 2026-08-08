@@ -2,6 +2,11 @@ import { IStandardHeader } from './set/standard_header'
 import { IOrdAllocGrp } from './set/ord_alloc_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+***********************
+* ConfirmationRequest *
+***********************
+*/
 export interface IConfirmationRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   ConfirmReqID: string// [2] 859 (String)

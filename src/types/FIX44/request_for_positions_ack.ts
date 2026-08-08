@@ -5,6 +5,11 @@ import { IInstrmtLegGrp } from './set/instrmt_leg_grp'
 import { IUndInstrmtGrp } from './set/und_instrmt_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+**************************
+* RequestForPositionsAck *
+**************************
+*/
 export interface IRequestForPositionsAck {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   PosMaintRptID: string// [2] 721 (String)
@@ -13,7 +18,7 @@ export interface IRequestForPositionsAck {
   UnsolicitedIndicator?: boolean// [5] 325 (Boolean)
   PosReqResult: number// [6] 728 (Int)
   PosReqStatus: number// [7] 729 (Int)
-  Parties?: IParties// [8] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
+  Parties: IParties// [8] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
   Account: string// [9] 1 (String)
   AcctIDSource?: number// [10] 660 (Int)
   AccountType: number// [11] 581 (Int)

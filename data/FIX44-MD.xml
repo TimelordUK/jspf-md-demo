@@ -286,6 +286,11 @@
    <field name='TestMessageIndicator' required='N' />
    <field name='Username' required='N' />
    <field name='Password' required='N' />
+   <!-- this venue also wants an account on the Logon.  Standard FIX 4.4 has no
+        Account on Logon, and without this line the engine has no tag to write it
+        to - it would drop the field however you put it on the message object.
+        See https://github.com/TimelordUK/jspurefix/issues/93 -->
+   <field name='Account' required='N' />
   </message>
   <message name='News' msgcat='app' msgtype='B'>
    <field name='OrigTime' required='N' />

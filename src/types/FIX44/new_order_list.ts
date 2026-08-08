@@ -2,6 +2,11 @@ import { IStandardHeader } from './set/standard_header'
 import { IListOrdGrp } from './set/list_ord_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+****************
+* NewOrderList *
+****************
+*/
 export interface INewOrderList {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   ListID: string// [2] 66 (String)
@@ -22,6 +27,6 @@ export interface INewOrderList {
   AllowableOneSidednessCurr?: string// [17] 767 (String)
   TotNoOrders: number// [18] 68 (Int)
   LastFragment?: boolean// [19] 893 (Boolean)
-  ListOrdGrp?: IListOrdGrp// [20] NoOrders.73, ClOrdID.11 .. Designation.494
+  ListOrdGrp: IListOrdGrp// [20] NoOrders.73, ClOrdID.11 .. Designation.494
   StandardTrailer: IStandardTrailer// [21] SignatureLength.93, Signature.89, CheckSum.10
 }

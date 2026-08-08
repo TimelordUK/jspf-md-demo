@@ -1,5 +1,10 @@
 import { INestedParties3 } from './nested_parties_3'
 
+/*
+************
+* NoAllocs *
+************
+*/
 export interface IPreAllocMlegGrpNoAllocs {
   AllocAccount?: string// [1] 79 (String)
   AllocAcctIDSource?: number// [2] 661 (Int)

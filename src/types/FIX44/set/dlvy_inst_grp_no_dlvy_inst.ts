@@ -1,5 +1,10 @@
 import { ISettlParties } from './settl_parties'
 
+/*
+**************
+* NoDlvyInst *
+**************
+*/
 export interface IDlvyInstGrpNoDlvyInst {
   SettlInstSource?: string// [1] 165 (String)
   DlvyInstType?: string// [2] 787 (String)

@@ -1,3 +1,8 @@
+/*
+****************
+* NoCapacities *
+****************
+*/
 export interface ICpctyConfGrpNoCapacities {
   OrderCapacity: string// [1] 528 (String)
   OrderRestrictions?: string// [2] 529 (String)

@@ -1,3 +1,8 @@
+/*
+************
+* NoEvents *
+************
+*/
 export interface IEvntGrpNoEvents {
   EventType?: number// [1] 865 (Int)
   EventDate?: Date// [2] 866 (LocalDate)

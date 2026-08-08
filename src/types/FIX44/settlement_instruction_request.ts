@@ -2,6 +2,11 @@ import { IStandardHeader } from './set/standard_header'
 import { IParties } from './set/parties'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+********************************
+* SettlementInstructionRequest *
+********************************
+*/
 export interface ISettlementInstructionRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   SettlInstReqID: string// [2] 791 (String)

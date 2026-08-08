@@ -3,6 +3,11 @@ import { IUnderlyingInstrument } from './set/underlying_instrument'
 import { IRelSymDerivSecGrp } from './set/rel_sym_deriv_sec_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+**************************
+* DerivativeSecurityList *
+**************************
+*/
 export interface IDerivativeSecurityList {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   SecurityReqID: string// [2] 320 (String)
