@@ -20,5 +20,6 @@ export interface ILogon {
   TestMessageIndicator?: boolean// [10] 464 (Boolean)
   Username?: string// [11] 553 (String)
   Password?: string// [12] 554 (String)
-  StandardTrailer: IStandardTrailer// [13] SignatureLength.93, Signature.89, CheckSum.10
+  Account?: string// [13] 1 (String)
+  StandardTrailer: IStandardTrailer// [14] SignatureLength.93, Signature.89, CheckSum.10
 }
