@@ -1,3 +1,8 @@
+/*
+*************
+* NoCompIDs *
+*************
+*/
 export interface ICompIDReqGrpNoCompIDs {
   RefCompID?: string// [1] 930 (String)
   RefSubID?: string// [2] 931 (String)

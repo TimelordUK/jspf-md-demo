@@ -6,13 +6,18 @@ import { IUndInstrmtGrp } from './set/und_instrmt_grp'
 import { ITrdgSesGrp } from './set/trdg_ses_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+***********************
+* RequestForPositions *
+***********************
+*/
 export interface IRequestForPositions {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   PosReqID: string// [2] 710 (String)
   PosReqType: number// [3] 724 (Int)
   MatchStatus?: string// [4] 573 (String)
   SubscriptionRequestType?: string// [5] 263 (String)
-  Parties?: IParties// [6] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
+  Parties: IParties// [6] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
   Account: string// [7] 1 (String)
   AcctIDSource?: number// [8] 660 (Int)
   AccountType: number// [9] 581 (Int)

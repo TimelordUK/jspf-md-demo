@@ -6,11 +6,16 @@ import { IInstrmtLegGrp } from './set/instrmt_leg_grp'
 import { IParties } from './set/parties'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+**********************
+* QuoteStatusRequest *
+**********************
+*/
 export interface IQuoteStatusRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   QuoteStatusReqID?: string// [2] 649 (String)
   QuoteID?: string// [3] 117 (String)
-  Instrument?: IInstrument// [4] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [4] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   FinancingDetails?: IFinancingDetails// [5] AgreementDesc.913, AgreementID.914 .. MarginRatio.898
   UndInstrmtGrp?: IUndInstrmtGrp// [6] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   InstrmtLegGrp?: IInstrmtLegGrp// [7] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956

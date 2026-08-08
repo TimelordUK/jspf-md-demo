@@ -1,6 +1,11 @@
 import { IStandardHeader } from './set/standard_header'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+************************
+* TradingSessionStatus *
+************************
+*/
 export interface ITradingSessionStatus {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   TradSesReqID?: string// [2] 335 (String)

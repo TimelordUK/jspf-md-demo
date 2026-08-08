@@ -4,6 +4,11 @@ import { IMiscFeesGrp } from './misc_fees_grp'
 import { IClrInstGrp } from './clr_inst_grp'
 import { ISettlInstructionsData } from './settl_instructions_data'
 
+/*
+************
+* NoAllocs *
+************
+*/
 export interface IAllocGrpNoAllocs {
   AllocAccount?: string// [1] 79 (String)
   AllocAcctIDSource?: number// [2] 661 (Int)

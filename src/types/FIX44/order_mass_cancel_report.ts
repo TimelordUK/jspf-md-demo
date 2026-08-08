@@ -4,6 +4,11 @@ import { IInstrument } from './set/instrument'
 import { IUnderlyingInstrument } from './set/underlying_instrument'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*************************
+* OrderMassCancelReport *
+*************************
+*/
 export interface IOrderMassCancelReport {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   ClOrdID?: string// [2] 11 (String)

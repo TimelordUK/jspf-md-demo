@@ -1,3 +1,8 @@
+/*
+*******************
+* NoBidComponents *
+*******************
+*/
 export interface IBidCompReqGrpNoBidComponents {
   ListID?: string// [1] 66 (String)
   Side?: string// [2] 54 (String)

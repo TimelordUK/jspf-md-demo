@@ -1,6 +1,11 @@
 import { IStandardHeader } from './set/standard_header'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*****************
+* ResendRequest *
+*****************
+*/
 export interface IResendRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   BeginSeqNo: number// [2] 7 (Int)

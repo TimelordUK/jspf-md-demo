@@ -11,6 +11,11 @@ import { ITrdRegTimestamps } from './set/trd_reg_timestamps'
 import { ITrdCapRptSideGrp } from './set/trd_cap_rpt_side_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+**********************
+* TradeCaptureReport *
+**********************
+*/
 export interface ITradeCaptureReport {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   TradeReportID: string// [2] 571 (String)
@@ -37,7 +42,7 @@ export interface ITradeCaptureReport {
   ExecRestatementReason?: number// [23] 378 (Int)
   PreviouslyReported: boolean// [24] 570 (Boolean)
   PriceType?: number// [25] 423 (Int)
-  Instrument?: IInstrument// [26] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [26] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   FinancingDetails?: IFinancingDetails// [27] AgreementDesc.913, AgreementID.914 .. MarginRatio.898
   OrderQtyData?: IOrderQtyData// [28] OrderQty.38, CashOrderQty.152 .. RoundingModulus.469
   QtyType?: number// [29] 854 (Int)
@@ -66,7 +71,7 @@ export interface ITradeCaptureReport {
   SettlDate?: Date// [52] 64 (LocalDate)
   MatchStatus?: string// [53] 573 (String)
   MatchType?: string// [54] 574 (String)
-  TrdCapRptSideGrp?: ITrdCapRptSideGrp// [55] NoSides.552, Side.54 .. AllocQty.80
+  TrdCapRptSideGrp: ITrdCapRptSideGrp// [55] NoSides.552, Side.54 .. AllocQty.80
   CopyMsgIndicator?: boolean// [56] 797 (Boolean)
   PublishTrdIndicator?: boolean// [57] 852 (Boolean)
   ShortSaleReason?: number// [58] 853 (Int)

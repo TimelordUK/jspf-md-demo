@@ -8,6 +8,11 @@ import { IInstrmtLegGrp } from './set/instrmt_leg_grp'
 import { ITrdCapDtGrp } from './set/trd_cap_dt_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*****************************
+* TradeCaptureReportRequest *
+*****************************
+*/
 export interface ITradeCaptureReportRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   TradeRequestID: string// [2] 568 (String)

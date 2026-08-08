@@ -11,13 +11,18 @@ import { IPegInstructions } from './set/peg_instructions'
 import { IDiscretionInstructions } from './set/discretion_instructions'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*****************
+* NewOrderCross *
+*****************
+*/
 export interface INewOrderCross {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   CrossID: string// [2] 548 (String)
   CrossType: number// [3] 549 (Int)
   CrossPrioritization: number// [4] 550 (Int)
-  SideCrossOrdModGrp?: ISideCrossOrdModGrp// [5] NoSides.552, Side.54 .. SideComplianceID.659
-  Instrument?: IInstrument// [6] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  SideCrossOrdModGrp: ISideCrossOrdModGrp// [5] NoSides.552, Side.54 .. SideComplianceID.659
+  Instrument: IInstrument// [6] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   UndInstrmtGrp?: IUndInstrmtGrp// [7] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   InstrmtLegGrp?: IInstrmtLegGrp// [8] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956
   SettlType?: string// [9] 63 (String)

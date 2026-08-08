@@ -3,6 +3,11 @@ import { IBidDescReqGrp } from './set/bid_desc_req_grp'
 import { IBidCompReqGrp } from './set/bid_comp_req_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+**************
+* BidRequest *
+**************
+*/
 export interface IBidRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   BidID?: string// [2] 390 (String)

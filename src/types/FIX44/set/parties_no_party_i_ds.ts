@@ -1,5 +1,10 @@
 import { IPtysSubGrp } from './ptys_sub_grp'
 
+/*
+**************
+* NoPartyIDs *
+**************
+*/
 export interface IPartiesNoPartyIDs {
   PartyID?: string// [1] 448 (String)
   PartyIDSource?: string// [2] 447 (String)

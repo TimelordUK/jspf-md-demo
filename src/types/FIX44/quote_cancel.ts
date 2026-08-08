@@ -3,6 +3,11 @@ import { IParties } from './set/parties'
 import { IQuotCxlEntriesGrp } from './set/quot_cxl_entries_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+***************
+* QuoteCancel *
+***************
+*/
 export interface IQuoteCancel {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   QuoteReqID?: string// [2] 131 (String)

@@ -1,6 +1,11 @@
 import { IStandardHeader } from './set/standard_header'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*********************
+* OrderCancelReject *
+*********************
+*/
 export interface IOrderCancelReject {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   OrderID: string// [2] 37 (String)

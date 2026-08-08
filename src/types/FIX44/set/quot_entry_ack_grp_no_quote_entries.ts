@@ -1,6 +1,11 @@
 import { IInstrument } from './instrument'
 import { IInstrmtLegGrp } from './instrmt_leg_grp'
 
+/*
+******************
+* NoQuoteEntries *
+******************
+*/
 export interface IQuotEntryAckGrpNoQuoteEntries {
   QuoteEntryID?: string// [1] 299 (String)
   Instrument?: IInstrument// [2] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874

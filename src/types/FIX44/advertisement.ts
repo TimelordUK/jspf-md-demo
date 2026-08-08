@@ -4,12 +4,17 @@ import { IInstrmtLegGrp } from './set/instrmt_leg_grp'
 import { IUndInstrmtGrp } from './set/und_instrmt_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*****************
+* Advertisement *
+*****************
+*/
 export interface IAdvertisement {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   AdvId: string// [2] 2 (String)
   AdvTransType: string// [3] 5 (String)
   AdvRefID?: string// [4] 3 (String)
-  Instrument?: IInstrument// [5] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [5] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   InstrmtLegGrp?: IInstrmtLegGrp// [6] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956
   UndInstrmtGrp?: IUndInstrmtGrp// [7] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   AdvSide: string// [8] 4 (String)

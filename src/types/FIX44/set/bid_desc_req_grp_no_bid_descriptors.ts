@@ -1,3 +1,8 @@
+/*
+********************
+* NoBidDescriptors *
+********************
+*/
 export interface IBidDescReqGrpNoBidDescriptors {
   BidDescriptorType?: number// [1] 399 (Int)
   BidDescriptor?: string// [2] 400 (String)

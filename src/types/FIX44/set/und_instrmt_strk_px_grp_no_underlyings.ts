@@ -1,5 +1,10 @@
 import { IUnderlyingInstrument } from './underlying_instrument'
 
+/*
+*****************
+* NoUnderlyings *
+*****************
+*/
 export interface IUndInstrmtStrkPxGrpNoUnderlyings {
   UnderlyingInstrument?: IUnderlyingInstrument// [1] UnderlyingSymbol.311, UnderlyingSymbolSfx.312 .. UnderlyingStipValue.889
   PrevClosePx?: number// [2] 140 (Float)

@@ -1,3 +1,8 @@
+/*
+*************************
+* LegBenchmarkCurveData *
+*************************
+*/
 export interface ILegBenchmarkCurveData {
   LegBenchmarkCurveCurrency?: string// [1] 676 (String)
   LegBenchmarkCurveName?: string// [2] 677 (String)

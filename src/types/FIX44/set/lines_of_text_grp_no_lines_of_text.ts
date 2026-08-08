@@ -1,3 +1,8 @@
+/*
+*****************
+* NoLinesOfText *
+*****************
+*/
 export interface ILinesOfTextGrpNoLinesOfText {
   Text: string// [1] 58 (String)
   EncodedTextLen?: number// [2] 354 (Length)

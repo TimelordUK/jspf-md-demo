@@ -14,6 +14,11 @@ import { IPegInstructions } from './set/peg_instructions'
 import { IDiscretionInstructions } from './set/discretion_instructions'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+******************
+* NewOrderSingle *
+******************
+*/
 export interface INewOrderSingle {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   ClOrdID: string// [2] 11 (String)
@@ -41,7 +46,7 @@ export interface INewOrderSingle {
   ExDestination?: string// [24] 100 (String)
   TrdgSesGrp?: ITrdgSesGrp// [25] NoTradingSessions.386, TradingSessionID.336, TradingSessionSubID.625
   ProcessCode?: string// [26] 81 (String)
-  Instrument?: IInstrument// [27] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [27] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   FinancingDetails?: IFinancingDetails// [28] AgreementDesc.913, AgreementID.914 .. MarginRatio.898
   UndInstrmtGrp?: IUndInstrmtGrp// [29] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   PrevClosePx?: number// [30] 140 (Float)
@@ -50,7 +55,7 @@ export interface INewOrderSingle {
   TransactTime: Date// [33] 60 (UtcTimestamp)
   Stipulations?: IStipulations// [34] NoStipulations.232, StipulationType.233, StipulationValue.234
   QtyType?: number// [35] 854 (Int)
-  OrderQtyData?: IOrderQtyData// [36] OrderQty.38, CashOrderQty.152 .. RoundingModulus.469
+  OrderQtyData: IOrderQtyData// [36] OrderQty.38, CashOrderQty.152 .. RoundingModulus.469
   OrdType: string// [37] 40 (String)
   PriceType?: number// [38] 423 (Int)
   Price?: number// [39] 44 (Float)

@@ -3,6 +3,11 @@ import { IParties } from './set/parties'
 import { IQuotSetGrp } from './set/quot_set_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*************
+* MassQuote *
+*************
+*/
 export interface IMassQuote {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   QuoteReqID?: string// [2] 131 (String)
@@ -15,6 +20,6 @@ export interface IMassQuote {
   AccountType?: number// [9] 581 (Int)
   DefBidSize?: number// [10] 293 (Float)
   DefOfferSize?: number// [11] 294 (Float)
-  QuotSetGrp?: IQuotSetGrp// [12] NoQuoteSets.296, QuoteSetID.302 .. Currency.15
+  QuotSetGrp: IQuotSetGrp// [12] NoQuoteSets.296, QuoteSetID.302 .. Currency.15
   StandardTrailer: IStandardTrailer// [13] SignatureLength.93, Signature.89, CheckSum.10
 }

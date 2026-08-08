@@ -11,12 +11,17 @@ import { ISpreadOrBenchmarkCurveData } from './set/spread_or_benchmark_curve_dat
 import { IYieldData } from './set/yield_data'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*******
+* IOI *
+*******
+*/
 export interface IIOI {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   IOIID: string// [2] 23 (String)
   IOITransType: string// [3] 28 (String)
   IOIRefID?: string// [4] 26 (String)
-  Instrument?: IInstrument// [5] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [5] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   FinancingDetails?: IFinancingDetails// [6] AgreementDesc.913, AgreementID.914 .. MarginRatio.898
   UndInstrmtGrp?: IUndInstrmtGrp// [7] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   Side: string// [8] 54 (String)

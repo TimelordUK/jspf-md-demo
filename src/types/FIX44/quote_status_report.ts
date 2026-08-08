@@ -11,6 +11,11 @@ import { ISpreadOrBenchmarkCurveData } from './set/spread_or_benchmark_curve_dat
 import { IYieldData } from './set/yield_data'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*********************
+* QuoteStatusReport *
+*********************
+*/
 export interface IQuoteStatusReport {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   QuoteStatusReqID?: string// [2] 649 (String)
@@ -21,7 +26,7 @@ export interface IQuoteStatusReport {
   Parties?: IParties// [7] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
   TradingSessionID?: string// [8] 336 (String)
   TradingSessionSubID?: string// [9] 625 (String)
-  Instrument?: IInstrument// [10] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [10] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   FinancingDetails?: IFinancingDetails// [11] AgreementDesc.913, AgreementID.914 .. MarginRatio.898
   UndInstrmtGrp?: IUndInstrmtGrp// [12] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   Side?: string// [13] 54 (String)

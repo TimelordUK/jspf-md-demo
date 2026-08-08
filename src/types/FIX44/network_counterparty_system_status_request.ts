@@ -2,6 +2,11 @@ import { IStandardHeader } from './set/standard_header'
 import { ICompIDReqGrp } from './set/comp_id_req_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+******************************************
+* NetworkCounterpartySystemStatusRequest *
+******************************************
+*/
 export interface INetworkCounterpartySystemStatusRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   NetworkRequestType: number// [2] 935 (Int)

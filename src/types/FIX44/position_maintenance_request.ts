@@ -7,6 +7,11 @@ import { ITrdgSesGrp } from './set/trdg_ses_grp'
 import { IPositionQty } from './set/position_qty'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+******************************
+* PositionMaintenanceRequest *
+******************************
+*/
 export interface IPositionMaintenanceRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   PosReqID: string// [2] 710 (String)
@@ -17,17 +22,17 @@ export interface IPositionMaintenanceRequest {
   ClearingBusinessDate: Date// [7] 715 (LocalDate)
   SettlSessID?: string// [8] 716 (String)
   SettlSessSubID?: string// [9] 717 (String)
-  Parties?: IParties// [10] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
+  Parties: IParties// [10] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
   Account: string// [11] 1 (String)
   AcctIDSource?: number// [12] 660 (Int)
   AccountType: number// [13] 581 (Int)
-  Instrument?: IInstrument// [14] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [14] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   Currency?: string// [15] 15 (String)
   InstrmtLegGrp?: IInstrmtLegGrp// [16] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956
   UndInstrmtGrp?: IUndInstrmtGrp// [17] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   TrdgSesGrp?: ITrdgSesGrp// [18] NoTradingSessions.386, TradingSessionID.336, TradingSessionSubID.625
   TransactTime: Date// [19] 60 (UtcTimestamp)
-  PositionQty?: IPositionQty// [20] NoPositions.702, PosType.703 .. NestedPartySubIDType.805
+  PositionQty: IPositionQty// [20] NoPositions.702, PosType.703 .. NestedPartySubIDType.805
   AdjustmentType?: number// [21] 718 (Int)
   ContraryInstructionIndicator?: boolean// [22] 719 (Boolean)
   PriorSpreadIndicator?: boolean// [23] 720 (Boolean)

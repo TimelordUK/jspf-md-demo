@@ -5,10 +5,15 @@ import { IUndInstrmtGrp } from './set/und_instrmt_grp'
 import { IInstrmtLegGrp } from './set/instrmt_leg_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*************************
+* SecurityStatusRequest *
+*************************
+*/
 export interface ISecurityStatusRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   SecurityStatusReqID: string// [2] 324 (String)
-  Instrument?: IInstrument// [3] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [3] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   InstrumentExtension?: IInstrumentExtension// [4] DeliveryForm.668, PctAtRisk.869 .. InstrAttribValue.872
   UndInstrmtGrp?: IUndInstrmtGrp// [5] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   InstrmtLegGrp?: IInstrmtLegGrp// [6] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956

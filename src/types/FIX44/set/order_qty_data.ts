@@ -1,3 +1,8 @@
+/*
+****************
+* OrderQtyData *
+****************
+*/
 export interface IOrderQtyData {
   OrderQty?: number// [1] 38 (Float)
   CashOrderQty?: number// [2] 152 (Float)

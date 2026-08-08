@@ -1,3 +1,8 @@
+/*
+*******************
+* PegInstructions *
+*******************
+*/
 export interface IPegInstructions {
   PegOffsetValue?: number// [1] 211 (Float)
   PegMoveType?: number// [2] 835 (Int)

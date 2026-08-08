@@ -4,6 +4,11 @@ import { IRgstDtlsGrp } from './set/rgst_dtls_grp'
 import { IRgstDistInstGrp } from './set/rgst_dist_inst_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+****************************
+* RegistrationInstructions *
+****************************
+*/
 export interface IRegistrationInstructions {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   RegistID: string// [2] 513 (String)

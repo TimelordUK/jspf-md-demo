@@ -6,6 +6,11 @@ import { IUndInstrmtGrp } from './set/und_instrmt_grp'
 import { IOrderQtyData } from './set/order_qty_data'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+**********************
+* OrderCancelRequest *
+**********************
+*/
 export interface IOrderCancelRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   OrigClOrdID: string// [2] 41 (String)
@@ -19,12 +24,12 @@ export interface IOrderCancelRequest {
   AcctIDSource?: number// [10] 660 (Int)
   AccountType?: number// [11] 581 (Int)
   Parties?: IParties// [12] NoPartyIDs.453, PartyID.448 .. PartySubIDType.803
-  Instrument?: IInstrument// [13] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [13] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   FinancingDetails?: IFinancingDetails// [14] AgreementDesc.913, AgreementID.914 .. MarginRatio.898
   UndInstrmtGrp?: IUndInstrmtGrp// [15] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   Side: string// [16] 54 (String)
   TransactTime: Date// [17] 60 (UtcTimestamp)
-  OrderQtyData?: IOrderQtyData// [18] OrderQty.38, CashOrderQty.152 .. RoundingModulus.469
+  OrderQtyData: IOrderQtyData// [18] OrderQty.38, CashOrderQty.152 .. RoundingModulus.469
   ComplianceID?: string// [19] 376 (String)
   Text?: string// [20] 58 (String)
   EncodedTextLen?: number// [21] 354 (Length)

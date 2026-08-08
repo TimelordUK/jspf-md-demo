@@ -1,5 +1,10 @@
 import { ICommissionData } from './commission_data'
 
+/*
+*******************
+* NoBidComponents *
+*******************
+*/
 export interface IBidCompRspGrpNoBidComponents {
   CommissionData: ICommissionData// [1] Commission.12, CommType.13 .. FundRenewWaiv.497
   ListID?: string// [2] 66 (String)

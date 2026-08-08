@@ -1,5 +1,10 @@
 import { INestedParties } from './nested_parties'
 
+/*
+***************
+* NoPositions *
+***************
+*/
 export interface IPositionQtyNoPositions {
   PosType?: string// [1] 703 (String)
   LongQty?: number// [2] 704 (Float)

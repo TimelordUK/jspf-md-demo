@@ -2,6 +2,11 @@ import { IInstrumentLeg } from './instrument_leg'
 import { ILegStipulations } from './leg_stipulations'
 import { INestedParties } from './nested_parties'
 
+/*
+**********
+* NoLegs *
+**********
+*/
 export interface ITrdInstrmtLegGrpNoLegs {
   InstrumentLeg?: IInstrumentLeg// [1] LegSymbol.600, LegSymbolSfx.601 .. LegInterestAccrualDate.956
   LegQty?: number// [2] 687 (Float)

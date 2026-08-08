@@ -1,3 +1,8 @@
+/*
+********************
+* NoAffectedOrders *
+********************
+*/
 export interface IAffectedOrdGrpNoAffectedOrders {
   OrigClOrdID?: string// [1] 41 (String)
   AffectedOrderID?: string// [2] 535 (String)

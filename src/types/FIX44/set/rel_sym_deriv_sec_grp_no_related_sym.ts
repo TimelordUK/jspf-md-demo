@@ -2,6 +2,11 @@ import { IInstrument } from './instrument'
 import { IInstrumentExtension } from './instrument_extension'
 import { IInstrmtLegGrp } from './instrmt_leg_grp'
 
+/*
+****************
+* NoRelatedSym *
+****************
+*/
 export interface IRelSymDerivSecGrpNoRelatedSym {
   Instrument?: IInstrument// [1] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   Currency?: string// [2] 15 (String)

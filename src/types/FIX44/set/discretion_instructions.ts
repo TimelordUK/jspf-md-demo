@@ -1,3 +1,8 @@
+/*
+**************************
+* DiscretionInstructions *
+**************************
+*/
 export interface IDiscretionInstructions {
   DiscretionInst?: string// [1] 388 (String)
   DiscretionOffsetValue?: number// [2] 389 (Float)

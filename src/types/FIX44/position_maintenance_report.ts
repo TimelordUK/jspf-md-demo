@@ -8,6 +8,11 @@ import { IPositionQty } from './set/position_qty'
 import { IPositionAmountData } from './set/position_amount_data'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*****************************
+* PositionMaintenanceReport *
+*****************************
+*/
 export interface IPositionMaintenanceReport {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   PosMaintRptID: string// [2] 721 (String)
@@ -24,14 +29,14 @@ export interface IPositionMaintenanceReport {
   Account: string// [13] 1 (String)
   AcctIDSource?: number// [14] 660 (Int)
   AccountType: number// [15] 581 (Int)
-  Instrument?: IInstrument// [16] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [16] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   Currency?: string// [17] 15 (String)
   InstrmtLegGrp?: IInstrmtLegGrp// [18] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956
   UndInstrmtGrp?: IUndInstrmtGrp// [19] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   TrdgSesGrp?: ITrdgSesGrp// [20] NoTradingSessions.386, TradingSessionID.336, TradingSessionSubID.625
   TransactTime: Date// [21] 60 (UtcTimestamp)
-  PositionQty?: IPositionQty// [22] NoPositions.702, PosType.703 .. NestedPartySubIDType.805
-  PositionAmountData?: IPositionAmountData// [23] NoPosAmt.753, PosAmtType.707, PosAmt.708
+  PositionQty: IPositionQty// [22] NoPositions.702, PosType.703 .. NestedPartySubIDType.805
+  PositionAmountData: IPositionAmountData// [23] NoPosAmt.753, PosAmtType.707, PosAmt.708
   AdjustmentType?: number// [24] 718 (Int)
   ThresholdAmount?: number// [25] 834 (Float)
   Text?: string// [26] 58 (String)

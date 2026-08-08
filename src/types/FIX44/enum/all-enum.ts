@@ -21,7 +21,6 @@ export enum CommType {
 }
 
 export enum ExecInst {
-  StayOnOfferside = '0',
   NotHeld = '1',
   Work = '2',
   GoAlong = '3',
@@ -31,6 +30,7 @@ export enum ExecInst {
   StrictScale = '7',
   TryToScale = '8',
   StayOnBidside = '9',
+  StayOnOfferside = '0',
   NoCross = 'A',
   OkToCross = 'B',
   CallFirst = 'C',
@@ -1234,6 +1234,13 @@ export enum MultiLegReportingType {
 }
 
 export enum PartyIDSource {
+  Bic = 'B',
+  GenerallyAcceptedMarketParticipantIdentifier = 'C',
+  ProprietaryCustomCode = 'D',
+  IsoCountryCode = 'E',
+  SettlementEntityLocation = 'F',
+  Mic = 'G',
+  CsdParticipantMemberCode = 'H',
   KoreanInvestorId = '1',
   TaiwaneseQualifiedForeignInvestorIdQfii = '2',
   TaiwaneseTradingAccount = '3',
@@ -1243,13 +1250,6 @@ export enum PartyIDSource {
   UsSocialSecurityNumber = '7',
   UsEmployerIdentificationNumber = '8',
   AustralianBusinessNumber = '9',
-  Bic = 'B',
-  GenerallyAcceptedMarketParticipantIdentifier = 'C',
-  ProprietaryCustomCode = 'D',
-  IsoCountryCode = 'E',
-  SettlementEntityLocation = 'F',
-  Mic = 'G',
-  CsdParticipantMemberCode = 'H',
   AustralianTaxFileNumber = 'A',
   DirectedBrokerThreeCharacterAcronymAsDefinedInIsitcEtcBestPracticeGuidelinesDocument = 'I'
 }
@@ -1344,11 +1344,11 @@ export enum CancellationRights {
 }
 
 export enum MoneyLaunderingStatus {
+  Passed = 'Y',
+  NotChecked = 'N',
   ExemptBelowTheLimit = '1',
   ExemptClientMoneyTypeExemption = '2',
-  ExemptAuthorisedCreditOrFinancialInstitution = '3',
-  Passed = 'Y',
-  NotChecked = 'N'
+  ExemptAuthorisedCreditOrFinancialInstitution = '3'
 }
 
 export enum ExecPriceType {
@@ -1454,9 +1454,9 @@ export enum RegistTransType {
 }
 
 export enum OwnershipType {
-  JointTrustees = '2',
   JointInvestors = 'J',
-  TenantsInCommon = 'T'
+  TenantsInCommon = 'T',
+  JointTrustees = '2'
 }
 
 export enum ContAmtType {
@@ -1733,12 +1733,6 @@ export enum AllocType {
 }
 
 export enum ClearingFeeIndicator {
-  E1stYearDelegateTradingForHisOwnAccount = '1',
-  E2ndYearDelegateTradingForHisOwnAccount = '2',
-  E3rdYearDelegateTradingForHisOwnAccount = '3',
-  E4thYearDelegateTradingForHisOwnAccount = '4',
-  E5thYearDelegateTradingForHisOwnAccount = '5',
-  E6thYearAndBeyondDelegateTradingForHisOwnAccount = '9',
   CboeMember = 'B',
   NonMemberAndCustomer = 'C',
   EquityMemberAndClearingMember = 'E',
@@ -1746,7 +1740,13 @@ export enum ClearingFeeIndicator {
   E106HAnd106JFirms = 'H',
   GimIdemAndComMembershipInterestHolders = 'I',
   LesseeAnd106FEmployees = 'L',
-  AllOtherOwnershipTypes = 'M'
+  AllOtherOwnershipTypes = 'M',
+  E1stYearDelegateTradingForHisOwnAccount = '1',
+  E2ndYearDelegateTradingForHisOwnAccount = '2',
+  E3rdYearDelegateTradingForHisOwnAccount = '3',
+  E4thYearDelegateTradingForHisOwnAccount = '4',
+  E5thYearDelegateTradingForHisOwnAccount = '5',
+  E6thYearAndBeyondDelegateTradingForHisOwnAccount = '9'
 }
 
 export enum WorkingIndicator {

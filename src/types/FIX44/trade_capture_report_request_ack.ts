@@ -4,6 +4,11 @@ import { IUndInstrmtGrp } from './set/und_instrmt_grp'
 import { IInstrmtLegGrp } from './set/instrmt_leg_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+********************************
+* TradeCaptureReportRequestAck *
+********************************
+*/
 export interface ITradeCaptureReportRequestAck {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   TradeRequestID: string// [2] 568 (String)
@@ -12,7 +17,7 @@ export interface ITradeCaptureReportRequestAck {
   TotNumTradeReports?: number// [5] 748 (Int)
   TradeRequestResult: number// [6] 749 (Int)
   TradeRequestStatus: number// [7] 750 (Int)
-  Instrument?: IInstrument// [8] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [8] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   UndInstrmtGrp?: IUndInstrmtGrp// [9] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   InstrmtLegGrp?: IInstrmtLegGrp// [10] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956
   MultiLegReportingType?: string// [11] 442 (String)

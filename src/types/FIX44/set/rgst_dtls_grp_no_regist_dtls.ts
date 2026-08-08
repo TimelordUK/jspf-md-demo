@@ -1,5 +1,10 @@
 import { INestedParties } from './nested_parties'
 
+/*
+****************
+* NoRegistDtls *
+****************
+*/
 export interface IRgstDtlsGrpNoRegistDtls {
   RegistDtls?: string// [1] 509 (String)
   RegistEmail?: string// [2] 511 (String)

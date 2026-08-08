@@ -1,3 +1,8 @@
+/*
+******************
+* NoDistribInsts *
+******************
+*/
 export interface IRgstDistInstGrpNoDistribInsts {
   DistribPaymentMethod?: number// [1] 477 (Int)
   DistribPercentage?: number// [2] 512 (Float)

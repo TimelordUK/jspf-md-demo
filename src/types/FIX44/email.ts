@@ -6,6 +6,11 @@ import { IInstrmtLegGrp } from './set/instrmt_leg_grp'
 import { ILinesOfTextGrp } from './set/lines_of_text_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*********
+* Email *
+*********
+*/
 export interface IEmail {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   EmailThreadID: string// [2] 164 (String)
@@ -20,7 +25,7 @@ export interface IEmail {
   InstrmtLegGrp?: IInstrmtLegGrp// [11] NoLegs.555, LegSymbol.600 .. LegInterestAccrualDate.956
   OrderID?: string// [12] 37 (String)
   ClOrdID?: string// [13] 11 (String)
-  LinesOfTextGrp?: ILinesOfTextGrp// [14] NoLinesOfText.33, Text.58 .. EncodedText.355
+  LinesOfTextGrp: ILinesOfTextGrp// [14] NoLinesOfText.33, Text.58 .. EncodedText.355
   RawDataLength?: number// [15] 95 (Length)
   RawData?: Buffer// [16] 96 (RawData)
   StandardTrailer: IStandardTrailer// [17] SignatureLength.93, Signature.89, CheckSum.10

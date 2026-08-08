@@ -3,6 +3,11 @@ import { IParties } from './set/parties'
 import { IQuotSetAckGrp } from './set/quot_set_ack_grp'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+****************************
+* MassQuoteAcknowledgement *
+****************************
+*/
 export interface IMassQuoteAcknowledgement {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   QuoteReqID?: string// [2] 131 (String)

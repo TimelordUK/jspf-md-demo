@@ -12,6 +12,11 @@ import { ISpreadOrBenchmarkCurveData } from './set/spread_or_benchmark_curve_dat
 import { IStipulations } from './set/stipulations'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*********************
+* CollateralRequest *
+*********************
+*/
 export interface ICollateralRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   CollReqID: string// [2] 894 (String)

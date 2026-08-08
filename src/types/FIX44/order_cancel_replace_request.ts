@@ -13,6 +13,11 @@ import { IDiscretionInstructions } from './set/discretion_instructions'
 import { ICommissionData } from './set/commission_data'
 import { IStandardTrailer } from './set/standard_trailer'
 
+/*
+*****************************
+* OrderCancelReplaceRequest *
+*****************************
+*/
 export interface IOrderCancelReplaceRequest {
   StandardHeader: IStandardHeader// [1] BeginString.8, BodyLength.9 .. HopRefID.630
   OrderID?: string// [2] 37 (String)
@@ -43,13 +48,13 @@ export interface IOrderCancelReplaceRequest {
   MaxFloor?: number// [27] 111 (Float)
   ExDestination?: string// [28] 100 (String)
   TrdgSesGrp?: ITrdgSesGrp// [29] NoTradingSessions.386, TradingSessionID.336, TradingSessionSubID.625
-  Instrument?: IInstrument// [30] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
+  Instrument: IInstrument// [30] Symbol.55, SymbolSfx.65 .. InterestAccrualDate.874
   FinancingDetails?: IFinancingDetails// [31] AgreementDesc.913, AgreementID.914 .. MarginRatio.898
   UndInstrmtGrp?: IUndInstrmtGrp// [32] NoUnderlyings.711, UnderlyingSymbol.311 .. UnderlyingStipValue.889
   Side: string// [33] 54 (String)
   TransactTime: Date// [34] 60 (UtcTimestamp)
   QtyType?: number// [35] 854 (Int)
-  OrderQtyData?: IOrderQtyData// [36] OrderQty.38, CashOrderQty.152 .. RoundingModulus.469
+  OrderQtyData: IOrderQtyData// [36] OrderQty.38, CashOrderQty.152 .. RoundingModulus.469
   OrdType: string// [37] 40 (String)
   PriceType?: number// [38] 423 (Int)
   Price?: number// [39] 44 (Float)
