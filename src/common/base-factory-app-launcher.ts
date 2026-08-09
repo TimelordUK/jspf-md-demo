@@ -1,7 +1,7 @@
-import { type EngineFactory, type IJsFixConfig, type SessionContainer } from 'jspurefix'
+import type { EngineFactory, IJsFixConfig, SessionContainer } from 'jspurefix'
 import { BaseAppLauncher } from './base-app-launcher'
-import { type MdBaseClient } from './md-base-client'
-import { type MdBaseServer } from './md-base-server'
+import type { MdBaseClient } from './md-base-client'
+import type { MdBaseServer } from './md-base-server'
 
 export abstract class BaseFactoryAppLauncher extends BaseAppLauncher {
   protected constructor (public options: IOptions,

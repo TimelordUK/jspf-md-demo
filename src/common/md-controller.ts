@@ -1,4 +1,4 @@
-import { type IJsFixConfig, type IJsFixLogger } from 'jspurefix'
+import type { IJsFixConfig, IJsFixLogger } from 'jspurefix'
 
 const express = require('express')
 const app = express()

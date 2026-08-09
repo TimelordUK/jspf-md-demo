@@ -1,6 +1,6 @@
 import { type ISessionDescription, MsgType, ASessionMsgFactory } from 'jspurefix'
-import { type ILooseObject } from 'jspurefix/dist/collections/collection'
-import { type IStandardHeader } from 'jspurefix/dist/types/FIX4.4/repo'
+import type { ILooseObject } from 'jspurefix/dist/collections/collection'
+import type { IStandardHeader } from 'jspurefix/dist/types/FIX4.4/repo'
 
 export abstract class BaseFactoryFact extends ASessionMsgFactory {
   protected constructor (readonly description: ISessionDescription) {

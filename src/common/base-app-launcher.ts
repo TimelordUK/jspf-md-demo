@@ -1,7 +1,7 @@
 import { type FixSession, type IJsFixConfig, type SessionContainer, SessionLauncher } from 'jspurefix'
 import { MdController } from './md-controller'
-import { type MdBaseClient } from './md-base-client'
-import { type MdBaseServer } from './md-base-server'
+import type { MdBaseClient } from './md-base-client'
+import type { MdBaseServer } from './md-base-server'
 
 export abstract class BaseAppLauncher extends SessionLauncher {
   controller!: MdController

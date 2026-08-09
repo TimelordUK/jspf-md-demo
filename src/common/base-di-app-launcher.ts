@@ -1,4 +1,4 @@
-import { type DependencyContainer } from 'tsyringe'
+import type { DependencyContainer } from 'tsyringe'
 import { DITokens, type FixSession, type IJsFixConfig, type SessionContainer } from 'jspurefix'
 import { BaseAppLauncher } from './base-app-launcher'
 
